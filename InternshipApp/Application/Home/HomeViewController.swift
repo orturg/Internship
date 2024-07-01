@@ -9,8 +9,8 @@ import UIKit
 
 class HomeViewController: BaseViewController {
     
-    weak var homeCoordinator: HomeCoordinator?
-
+    var vm: HomeViewModel? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red

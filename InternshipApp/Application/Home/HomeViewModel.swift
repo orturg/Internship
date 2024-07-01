@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+class HomeViewModel {
+    weak var homeCoordinator: HomeCoordinator?
+}

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		723C8E802C369FA6000C19BA /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 723C8E7F2C369FA6000C19BA /* HomeViewController.xib */; };
+		723C8E832C36D7AF000C19BA /* TextValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723C8E822C36D7AF000C19BA /* TextValues.swift */; };
+		723C8E862C36D895000C19BA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723C8E852C36D895000C19BA /* Constants.swift */; };
 		7272675B2C3408A5004BF6B6 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7272675A2C3408A5004BF6B6 /* CustomTextField.swift */; };
 		727268F22C352BBF004BF6B6 /* Saira-Italic-VariableFont_wdth,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7272686F2C352BBF004BF6B6 /* Saira-Italic-VariableFont_wdth,wght.ttf */; };
 		727268F32C352BBF004BF6B6 /* Saira-VariableFont_wdth,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 727268702C352BBF004BF6B6 /* Saira-VariableFont_wdth,wght.ttf */; };
@@ -160,6 +162,8 @@
 
 /* Begin PBXFileReference section */
 		723C8E7F2C369FA6000C19BA /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		723C8E822C36D7AF000C19BA /* TextValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextValues.swift; sourceTree = "<group>"; };
+		723C8E852C36D895000C19BA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7272675A2C3408A5004BF6B6 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		7272686F2C352BBF004BF6B6 /* Saira-Italic-VariableFont_wdth,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Saira-Italic-VariableFont_wdth,wght.ttf"; sourceTree = "<group>"; };
 		727268702C352BBF004BF6B6 /* Saira-VariableFont_wdth,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Saira-VariableFont_wdth,wght.ttf"; sourceTree = "<group>"; };
@@ -335,6 +339,8 @@
 		727267582C33ED9A004BF6B6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				723C8E822C36D7AF000C19BA /* TextValues.swift */,
+				723C8E852C36D895000C19BA /* Constants.swift */,
 				727269742C352BCD004BF6B6 /* Fonts */,
 				7284E1F62C2FFA8F0081F8D1 /* Assets.xcassets */,
 			);
@@ -787,12 +793,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				723C8E832C36D7AF000C19BA /* TextValues.swift in Sources */,
 				7284E20D2C3016F60081F8D1 /* Coordinator.swift in Sources */,
 				7284E20A2C3010120081F8D1 /* BaseViewController.swift in Sources */,
 				7272697A2C35317A004BF6B6 /* CustomSwitch.swift in Sources */,
 				727269762C352C97004BF6B6 /* CustomRoundedRectangleButton.swift in Sources */,
 				727269802C35ABA7004BF6B6 /* CustomRadioButton.swift in Sources */,
 				7284E20F2C3017D90081F8D1 /* AppCoordinator.swift in Sources */,
+				723C8E862C36D895000C19BA /* Constants.swift in Sources */,
 				7284E2162C3035880081F8D1 /* HomeViewModel.swift in Sources */,
 				7284E1EE2C2FFA8E0081F8D1 /* AppDelegate.swift in Sources */,
 				7284E1F02C2FFA8E0081F8D1 /* SceneDelegate.swift in Sources */,

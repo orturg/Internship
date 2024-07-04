@@ -8,15 +8,13 @@
 import UIKit
 
 class CustomTextField: UIView {
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var titleLabel: UILabel!
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         configure()
     }
-    
-    @IBOutlet weak var textField: UITextField!
-    
-    @IBOutlet weak var titleLabel: UILabel!
     
     private func configure() {
         let subview = self.loadViewFromXib()
@@ -30,7 +28,6 @@ class CustomTextField: UIView {
     
     
     private func configureTextField() {
-        
         textField.layer.borderWidth = 1
         textField.layer.cornerRadius = 12
         textField.layer.borderColor = UIColor.appSecondary.cgColor
@@ -49,13 +46,13 @@ class CustomTextField: UIView {
         return view
     }
     
+    
     @IBAction func textfieldTapped(_ sender: UITextField) {
         textField.layer.borderColor = UIColor.appWhite.cgColor
         textField.textColor = UIColor.appWhite
     }
     
     @IBAction func textFieldCharsAmount(_ sender: UITextField) {
-        
         guard let digits = textField.text?.count else { return }
         
         if digits > 10 {

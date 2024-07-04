@@ -9,7 +9,6 @@ import UIKit
 
 
 class CustomCheckboxSwitch: UIButton {
-    
     private  var color: UIColor?
     private var isActive: Bool = false
     private let checkmarkImageView = UIImageView(image: UIImage(named: "checkmark"))

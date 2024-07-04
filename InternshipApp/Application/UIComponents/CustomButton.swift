@@ -9,8 +9,8 @@ import UIKit
 
 class CustomButton: UIButton {
     
-    var text: String?
-    var color: UIColor?
+    private var text: String?
+    private var color: UIColor?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,7 +29,7 @@ class CustomButton: UIButton {
     }
     
     
-    func configure() {
+    private func configure() {
         titleLabel?.font = UIFont(name: "Saira-Bold", size: 16)
         setTitle(text, for: .normal)
         setTitleColor(color, for: .normal)

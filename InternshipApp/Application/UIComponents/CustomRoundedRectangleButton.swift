@@ -10,11 +10,11 @@ import UIKit
 import UIKit
 
 class CustomRoundedRectangleButton: UIButton {
-    var buttonBackgroundColor: UIColor?
-    var buttonText: String?
-    var textColor: UIColor?
-    var height: CGFloat = 49
-    var width: CGFloat = 289
+    private var buttonBackgroundColor: UIColor?
+    private var buttonText: String?
+    private var textColor: UIColor?
+    private var height: CGFloat = 49
+    private var width: CGFloat = 289
     
     override init(frame: CGRect) {
         super.init(frame: frame)

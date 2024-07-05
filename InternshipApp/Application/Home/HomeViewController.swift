@@ -9,11 +9,18 @@ import UIKit
 
 final class HomeViewController: BaseViewController {
     
+    let roundedRectangleButton = CustomRoundedRectangleButton(buttonBackgroundColor: .appYellow, buttonText: TextValues.addButtonLabel, textColor: .black, height: Constants.customRoundedRectangleButtonHeight, width: Constants.customRoundedRectangleButtonWidth)
+    let button = CustomButton(text: TextValues.backToLoginLabel, color: .appYellow)
+    let button2 = CustomButton(text: TextValues.deleteAccountLabel, color: .appRed)
+    let customSwitch = CustomSwitch(color: .appYellow)
+    let customCheckBox = CustomCheckboxSwitch(color: .appYellow)
+    let customRadioButton = CustomRadioButton(color: .appWhite)
+    
     var vm: HomeViewModel? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        layoutViews()
+        configure()
     }
     
     init(vm: HomeViewModel? = nil) {
@@ -25,25 +32,24 @@ final class HomeViewController: BaseViewController {
         super.init(coder: coder)
     }
     
-    private func layoutViews() {
-        let roundedRectangleButton = CustomRoundedRectangleButton(buttonBackgroundColor: .appYellow, buttonText: TextValues.addButtonLabel, textColor: .black, height: Constants.customRoundedRectangleButtonHeight, width: Constants.customRoundedRectangleButtonWidth)
+    
+    private func configure() {
+        setupSubviews()
+        setupLayoutConstraints()
+    }
+    
+    
+    private func setupSubviews() {
         view.addSubview(roundedRectangleButton)
-        
-        let button = CustomButton(text: TextValues.backToLoginLabel, color: .appYellow)
         view.addSubview(button)
-        
-        let button2 = CustomButton(text: TextValues.deleteAccountLabel, color: .appRed)
         view.addSubview(button2)
-        
-        let customSwitch = CustomSwitch(color: .appYellow)
         view.addSubview(customSwitch)
-        
-        let customCheckBox = CustomCheckboxSwitch(color: .appYellow)
         view.addSubview(customCheckBox)
-        
-        let customRadioButton = CustomRadioButton(color: .appWhite)
         view.addSubview(customRadioButton)
-        
+    }
+    
+    
+    private func setupLayoutConstraints() {
         NSLayoutConstraint.activate([
             roundedRectangleButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             roundedRectangleButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),

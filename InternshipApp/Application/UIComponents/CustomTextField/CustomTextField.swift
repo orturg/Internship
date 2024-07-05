@@ -7,9 +7,9 @@
 
 import UIKit
 
-class CustomTextField: UIView {
-    @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var titleLabel: UILabel!
+final class CustomTextField: UIView {
+    @IBOutlet private weak var textField: UITextField!
+    @IBOutlet private weak var titleLabel: UILabel!
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -28,11 +28,11 @@ class CustomTextField: UIView {
     
     
     private func configureTextField() {
-        textField.layer.borderWidth = 1
-        textField.layer.cornerRadius = 12
+        textField.layer.borderWidth = Constants.textFieldBorderWidth
+        textField.layer.cornerRadius = Constants.textFieldCornerRadius
         textField.layer.borderColor = UIColor.appSecondary.cgColor
         
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: Constants.textFieldPaddingWidth, height: textField.frame.height))
         textField.leftView = paddingView
         textField.leftViewMode = .always
     }
@@ -42,7 +42,6 @@ class CustomTextField: UIView {
         guard let view = Bundle.main.loadNibNamed("CustomTextField", owner: self)?.first as? UIView else {
             return UIView()
         }
-        
         return view
     }
     
@@ -52,14 +51,14 @@ class CustomTextField: UIView {
         textField.textColor = UIColor.appWhite
     }
     
-    @IBAction func textFieldCharsAmount(_ sender: UITextField) {
+    @IBAction final func textFieldCharsAmount(_ sender: UITextField) {
         guard let digits = textField.text?.count else { return }
         
         if digits > 10 {
             titleLabel.textColor = .appRed
             textField.layer.borderColor = UIColor.appRed.cgColor
             textField.textColor = UIColor.appRed
-        } else if digits == 0 {
+        } else if digits == .zero {
             textField.layer.borderColor = UIColor.appSecondary.cgColor
             textField.textColor = UIColor.appSecondary
         } else {

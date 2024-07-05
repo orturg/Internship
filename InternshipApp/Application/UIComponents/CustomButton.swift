@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomButton: UIButton {
+final class CustomButton: UIButton {
     
     private var text: String?
     private var color: UIColor?
@@ -30,7 +30,7 @@ class CustomButton: UIButton {
     
     
     private func configure() {
-        titleLabel?.font = UIFont(name: "Saira-Bold", size: 16)
+        titleLabel?.font = UIFont(name: TextValues.buttonLabelFont, size: Constants.buttonLabelSize)
         setTitle(text, for: .normal)
         setTitleColor(color, for: .normal)
         translatesAutoresizingMaskIntoConstraints = false

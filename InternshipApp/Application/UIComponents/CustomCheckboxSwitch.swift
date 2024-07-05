@@ -8,7 +8,7 @@
 import UIKit
 
 
-class CustomCheckboxSwitch: UIButton {
+final class CustomCheckboxSwitch: UIButton {
     private  var color: UIColor?
     private var isActive: Bool = false
     private let checkmarkImageView = UIImageView(image: UIImage(named: "checkmark"))
@@ -30,21 +30,31 @@ class CustomCheckboxSwitch: UIButton {
     
     
     private func configure() {
-        layer.cornerRadius = 3
-        layer.borderWidth = 3
+        setupSubviews()
+        setupLayoutConstraints()
+    }
+    
+    
+    private func setupSubviews() {
+        layer.cornerRadius = Constants.customCheckboxSwitchCornerRadius
+        layer.borderWidth = Constants.customCheckboxSwitchBorderWidth
         layer.borderColor = color?.cgColor
         translatesAutoresizingMaskIntoConstraints = false
-        
-        widthAnchor.constraint(equalToConstant: 16).isActive = true
-        heightAnchor.constraint(equalToConstant: 16).isActive = true
-        
         addTarget(self, action: #selector(checkboxAction), for: .touchUpInside)
-        
         backgroundColor = isActive ? color : .clear
         if isActive { addCheckmarkImageView() }
     }
     
-    @objc func checkboxAction() {
+    
+    private func setupLayoutConstraints() {
+        NSLayoutConstraint.activate([
+            widthAnchor.constraint(equalToConstant: Constants.customCheckboxSwitchWidth),
+            heightAnchor.constraint(equalToConstant: Constants.customCheckboxSwitchHeight)
+        ])
+    }
+    
+    
+    @objc private func checkboxAction() {
         isActive.toggle()
         backgroundColor = isActive ? color : .clear
         if isActive {
@@ -59,10 +69,13 @@ class CustomCheckboxSwitch: UIButton {
         addSubview(checkmarkImageView)
         checkmarkImageView.translatesAutoresizingMaskIntoConstraints = false
         
-        checkmarkImageView.widthAnchor.constraint(equalToConstant: 8).isActive = true
-        checkmarkImageView.heightAnchor.constraint(equalToConstant: 5).isActive = true
-        checkmarkImageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        checkmarkImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            checkmarkImageView.widthAnchor.constraint(equalToConstant: Constants.customCheckboxSwitchcheckmarkImageViewWidth),
+            checkmarkImageView.heightAnchor.constraint(equalToConstant: Constants.customCheckboxSwitchcheckmarkImageViewHeight),
+            checkmarkImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            checkmarkImageView.centerYAnchor.constraint(equalTo: centerYAnchor)
+        ])
+        
     }
 }
 

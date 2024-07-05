@@ -7,14 +7,12 @@
 
 import UIKit
 
-import UIKit
-
-class CustomRoundedRectangleButton: UIButton {
+final class CustomRoundedRectangleButton: UIButton {
     private var buttonBackgroundColor: UIColor?
     private var buttonText: String?
     private var textColor: UIColor?
-    private var height: CGFloat = 49
-    private var width: CGFloat = 289
+    private var height: CGFloat = Constants.customRoundedRectangleButtonHeight
+    private var width: CGFloat = Constants.customRoundedRectangleButtonWidth
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -38,15 +36,27 @@ class CustomRoundedRectangleButton: UIButton {
     
     
     private func configure() {
+        setupSubviews()
+        setupLayoutConstraints()
+    }
+    
+    
+    private func setupSubviews() {
         backgroundColor = buttonBackgroundColor
         setTitleColor(textColor, for: .normal)
-        titleLabel?.font = UIFont(name: "Saira-Regular", size: 16)
+        titleLabel?.font = UIFont(name: TextValues.customRoundedRectangleButtonLabelFont, size: Constants.buttonLabelSize)
         setTitle(buttonText, for: .normal)
-        layer.cornerRadius = 24
+        layer.cornerRadius = Constants.customRoundedRectangleButtonCornerRadius
         translatesAutoresizingMaskIntoConstraints = false
-        widthAnchor.constraint(equalToConstant: width).isActive = true
-        heightAnchor.constraint(equalToConstant: height).isActive = true
     }
-
+    
+    
+    private func setupLayoutConstraints() {
+        NSLayoutConstraint.activate([
+            widthAnchor.constraint(equalToConstant: width),
+            heightAnchor.constraint(equalToConstant: height)
+        ])
+    }
+    
 }
 

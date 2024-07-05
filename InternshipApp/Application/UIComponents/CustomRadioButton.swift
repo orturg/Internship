@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomRadioButton: UIButton {
+final class CustomRadioButton: UIButton {
     
     private var color: UIColor?
     private var isActive = false
@@ -28,21 +28,30 @@ class CustomRadioButton: UIButton {
     }
     
     private func configure() {
-        layer.cornerRadius = 8
+        setupViews()
+        setupLayoutConstraints()
+    }
+    
+    
+    private func setupViews() {
+        layer.cornerRadius = Constants.customRadioButtonCornerRadius
         translatesAutoresizingMaskIntoConstraints = false
         layer.borderColor = color?.cgColor
-        layer.borderWidth = 2
-        
-        widthAnchor.constraint(equalToConstant: 15).isActive = true
-        heightAnchor.constraint(equalToConstant: 15).isActive = true
-        
+        layer.borderWidth = Constants.customRadioButtonBorderWidth
         addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-        
         if isActive { createInnerCircle() }
     }
     
     
-    @objc func buttonAction() {
+    private func setupLayoutConstraints() {
+        NSLayoutConstraint.activate([
+            widthAnchor.constraint(equalToConstant: Constants.customRadioButtonWidth),
+            heightAnchor.constraint(equalToConstant: Constants.customRadioButtonHeight)
+        ])
+    }
+    
+    
+    @objc private func buttonAction() {
         isActive.toggle()
         if isActive {
             createInnerCircle()
@@ -54,14 +63,16 @@ class CustomRadioButton: UIButton {
     
     private func createInnerCircle() {
         addSubview(circle)
-        circle.layer.cornerRadius = 3
-        circle.layer.borderWidth = 5
+        circle.layer.cornerRadius = Constants.customRadioButtonInnerCircleCornerRadius
+        circle.layer.borderWidth = Constants.customRadioButtonInnerCircleBorderWidth
         circle.layer.borderColor = color?.cgColor
         circle.translatesAutoresizingMaskIntoConstraints = false
         
-        circle.widthAnchor.constraint(equalToConstant: 6).isActive = true
-        circle.heightAnchor.constraint(equalToConstant: 6).isActive = true
-        circle.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        circle.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            circle.widthAnchor.constraint(equalToConstant: Constants.customRadioButtonInnerCircleWidth),
+            circle.heightAnchor.constraint(equalToConstant: Constants.customRadioButtonInnerCircleHeight),
+            circle.centerXAnchor.constraint(equalTo: centerXAnchor),
+            circle.centerYAnchor.constraint(equalTo: centerYAnchor)
+        ])
     }
 }

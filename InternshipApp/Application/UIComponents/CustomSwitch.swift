@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomSwitch: UISwitch {
+final class CustomSwitch: UISwitch {
     
     private var color: UIColor?
 
@@ -17,7 +17,7 @@ class CustomSwitch: UISwitch {
     }
     
     init(color: UIColor) {
-        super.init(frame: CGRect(x: 0, y: 0, width: 73, height: 33))
+        super.init(frame: .zero)
         self.color = color
         configure()
     }

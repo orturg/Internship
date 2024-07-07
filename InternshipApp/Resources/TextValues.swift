@@ -13,4 +13,9 @@ enum TextValues {
     static let deleteAccountLabel = "Delete account"
     static let customRoundedRectangleButtonLabelFont = "Saira-Regular"
     static let buttonLabelFont = "Saira-Bold"
+    static let superManLabel = "SUPERMAN"
+    static let superGirlLabel = "SUPERGIRL"
+    static let gradientDividerText = "GradientDivider"
+    static let customTextFieldText = "CustomTextField"
+    static let homeVCTitleLabelFont = "Saira"
 }

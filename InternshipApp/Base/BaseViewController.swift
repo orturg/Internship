@@ -8,7 +8,7 @@
 import UIKit
 
 class BaseViewController: UIViewController {
-    let backgroundImageView = UIImageView(image: .background)
+    var backgroundImageView = UIImageView(image: .background)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,5 +32,17 @@ class BaseViewController: UIViewController {
             backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+    }
+    
+    
+    func removeBackground() {
+        backgroundImageView.removeFromSuperview()
+    }
+    
+    
+    func setGirlBackgroundImage() {
+        backgroundImageView = UIImageView(image: .supergirl)
+        configure()
+        setupLayoutConstraints()
     }
 }

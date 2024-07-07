@@ -24,7 +24,7 @@ class AppCoordinator: Coordinator {
     
     
     func start() {
-        let homeCoordinator = HomeCoordinator(navigationController: navigationController)
-        homeCoordinator.start()
+        let startCoordinator = StartCoordinator(navigationController: navigationController)
+        startCoordinator.start()
     }
 }

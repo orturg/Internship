@@ -8,16 +8,20 @@
 import UIKit
 
 class HomeCoordinator: Coordinator {
-    private var navigationController: UINavigationController
+    var navigationController: UINavigationController
+    var titleText: String?
+    var isMan: Bool
     
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, titleText: String?, isMan: Bool) {
         self.navigationController = navigationController
+        self.titleText = titleText
+        self.isMan = isMan
     }
     
     
     func start() {
         let homeVC = HomeViewController()
-        let homeVM = HomeViewModel()
+        let homeVM = HomeViewModel(titleText: titleText, isMan: isMan)
         
         homeVC.vm = homeVM
         homeVC.vm?.homeCoordinator = self

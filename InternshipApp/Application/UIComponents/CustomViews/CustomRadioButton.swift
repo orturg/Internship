@@ -8,7 +8,6 @@
 import UIKit
 
 final class CustomRadioButton: UIButton {
-    
     private var color: UIColor?
     private var isActive = false
     private var circle = UIButton()

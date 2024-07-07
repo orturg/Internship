@@ -8,15 +8,20 @@
 import UIKit
 
 final class HomeViewController: BaseViewController {
+    var vm: HomeViewModel?
     
-    let roundedRectangleButton = CustomRoundedRectangleButton(buttonBackgroundColor: .appYellow, buttonText: TextValues.addButtonLabel, textColor: .black, height: Constants.customRoundedRectangleButtonHeight, width: Constants.customRoundedRectangleButtonWidth)
-    let button = CustomButton(text: TextValues.backToLoginLabel, color: .appYellow)
-    let button2 = CustomButton(text: TextValues.deleteAccountLabel, color: .appRed)
-    let customSwitch = CustomSwitch(color: .appYellow)
-    let customCheckBox = CustomCheckboxSwitch(color: .appYellow)
-    let customRadioButton = CustomRadioButton(color: .appWhite)
+    lazy var titleLabel: UILabel = {
+        var titleLabel = UILabel()
+        titleLabel.text = vm?.titleText
+        titleLabel.font = UIFont(name: TextValues.homeVCTitleLabelFont, size: Constants.homeVCTitleLabelSize)
+        titleLabel.textColor = .appWhite
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        return titleLabel
+    }()
     
-    var vm: HomeViewModel? = nil
+    lazy var gradient: GradientView = {
+        GradientView(width: Constants.gradientViewWidth, height: view.bounds.height, topColor: .clear, bottomColor: .black)
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,40 +39,38 @@ final class HomeViewController: BaseViewController {
     
     
     private func configure() {
+        configureVC()
         setupSubviews()
         setupLayoutConstraints()
     }
     
     
+    private func configureVC() {
+        let backBarButtonItem = UIBarButtonItem(customView: UIView())
+            navigationItem.leftBarButtonItem = backBarButtonItem
+        guard let vm else { return }
+        if !vm.isMan {
+            super.removeBackground()
+            super.setGirlBackgroundImage()
+        }
+    }
+    
+    
     private func setupSubviews() {
-        view.addSubview(roundedRectangleButton)
-        view.addSubview(button)
-        view.addSubview(button2)
-        view.addSubview(customSwitch)
-        view.addSubview(customCheckBox)
-        view.addSubview(customRadioButton)
+        view.addSubview(gradient)
+        view.addSubview(titleLabel)
     }
     
     
     private func setupLayoutConstraints() {
         NSLayoutConstraint.activate([
-            roundedRectangleButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            roundedRectangleButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            gradient.topAnchor.constraint(equalTo: view.topAnchor),
+            gradient.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            gradient.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            gradient.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             
-            button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            button.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 70),
-            
-            button2.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            button2.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 100),
-            
-            customSwitch.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            customSwitch.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 130),
-            
-            customCheckBox.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            customCheckBox.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 160),
-            
-            customRadioButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            customRadioButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 180),
+            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: Constants.homeTitleLabelPadding)
         ])
     }
 }

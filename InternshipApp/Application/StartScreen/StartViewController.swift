@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StartViewController: UIViewController {
+final class StartViewController: UIViewController {
     var vm: StartViewModel?
     
     @IBOutlet weak var titleLabels: UILabel!
@@ -40,16 +40,14 @@ class StartViewController: UIViewController {
     @objc private func superManButtonAction() {
         guard let navigationController else { return }
         
-        let tabBarCoordinator = TabBarCoordinator(navigationController: navigationController, titleText: TextValues.superManLabel, isMan: true)
-        tabBarCoordinator.start()
+        vm?.createTabBarCoordinator(navigationController: navigationController, titleText: TextValues.superManLabel, isMan: true)
     }
     
     
     @objc private func superGirlButtonAction() {
         guard let navigationController else { return }
         
-        let tabBarCoordinator = TabBarCoordinator(navigationController: navigationController, titleText: TextValues.superGirlLabel, isMan: false)
-        tabBarCoordinator.start()
+        vm?.createTabBarCoordinator(navigationController: navigationController, titleText: TextValues.superGirlLabel, isMan: false)
     }
     
     

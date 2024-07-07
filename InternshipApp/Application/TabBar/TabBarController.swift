@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TabBarController: UITabBarController {
+final class TabBarController: UITabBarController {
     var homeNavController: UINavigationController
     var progressNavController: UINavigationController
     var calculatorNavController: UINavigationController

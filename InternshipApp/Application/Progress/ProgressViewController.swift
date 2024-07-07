@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProgressViewController: UIViewController {
+final class ProgressViewController: UIViewController {
 
     var vm: ProgressViewModel? = nil
     

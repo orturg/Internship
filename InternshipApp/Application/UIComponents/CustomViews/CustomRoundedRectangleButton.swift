@@ -2,7 +2,7 @@
 //  CustomRoundedRectangleButton.swift
 //  InternshipApp
 //
-//  Created by Artur Nozhenko on 03.07.2024.
+//  Created by Artur Nozhenko on 07.07.2024.
 //
 
 import UIKit
@@ -57,6 +57,4 @@ final class CustomRoundedRectangleButton: UIButton {
             heightAnchor.constraint(equalToConstant: height)
         ])
     }
-    
 }
-

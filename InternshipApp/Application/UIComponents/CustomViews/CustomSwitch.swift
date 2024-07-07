@@ -8,7 +8,6 @@
 import UIKit
 
 final class CustomSwitch: UISwitch {
-    
     private var color: UIColor?
 
     override init(frame: CGRect) {

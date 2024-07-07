@@ -39,7 +39,7 @@ final class CustomTextField: UIView {
     
     
     private func loadViewFromXib() -> UIView {
-        guard let view = Bundle.main.loadNibNamed("CustomTextField", owner: self)?.first as? UIView else {
+        guard let view = Bundle.main.loadNibNamed(TextValues.customTextFieldText, owner: self)?.first as? UIView else {
             return UIView()
         }
         return view
@@ -50,6 +50,7 @@ final class CustomTextField: UIView {
         textField.layer.borderColor = UIColor.appWhite.cgColor
         textField.textColor = UIColor.appWhite
     }
+    
     
     @IBAction final func textFieldCharsAmount(_ sender: UITextField) {
         guard let digits = textField.text?.count else { return }

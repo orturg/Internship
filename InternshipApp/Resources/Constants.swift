@@ -29,4 +29,12 @@ enum Constants {
     static let customCheckboxSwitchBorderWidth: CGFloat = 3
     static let customCheckboxSwitchcheckmarkImageViewWidth: CGFloat = 8
     static let customCheckboxSwitchcheckmarkImageViewHeight: CGFloat = 5
+    static let gradientViewWidth: CGFloat = 393
+    static let gradientViewHeight: CGFloat = 91
+    static let gradientViewSpacing: CGFloat = 45.5
+    static let startViewControllerButtonPadding: CGFloat = 181
+    static let homeTitleLabelPadding: CGFloat = 76
+    static let startScreenButtonWidth: CGFloat = 144
+    static let startScreenButtonHeight: CGFloat = 44
+    static let homeVCTitleLabelSize: CGFloat = 24
 }

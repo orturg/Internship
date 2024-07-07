@@ -11,7 +11,7 @@ import UIKit
 final class CustomCheckboxSwitch: UIButton {
     private  var color: UIColor?
     private var isActive: Bool = false
-    private let checkmarkImageView = UIImageView(image: UIImage(named: "checkmark"))
+    private let checkmarkImageView = UIImageView(image: UIImage.checkmark)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -75,7 +75,6 @@ final class CustomCheckboxSwitch: UIButton {
             checkmarkImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
             checkmarkImageView.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
-        
     }
 }
 

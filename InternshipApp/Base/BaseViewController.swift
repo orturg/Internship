@@ -41,7 +41,7 @@ class BaseViewController: UIViewController {
     
     
     func setGirlBackgroundImage() {
-        backgroundImageView = UIImageView(image: .supergirl)
+        backgroundImageView = UIImageView(image: .backgroundImageGirl)
         configure()
         setupLayoutConstraints()
     }

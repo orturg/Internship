@@ -25,6 +25,13 @@ final class StartViewController: UIViewController {
     private func configure() {
         layoutSubviews()
         configureLayoutConstraints()
+        configureVC()
+    }
+    
+    
+    private func configureVC() {
+        let backBarButtonItem = UIBarButtonItem(customView: UIView())
+            navigationItem.leftBarButtonItem = backBarButtonItem
     }
     
     
@@ -40,14 +47,40 @@ final class StartViewController: UIViewController {
     @objc private func superManButtonAction() {
         guard let navigationController else { return }
         
-        vm?.createTabBarCoordinator(navigationController: navigationController, titleText: TextValues.superManLabel, isMan: true)
+        vm?.updateUser(sex: TextValues.male) { [weak self] result in
+            guard let self else { return }
+            
+            switch result {
+            case .success(_):
+                vm?.createTabBarCoordinator(navigationController: navigationController, titleText: TextValues.superManLabel, isMan: true)
+                superManButton.isEnabled = true
+                superGirlButton.isEnabled = true
+            case .failure(let error):
+                vm?.showAlert(vc: self, error: error)
+                superManButton.isEnabled = true
+                superGirlButton.isEnabled = true
+            }
+        }
     }
     
     
     @objc private func superGirlButtonAction() {
         guard let navigationController else { return }
         
-        vm?.createTabBarCoordinator(navigationController: navigationController, titleText: TextValues.superGirlLabel, isMan: false)
+        vm?.updateUser(sex: TextValues.female) { [weak self] result in
+            guard let self else { return }
+            
+            switch result {
+            case .success(_):
+                vm?.createTabBarCoordinator(navigationController: navigationController, titleText: TextValues.superGirlLabel, isMan: false)
+                superManButton.isEnabled = true
+                superGirlButton.isEnabled = true
+            case .failure(let error):
+                vm?.showAlert(vc: self, error: error)
+                superManButton.isEnabled = true
+                superGirlButton.isEnabled = true
+            }
+        }
     }
     
     

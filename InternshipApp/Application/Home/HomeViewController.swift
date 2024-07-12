@@ -10,14 +10,8 @@ import UIKit
 final class HomeViewController: BaseViewController {
     var vm: HomeViewModel?
     
-    lazy var titleLabel: UILabel = {
-        var titleLabel = UILabel()
-        titleLabel.text = vm?.titleText
-        titleLabel.font = UIFont(name: TextValues.homeVCTitleLabelFont, size: Constants.homeVCTitleLabelSize)
-        titleLabel.textColor = .appWhite
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        return titleLabel
-    }()
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     
     lazy var gradient: GradientView = {
         GradientView(width: Constants.gradientViewWidth, height: view.bounds.height, topColor: .clear, bottomColor: .black)
@@ -25,6 +19,9 @@ final class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.vm?.getUser { [weak self] in
+            self?.configureLabels()
+        }
         configure()
     }
     
@@ -40,6 +37,7 @@ final class HomeViewController: BaseViewController {
     
     private func configure() {
         configureVC()
+        configureLabels()
         setupSubviews()
         setupLayoutConstraints()
     }
@@ -47,7 +45,7 @@ final class HomeViewController: BaseViewController {
     
     private func configureVC() {
         let backBarButtonItem = UIBarButtonItem(customView: UIView())
-            navigationItem.leftBarButtonItem = backBarButtonItem
+        navigationItem.leftBarButtonItem = backBarButtonItem
         guard let vm else { return }
         if !vm.isMan {
             super.removeBackground()
@@ -56,9 +54,16 @@ final class HomeViewController: BaseViewController {
     }
     
     
+    private func configureLabels() {
+        titleLabel.text = vm?.titleText
+        nameLabel.text = vm?.user?.userName
+    }
+    
+    
     private func setupSubviews() {
         view.addSubview(gradient)
         view.addSubview(titleLabel)
+        view.addSubview(nameLabel)
     }
     
     
@@ -68,9 +73,6 @@ final class HomeViewController: BaseViewController {
             gradient.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             gradient.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             gradient.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            
-            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: Constants.homeTitleLabelPadding)
         ])
     }
 }

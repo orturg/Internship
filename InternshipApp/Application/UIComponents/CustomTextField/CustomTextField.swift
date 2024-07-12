@@ -47,25 +47,35 @@ final class CustomTextField: UIView {
     
     
     @IBAction func textfieldTapped(_ sender: UITextField) {
+        titleLabel.textColor = UIColor.appWhite
         textField.layer.borderColor = UIColor.appWhite.cgColor
         textField.textColor = UIColor.appWhite
     }
     
     
-    @IBAction final func textFieldCharsAmount(_ sender: UITextField) {
-        guard let digits = textField.text?.count else { return }
-        
-        if digits > 10 {
-            titleLabel.textColor = .appRed
-            textField.layer.borderColor = UIColor.appRed.cgColor
-            textField.textColor = UIColor.appRed
-        } else if digits == .zero {
-            textField.layer.borderColor = UIColor.appSecondary.cgColor
-            textField.textColor = UIColor.appSecondary
-        } else {
-            titleLabel.textColor = .appWhite
-            textField.layer.borderColor = UIColor.appWhite.cgColor
-            textField.textColor = UIColor.appWhite
-        }
+    func setSecureField() {
+        textField.isSecureTextEntry = true
+    }
+    
+    
+    func setTextFieldTitle(text: String) {
+        titleLabel.text = text
+    }
+    
+    
+    func setTextFieldPlaceholder(text: String) {
+        textField.placeholder = text
+    }
+    
+    
+    func getText() -> String {
+        return textField.text ?? " "
+    }
+    
+    
+    func changeToRed() {
+        titleLabel.textColor = .appRed
+        textField.layer.borderColor = UIColor.appRed.cgColor
+        textField.textColor = UIColor.appRed
     }
 }

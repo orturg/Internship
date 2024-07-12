@@ -7,6 +7,6 @@
 
 import Foundation
 
-class CalculatorViewModel {
+final class CalculatorViewModel {
     weak var calculatorCoordinator: CalculatorCoordinator?
 }

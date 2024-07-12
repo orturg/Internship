@@ -92,4 +92,9 @@ class FirebaseService {
         try Auth.auth().signOut()
         UserDefaults.standard.set("", forKey: TextValues.userId)
     }
+    
+    
+    func isAppDeleted() -> Bool {
+        UserDefaults.standard.string(forKey: TextValues.userId) == nil
+    }
 }

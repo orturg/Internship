@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46AB61E800FC076992F83744 /* Pods_InternshipApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87E55BAE319D883015806322 /* Pods_InternshipApp.framework */; };
+		7238CF412C41488F006F5B27 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7238CF402C41488F006F5B27 /* GoogleService-Info.plist */; };
 		723C8E802C369FA6000C19BA /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 723C8E7F2C369FA6000C19BA /* HomeViewController.xib */; };
 		723C8E832C36D7AF000C19BA /* TextValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723C8E822C36D7AF000C19BA /* TextValues.swift */; };
 		723C8E862C36D895000C19BA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723C8E852C36D895000C19BA /* Constants.swift */; };
-		725D5BAD2C40F1ED0064A4C5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 725D5BAC2C40F1ED0064A4C5 /* GoogleService-Info.plist */; };
 		726988CD2C3D446700124AD3 /* SignUpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726988CC2C3D446700124AD3 /* SignUpCoordinator.swift */; };
 		726988CF2C3D447700124AD3 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726988CE2C3D447700124AD3 /* SignUpViewModel.swift */; };
 		726988D22C3D449000124AD3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726988D02C3D448F00124AD3 /* SignUpViewController.swift */; };
@@ -188,15 +189,14 @@
 		729BB4042C39564C00F06383 /* StartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729BB4032C39564C00F06383 /* StartViewModel.swift */; };
 		729BB4082C3961AB00F06383 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729BB4072C3961AB00F06383 /* GradientView.swift */; };
 		72AAD2252C3FAD7C0066EF8C /* DataBaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AAD2242C3FAD7C0066EF8C /* DataBaseError.swift */; };
-		9EF29AEF4D4EBEF128374EE8 /* Pods_InternshipApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0F84776E6C0B11CEBD66C9D /* Pods_InternshipApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1946CEF6DE0804A6E963D5FB /* Pods-InternshipApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InternshipApp.debug.xcconfig"; path = "Target Support Files/Pods-InternshipApp/Pods-InternshipApp.debug.xcconfig"; sourceTree = "<group>"; };
+		7238CF3F2C4146FD006F5B27 /* InternshipApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InternshipApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7238CF402C41488F006F5B27 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		723C8E7F2C369FA6000C19BA /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		723C8E822C36D7AF000C19BA /* TextValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextValues.swift; sourceTree = "<group>"; };
 		723C8E852C36D895000C19BA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		725D5BAC2C40F1ED0064A4C5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		726988CC2C3D446700124AD3 /* SignUpCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCoordinator.swift; sourceTree = "<group>"; };
 		726988CE2C3D447700124AD3 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		726988D02C3D448F00124AD3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -342,7 +342,6 @@
 		7272697D2C3536B1004BF6B6 /* CustomCheckboxSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCheckboxSwitch.swift; sourceTree = "<group>"; };
 		7272697F2C35ABA7004BF6B6 /* CustomRadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRadioButton.swift; sourceTree = "<group>"; };
 		727269812C368966004BF6B6 /* CustomTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTextField.xib; sourceTree = "<group>"; };
-		7284E1EA2C2FFA8E0081F8D1 /* InternshipApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InternshipApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7284E1ED2C2FFA8E0081F8D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7284E1EF2C2FFA8E0081F8D1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7284E1F62C2FFA8F0081F8D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -376,8 +375,9 @@
 		729BB4032C39564C00F06383 /* StartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewModel.swift; sourceTree = "<group>"; };
 		729BB4072C3961AB00F06383 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		72AAD2242C3FAD7C0066EF8C /* DataBaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseError.swift; sourceTree = "<group>"; };
-		F0F84776E6C0B11CEBD66C9D /* Pods_InternshipApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InternshipApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F268A55712402BA19BFAF5BC /* Pods-InternshipApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InternshipApp.release.xcconfig"; path = "Target Support Files/Pods-InternshipApp/Pods-InternshipApp.release.xcconfig"; sourceTree = "<group>"; };
+		87E55BAE319D883015806322 /* Pods_InternshipApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InternshipApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CED9F4E46D44F822D4183A55 /* Pods-InternshipApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InternshipApp.debug.xcconfig"; path = "Target Support Files/Pods-InternshipApp/Pods-InternshipApp.debug.xcconfig"; sourceTree = "<group>"; };
+		D890426480538D3E52BE33F8 /* Pods-InternshipApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InternshipApp.release.xcconfig"; path = "Target Support Files/Pods-InternshipApp/Pods-InternshipApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -385,19 +385,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9EF29AEF4D4EBEF128374EE8 /* Pods_InternshipApp.framework in Frameworks */,
+				46AB61E800FC076992F83744 /* Pods_InternshipApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0AB11E301D58DC23A3A05349 /* Frameworks */ = {
+		3078242CA2C6A958D5027F22 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F0F84776E6C0B11CEBD66C9D /* Pods_InternshipApp.framework */,
+				87E55BAE319D883015806322 /* Pods_InternshipApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3EB52F9F26D0213EDC11BF1C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CED9F4E46D44F822D4183A55 /* Pods-InternshipApp.debug.xcconfig */,
+				D890426480538D3E52BE33F8 /* Pods-InternshipApp.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		723C8E812C36B1B8000C19BA /* CustomTextField */ = {
@@ -622,24 +631,16 @@
 			isa = PBXGroup;
 			children = (
 				7284E1EC2C2FFA8E0081F8D1 /* InternshipApp */,
-				7284E1EB2C2FFA8E0081F8D1 /* Products */,
-				D4E246CC9B3A273D93A3300B /* Pods */,
-				0AB11E301D58DC23A3A05349 /* Frameworks */,
+				7238CF3F2C4146FD006F5B27 /* InternshipApp.app */,
+				3EB52F9F26D0213EDC11BF1C /* Pods */,
+				3078242CA2C6A958D5027F22 /* Frameworks */,
 			);
-			sourceTree = "<group>";
-		};
-		7284E1EB2C2FFA8E0081F8D1 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				7284E1EA2C2FFA8E0081F8D1 /* InternshipApp.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		7284E1EC2C2FFA8E0081F8D1 /* InternshipApp */ = {
 			isa = PBXGroup;
 			children = (
-				725D5BAC2C40F1ED0064A4C5 /* GoogleService-Info.plist */,
+				7238CF402C41488F006F5B27 /* GoogleService-Info.plist */,
 				7284E2012C300F460081F8D1 /* Application */,
 				7284E2042C300F710081F8D1 /* Base */,
 				7284E1FB2C2FFA8F0081F8D1 /* Info.plist */,
@@ -783,15 +784,6 @@
 			path = Errors;
 			sourceTree = "<group>";
 		};
-		D4E246CC9B3A273D93A3300B /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				1946CEF6DE0804A6E963D5FB /* Pods-InternshipApp.debug.xcconfig */,
-				F268A55712402BA19BFAF5BC /* Pods-InternshipApp.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -810,10 +802,8 @@
 			dependencies = (
 			);
 			name = InternshipApp;
-			packageProductDependencies = (
-			);
 			productName = InternshipApp;
-			productReference = 7284E1EA2C2FFA8E0081F8D1 /* InternshipApp.app */;
+			productReference = 7238CF3F2C4146FD006F5B27 /* InternshipApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -840,9 +830,7 @@
 				Base,
 			);
 			mainGroup = 7284E1E12C2FFA8E0081F8D1;
-			packageReferences = (
-			);
-			productRefGroup = 7284E1EB2C2FFA8E0081F8D1 /* Products */;
+			productRefGroup = 7284E1E12C2FFA8E0081F8D1;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -876,6 +864,7 @@
 				727269262C352BBF004BF6B6 /* Saira_ExtraCondensed-ExtraLight.ttf in Resources */,
 				723C8E802C369FA6000C19BA /* HomeViewController.xib in Resources */,
 				727269222C352BBF004BF6B6 /* Saira_UltraCondensed-ExtraLight.ttf in Resources */,
+				7238CF412C41488F006F5B27 /* GoogleService-Info.plist in Resources */,
 				7272694E2C352BBF004BF6B6 /* Saira_SemiExpanded-ThinItalic.ttf in Resources */,
 				727269402C352BBF004BF6B6 /* Saira-ThinItalic.ttf in Resources */,
 				727269542C352BBF004BF6B6 /* Saira_Expanded-Medium.ttf in Resources */,
@@ -941,7 +930,6 @@
 				727269382C352BBF004BF6B6 /* Saira_Condensed-Italic.ttf in Resources */,
 				7272696B2C352BBF004BF6B6 /* Saira_SemiExpanded-ExtraBold.ttf in Resources */,
 				727269622C352BBF004BF6B6 /* Saira_SemiExpanded-Bold.ttf in Resources */,
-				725D5BAD2C40F1ED0064A4C5 /* GoogleService-Info.plist in Resources */,
 				727269172C352BBF004BF6B6 /* Saira_Expanded-LightItalic.ttf in Resources */,
 				727268F42C352BBF004BF6B6 /* Saira_ExtraCondensed-Black.ttf in Resources */,
 				727269722C352BBF004BF6B6 /* OFL.txt in Resources */,
@@ -1227,7 +1215,7 @@
 		};
 		7284E1FF2C2FFA8F0081F8D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1946CEF6DE0804A6E963D5FB /* Pods-InternshipApp.debug.xcconfig */;
+			baseConfigurationReference = CED9F4E46D44F822D4183A55 /* Pods-InternshipApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1257,7 +1245,7 @@
 		};
 		7284E2002C2FFA8F0081F8D1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F268A55712402BA19BFAF5BC /* Pods-InternshipApp.release.xcconfig */;
+			baseConfigurationReference = D890426480538D3E52BE33F8 /* Pods-InternshipApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

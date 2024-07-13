@@ -19,8 +19,14 @@ final class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.vm?.getUser { [weak self] in
-            self?.configureLabels()
+        vm?.getUser { [weak self] result in
+            guard let self else { return }
+            switch result {
+            case .success(_):
+                self.configureLabels()
+            case .failure(let error):
+                showAlert(vc: self, error: error)
+            }
         }
         configure()
     }

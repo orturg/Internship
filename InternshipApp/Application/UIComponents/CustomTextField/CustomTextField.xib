@@ -34,6 +34,8 @@
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                     <textInputTraits key="textInputTraits"/>
                     <connections>
+                        <action selector="textFieldTextChanged:" destination="-1" eventType="editingChanged" id="cab-O2-Pat"/>
+                        <action selector="textfieldDidEndEditing:" destination="-1" eventType="editingDidEnd" id="uEN-yC-MQY"/>
                         <action selector="textfieldTapped:" destination="-1" eventType="editingDidBegin" id="JQm-bc-vQQ"/>
                     </connections>
                 </textField>

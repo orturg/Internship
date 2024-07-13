@@ -18,6 +18,33 @@ final class SignUpViewModel {
     }
     
     
+    func signUpButtonAction(nameTextField: CustomTextField, emailTextField: CustomTextField, passwordTextField: CustomTextField, confirmPasswordTextField: CustomTextField, signUpButton: CustomRoundedRectangleButton, navigationController: UINavigationController?) {
+        guard let navigationController else { return }
+        
+        let name = nameTextField.getText()
+        let email = emailTextField.getText()
+        let password = passwordTextField.getText()
+        let confirmedPassword = confirmPasswordTextField.getText()
+        
+        
+        guard isValidFields(nameTextField: nameTextField, name: name, emailTextField: emailTextField, email: email, passwordTextField: passwordTextField, password: password, confirmedPasswordTextField: confirmPasswordTextField, confirmedPassword: confirmedPassword) else { return }
+        
+        signUpButton.isEnabled = false
+        
+        createUser(userName: nameTextField.getText(), email: emailTextField.getText(), password: passwordTextField.getText()) { [weak self] result in
+            guard let self else { return }
+            
+            switch result {
+            case .success(_):
+                createStartCoordinator(navigationController: navigationController)
+                signUpButton.isEnabled = true
+            case .failure(_):
+                signUpButton.isEnabled = true
+            }
+        }
+    }
+    
+    
     func isValidFields(nameTextField: CustomTextField, name: String, emailTextField: CustomTextField, email: String, passwordTextField: CustomTextField, password: String, confirmedPasswordTextField: CustomTextField,confirmedPassword: String) -> Bool {
         let isValidName = isValid(name: name, textField: nameTextField)
         let isValidEmail = isValid(email: email, textField: emailTextField)
@@ -74,7 +101,6 @@ final class SignUpViewModel {
     
     
     func createUser(userName: String, email: String, password: String, completion: @escaping(Result<String?, DataBaseError>) -> Void) {
-        
         
         FirebaseService.shared.createUser(userName: userName, email: email, password: password) { [weak self] result in
             guard let self else { return }

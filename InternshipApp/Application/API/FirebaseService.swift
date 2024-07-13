@@ -47,7 +47,7 @@ class FirebaseService {
             "sex": sex
         ]) { error in
             if let error {
-                completion(.failure(.errorCreatingUser))
+                completion(.failure(.errorUpdatingUser))
             } else {
                 completion(.success(nil))
             }

@@ -10,6 +10,7 @@ import UIKit
 final class CustomTextField: UIView {
     @IBOutlet private weak var textField: UITextField!
     @IBOutlet private weak var titleLabel: UILabel!
+    var placeholderText: String?
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -17,13 +18,23 @@ final class CustomTextField: UIView {
     }
     
     private func configure() {
+        configureSubview()
+        configureLabel()
+        configureTextField()
+        
+    }
+    
+    
+    private func configureSubview() {
         let subview = self.loadViewFromXib()
         subview.frame = self.bounds
         subview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
-        configureTextField()
-        
         addSubview(subview)
+    }
+    
+    
+    private func configureLabel() {
+        titleLabel.textColor = UIColor.appWhite
     }
     
     
@@ -46,13 +57,6 @@ final class CustomTextField: UIView {
     }
     
     
-    @IBAction func textfieldTapped(_ sender: UITextField) {
-        titleLabel.textColor = UIColor.appWhite
-        textField.layer.borderColor = UIColor.appWhite.cgColor
-        textField.textColor = UIColor.appWhite
-    }
-    
-    
     func setSecureField() {
         textField.isSecureTextEntry = true
     }
@@ -64,7 +68,11 @@ final class CustomTextField: UIView {
     
     
     func setTextFieldPlaceholder(text: String) {
-        textField.placeholder = text
+        textField.attributedPlaceholder = NSAttributedString(
+            string: text,
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.appSecondary]
+        )
+        self.placeholderText = text
     }
     
     
@@ -77,5 +85,36 @@ final class CustomTextField: UIView {
         titleLabel.textColor = .appRed
         textField.layer.borderColor = UIColor.appRed.cgColor
         textField.textColor = UIColor.appRed
+    }
+    
+    
+    @IBAction func textfieldTapped(_ sender: UITextField) {
+        titleLabel.textColor = UIColor.appWhite
+        textField.layer.borderColor = UIColor.appWhite.cgColor
+        textField.textColor = UIColor.appWhite
+        textField.attributedPlaceholder = NSAttributedString(
+            string: placeholderText ?? "",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.appWhite]
+        )
+    }
+    
+    
+    @IBAction func textFieldTextChanged(_ sender: Any) {
+        if titleLabel.textColor == .appRed &&
+            textField.layer.borderColor == UIColor.appRed.cgColor &&
+            textField.textColor == UIColor.appRed {
+            titleLabel.textColor = UIColor.appWhite
+            textField.layer.borderColor = UIColor.appWhite.cgColor
+            textField.textColor = UIColor.appWhite
+        }
+    }
+    
+    @IBAction func textfieldDidEndEditing(_ sender: Any) {
+        configureLabel()
+        configureTextField()
+        textField.attributedPlaceholder = NSAttributedString(
+            string: placeholderText ?? "",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.appSecondary]
+        )
     }
 }

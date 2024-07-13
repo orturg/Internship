@@ -19,16 +19,16 @@ final class HomeViewModel {
     }
     
     
-    func getUser(completion: @escaping () -> Void) {
+    func getUser(completion: @escaping (Result<String?, DataBaseError>) -> Void) {
         FirebaseService.shared.getUser { [weak self] result in
             guard let self = self else { return }
             
             switch result {
             case .success(let user):
                 self.user = user
-                completion()
+                completion(.success(nil))
             case .failure(let error):
-                print(error.localizedDescription)
+                completion(.failure(error))
             }
         }
     }

@@ -59,30 +59,7 @@ final class SignUpViewController: BaseViewController {
     
     
     @objc private func signUpButtonAction() {
-        guard let vm else { return }
-        guard let navigationController else { return }
-        
-        let name = nameTextField.getText()
-        let email = emailTextField.getText()
-        let password = passwordTextField.getText()
-        let confirmedPassword = confirmPasswordTextField.getText()
-        
-        
-        guard vm.isValidFields(nameTextField: nameTextField, name: name, emailTextField: emailTextField, email: email, passwordTextField: passwordTextField, password: password, confirmedPasswordTextField: confirmPasswordTextField, confirmedPassword: confirmedPassword) else { return }
-        
-        signUpButton.isEnabled = false
-        
-        vm.createUser(userName: nameTextField.getText(), email: emailTextField.getText(), password: passwordTextField.getText()) { [weak self] result in
-            guard let self else { return }
-            
-            switch result {
-            case .success(_):
-                self.vm?.createStartCoordinator(navigationController: navigationController)
-                self.signUpButton.isEnabled = true
-            case .failure(_):
-                signUpButton.isEnabled = true
-            }
-        }
+        vm?.signUpButtonAction(nameTextField: nameTextField, emailTextField: emailTextField, passwordTextField: passwordTextField, confirmPasswordTextField: confirmPasswordTextField, signUpButton: signUpButton, navigationController: navigationController)
     }
     
     

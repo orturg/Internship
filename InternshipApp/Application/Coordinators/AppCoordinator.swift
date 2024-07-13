@@ -53,13 +53,14 @@ final class AppCoordinator: Coordinator {
     
     
     private func getUser(completion: @escaping (RegistrationData?) -> Void) {
-        FirebaseService.shared.getUser { result in
+        FirebaseService.shared.getUser { [weak self] result in
+            guard let self else { return }
+            
             switch result {
             case .success(let user):
                 completion(user)
             case .failure(let error):
-                print(error.localizedDescription)
-                completion(nil)
+                self.navigationController.showAlert(vc: navigationController, error: error)
             }
         }
     }

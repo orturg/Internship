@@ -19,16 +19,16 @@ final class HomeViewModel {
     }
     
     
-    func getUser(completion: @escaping (Result<String?, DataBaseError>) -> Void) {
+    func getUser(vc: HomeViewController) {
         FirebaseService.shared.getUser { [weak self] result in
             guard let self = self else { return }
             
             switch result {
             case .success(let user):
                 self.user = user
-                completion(.success(nil))
+                vc.configureLabels()
             case .failure(let error):
-                completion(.failure(error))
+                vc.showAlert(vc: vc, error: error)
             }
         }
     }

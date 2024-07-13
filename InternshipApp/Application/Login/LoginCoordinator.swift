@@ -15,8 +15,8 @@ final class LoginCoordinator: Coordinator {
     }
     
     func start() {
-        var loginVC = LoginViewController()
-        var loginVM = LoginViewModel()
+        let loginVC = LoginViewController()
+        let loginVM = LoginViewModel()
         
         loginVC.vm = loginVM
         loginVC.vm?.coordinator = self

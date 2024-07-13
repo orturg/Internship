@@ -19,15 +19,7 @@ final class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        vm?.getUser { [weak self] result in
-            guard let self else { return }
-            switch result {
-            case .success(_):
-                self.configureLabels()
-            case .failure(let error):
-                showAlert(vc: self, error: error)
-            }
-        }
+        vm?.getUser(vc: self)
         configure()
     }
     
@@ -60,7 +52,7 @@ final class HomeViewController: BaseViewController {
     }
     
     
-    private func configureLabels() {
+    func configureLabels() {
         titleLabel.text = vm?.titleText
         nameLabel.text = vm?.user?.userName
     }

@@ -44,4 +44,5 @@ enum Constants {
     static let loginButtonLeadingAnchor: CGFloat = 8
     static let forgotPasswordTopAnchorPadding: CGFloat = 16
     static let loginButtonTopAnchor: CGFloat = 61
+    static let loginButtonBottomAnchor: CGFloat = 20
 }

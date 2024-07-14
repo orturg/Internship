@@ -12,7 +12,6 @@ final class SignUpViewModel {
     weak var coordinator: SignUpCoordinator?
     
     func createStartCoordinator(navigationController: UINavigationController) {
-        
         let startCoordinator = StartCoordinator(navigationController: navigationController)
         startCoordinator.start()
     }

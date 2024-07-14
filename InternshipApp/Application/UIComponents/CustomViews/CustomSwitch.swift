@@ -31,5 +31,4 @@ final class CustomSwitch: UISwitch {
         onTintColor = color
         translatesAutoresizingMaskIntoConstraints = false
     }
-    
 }

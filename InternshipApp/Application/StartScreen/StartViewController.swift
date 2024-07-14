@@ -16,6 +16,7 @@ final class StartViewController: UIViewController {
     var superManButton = CustomRoundedRectangleButton(buttonBackgroundColor: .appYellow, buttonText: TextValues.superManLabel, textColor: .black, height: Constants.startScreenButtonHeight, width: Constants.startScreenButtonWidth)
     var superGirlButton = CustomRoundedRectangleButton(buttonBackgroundColor: .appYellow, buttonText: TextValues.superGirlLabel, textColor: .black, height: Constants.startScreenButtonHeight, width: Constants.startScreenButtonWidth)
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
@@ -25,29 +26,36 @@ final class StartViewController: UIViewController {
     private func configure() {
         layoutSubviews()
         configureLayoutConstraints()
+        configureVC()
+        configureButtons()
+    }
+    
+    
+    private func configureVC() {
+        let backBarButtonItem = UIBarButtonItem(customView: UIView())
+        navigationItem.leftBarButtonItem = backBarButtonItem
     }
     
     
     private func layoutSubviews() {
         view.addSubview(superManButton)
         view.addSubview(superGirlButton)
-        
+    }
+    
+    
+    private func configureButtons() {
         superManButton.addTarget(self, action: #selector(superManButtonAction), for: .touchUpInside)
         superGirlButton.addTarget(self, action: #selector(superGirlButtonAction), for: .touchUpInside)
     }
     
     
     @objc private func superManButtonAction() {
-        guard let navigationController else { return }
-        
-        vm?.createTabBarCoordinator(navigationController: navigationController, titleText: TextValues.superManLabel, isMan: true)
+        vm?.superManButtonAction(navigationController: navigationController, superManButton: superManButton, superGirlButton: superGirlButton, vc: self)
     }
     
     
     @objc private func superGirlButtonAction() {
-        guard let navigationController else { return }
-        
-        vm?.createTabBarCoordinator(navigationController: navigationController, titleText: TextValues.superGirlLabel, isMan: false)
+        vm?.superGirlButtonAction(navigationController: navigationController, superManButton: superManButton, superGirlButton: superGirlButton, vc: self)
     }
     
     

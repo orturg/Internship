@@ -37,4 +37,11 @@ enum Constants {
     static let startScreenButtonWidth: CGFloat = 144
     static let startScreenButtonHeight: CGFloat = 44
     static let homeVCTitleLabelSize: CGFloat = 24
+    static let fullNamePattern = #"^[a-zA-Z0-9-''']+(?: [a-zA-Z0-9-''']+)*$"#
+    static let emailPattern = #"^\S+@\S+\.\S+$"#
+    static let passwordPattern = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$"
+    static let signUpButtonTopAnchor: CGFloat = 80
+    static let loginButtonLeadingAnchor: CGFloat = 8
+    static let forgotPasswordTopAnchorPadding: CGFloat = 16
+    static let loginButtonTopAnchor: CGFloat = 61
 }

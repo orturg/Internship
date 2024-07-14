@@ -7,6 +7,6 @@
 
 import Foundation
 
-class MusclesViewModel {
+final class MusclesViewModel {
     weak var musclesCoordinator: MusclesCoordinator?
 }

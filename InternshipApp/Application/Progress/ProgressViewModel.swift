@@ -7,6 +7,6 @@
 
 import Foundation
 
-class ProgressViewModel {
+final class ProgressViewModel {
     weak var progressCoordinator: ProgressCoordinator?
 }

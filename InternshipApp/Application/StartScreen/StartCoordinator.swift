@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StartCoordinator: Coordinator {
+final class StartCoordinator: Coordinator {
     var navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {

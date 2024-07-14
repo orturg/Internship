@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MusclesCoordinator: Coordinator {
+final class MusclesCoordinator: Coordinator {
     var navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {

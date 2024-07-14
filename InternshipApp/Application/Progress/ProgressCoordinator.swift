@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProgressCoordinator {
+final class ProgressCoordinator {
     var navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {

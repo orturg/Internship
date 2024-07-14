@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TabBarCoordinator: Coordinator {
+final class TabBarCoordinator: Coordinator {
     private var navigationController: UINavigationController
     let homeNavController = UINavigationController()
     let progressNavController = UINavigationController()

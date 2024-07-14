@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tp-qo-9vB">
-                    <rect key="frame" x="0.0" y="0.0" width="49" height="22"/>
+                    <rect key="frame" x="0.0" y="0.0" width="289" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
                     <nil key="textColor"/>
@@ -34,7 +34,8 @@
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                     <textInputTraits key="textInputTraits"/>
                     <connections>
-                        <action selector="textFieldCharsAmount:" destination="-1" eventType="editingChanged" id="GrC-d6-FO9"/>
+                        <action selector="textFieldTextChanged:" destination="-1" eventType="editingChanged" id="cab-O2-Pat"/>
+                        <action selector="textfieldDidEndEditing:" destination="-1" eventType="editingDidEnd" id="uEN-yC-MQY"/>
                         <action selector="textfieldTapped:" destination="-1" eventType="editingDidBegin" id="JQm-bc-vQQ"/>
                     </connections>
                 </textField>
@@ -42,7 +43,7 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-1" y="8"/>
+            <point key="canvasLocation" x="-2.2900763358778624" y="7.746478873239437"/>
         </view>
     </objects>
     <resources>

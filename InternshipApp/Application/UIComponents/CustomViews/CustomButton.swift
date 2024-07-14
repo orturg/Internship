@@ -35,4 +35,14 @@ final class CustomButton: UIButton {
         setTitleColor(color, for: .normal)
         translatesAutoresizingMaskIntoConstraints = false
     }
+    
+    
+    func set(_ title: String) {
+        setTitle(title, for: .normal)
+    }
+    
+    
+    func set(_ color: UIColor) {
+        setTitleColor(color, for: .normal)
+    }
 }

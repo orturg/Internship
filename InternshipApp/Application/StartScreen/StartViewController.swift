@@ -33,7 +33,7 @@ final class StartViewController: UIViewController {
     
     private func configureVC() {
         let backBarButtonItem = UIBarButtonItem(customView: UIView())
-            navigationItem.leftBarButtonItem = backBarButtonItem
+        navigationItem.leftBarButtonItem = backBarButtonItem
     }
     
     

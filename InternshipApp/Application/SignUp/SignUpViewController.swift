@@ -10,7 +10,7 @@ import UIKit
 final class SignUpViewController: BaseViewController {
     
     var vm: SignUpViewModel?
-    
+    private var scrollView = UIScrollView()
     @IBOutlet private weak var nameTextField: CustomTextField!
     @IBOutlet private weak var emailTextField: CustomTextField!
     @IBOutlet private weak var passwordTextField: CustomTextField!
@@ -32,7 +32,7 @@ final class SignUpViewController: BaseViewController {
         configureTextFields()
         setupSubviews()
         setupLayoutConstraints()
-        configureSignUpButton()
+        configureButtons()
     }
     
     
@@ -53,13 +53,29 @@ final class SignUpViewController: BaseViewController {
     }
     
     
+    private func configureButtons() {
+        configureSignUpButton()
+        configureLoginButton()
+    }
+    
+    
     private func configureSignUpButton() {
         signUpButton.addTarget(self, action: #selector(signUpButtonAction), for: .touchUpInside)
     }
     
     
+    private func configureLoginButton() {
+        loginButton.addTarget(self, action: #selector(loginButtonAction), for: .touchUpInside)
+    }
+    
+    
     @objc private func signUpButtonAction() {
         vm?.signUpButtonAction(nameTextField: nameTextField, emailTextField: emailTextField, passwordTextField: passwordTextField, confirmPasswordTextField: confirmPasswordTextField, signUpButton: signUpButton, navigationController: navigationController)
+    }
+    
+    
+    @objc private func loginButtonAction() {
+        vm?.loginButtonAction(navigationController: navigationController)
     }
     
     

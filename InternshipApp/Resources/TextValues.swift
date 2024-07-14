@@ -34,4 +34,6 @@ enum TextValues {
     static let female = "female"
     static let users = "users"
     static let userId = "userId"
+    static let forgotPassword = "Forgot Password?"
+    static let loginButtonText = "Login"
 }

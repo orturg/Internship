@@ -42,4 +42,6 @@ enum Constants {
     static let passwordPattern = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$"
     static let signUpButtonTopAnchor: CGFloat = 80
     static let loginButtonLeadingAnchor: CGFloat = 8
+    static let forgotPasswordTopAnchorPadding: CGFloat = 16
+    static let loginButtonTopAnchor: CGFloat = 61
 }

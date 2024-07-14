@@ -9,34 +9,39 @@ import Firebase
 import FirebaseFirestore
 import FirebaseAuth
 
+
 class FirebaseService {
     static let shared = FirebaseService()
-    private init() {
-        if let savedId = UserDefaults.standard.string(forKey: "userId") {
-            id = savedId
-        }
-    }
+    private init() {  }
     
     var id: String = ""
     let collection = Firestore.firestore().collection(TextValues.users)
     
     func createUser(userName: String, email: String, password: String, completion: @escaping (Result<String?, DataBaseError>) -> Void) {
-        
-        Auth.auth().createUser(withEmail: email, password: password)
-        
-        id = collection.document().documentID
-        
-        UserDefaults.standard.set(self.id, forKey: TextValues.userId)
-        
-        collection.document(id).setData([
-            "userName": userName,
-            "email": email,
-            "id": id
-        ]) { error in
-            if let error {
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            if let error = error {
                 completion(.failure(.errorCreatingUser))
-            } else {
-                completion(.success(nil))
+                return
+            }
+            
+            guard let user = authResult?.user else {
+                completion(.failure(.errorCreatingUser))
+                return
+            }
+            
+            self.id = user.uid
+            UserDefaults.standard.set(self.id, forKey: TextValues.userId)
+            
+            self.collection.document(self.id).setData([
+                "userName": userName,
+                "email": email,
+                "id": self.id
+            ]) { error in
+                if let error = error {
+                    completion(.failure(.errorCreatingUser))
+                } else {
+                    completion(.success(nil))
+                }
             }
         }
     }
@@ -56,6 +61,13 @@ class FirebaseService {
     
     
     func getUser(completion: @escaping (Result<RegistrationData?, DataBaseError>) -> Void) {
+        guard let currentUser = Auth.auth().currentUser else {
+            completion(.failure(.errorGettingUser))
+            return
+        }
+        
+        id = currentUser.uid
+        
         collection.document(id).getDocument { documentSnapshot, error in
             if let error {
                 completion(.failure(.errorGettingUser))
@@ -79,6 +91,26 @@ class FirebaseService {
             } else {
                 completion(.failure(.errorGettingUser))
             }
+        }
+    }
+
+    
+    func login(email: String, password: String, completion: @escaping(Result<String?, DataBaseError>) -> Void) {
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] result, error in
+            
+            guard let self else { return }
+            
+            if let error {
+                completion(.failure(.errorSigningIn))
+            }
+            
+            guard let currentUser = Auth.auth().currentUser else {
+                completion(.failure(.errorGettingUser))
+                return
+            }
+            
+            self.id = currentUser.uid
+            completion(.success(nil))
         }
     }
     

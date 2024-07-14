@@ -62,6 +62,7 @@ final class HomeViewController: BaseViewController {
         view.addSubview(gradient)
         view.addSubview(titleLabel)
         view.addSubview(nameLabel)
+        
     }
     
     

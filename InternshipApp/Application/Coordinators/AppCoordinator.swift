@@ -25,8 +25,10 @@ final class AppCoordinator: Coordinator {
     
     
     func start() {
-        // if you want to logout session without deleting app uncomment below
+//         if you want to logout session without deleting app uncomment below
+        
 //        try? FirebaseService.shared.logOut()
+        
         if FirebaseService.shared.isAppDeleted() {
             try? FirebaseService.shared.logOut()
         }
@@ -36,7 +38,6 @@ final class AppCoordinator: Coordinator {
                 guard let user else {
                     return
                 }
-                
                 if let sex = user.sex, !sex.isEmpty {
                     let tabBarCoordinator = TabBarCoordinator(navigationController: self.navigationController, titleText: user.sex == TextValues.male ? TextValues.superManLabel : TextValues.superGirlLabel, isMan: user.sex == TextValues.male)
                     tabBarCoordinator.start()
@@ -49,6 +50,9 @@ final class AppCoordinator: Coordinator {
             let signUpCoordinator = SignUpCoordinator(navigationController: navigationController)
             signUpCoordinator.start()
         }
+        
+//        let loginCoordinator = LoginCoordinator(navigationController: navigationController)
+//        loginCoordinator.start()
     }
     
     

@@ -45,6 +45,14 @@ final class SignUpViewModel {
     }
     
     
+    func loginButtonAction(navigationController: UINavigationController?) {
+        guard let navigationController else { return }
+        
+        let loginCoordinator = LoginCoordinator(navigationController: navigationController)
+        loginCoordinator.start()
+    }
+    
+    
     func isValidFields(nameTextField: CustomTextField, name: String, emailTextField: CustomTextField, email: String, passwordTextField: CustomTextField, password: String, confirmedPasswordTextField: CustomTextField,confirmedPassword: String) -> Bool {
         let isValidName = isValid(name: name, textField: nameTextField)
         let isValidEmail = isValid(email: email, textField: emailTextField)

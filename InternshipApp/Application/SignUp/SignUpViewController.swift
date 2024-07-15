@@ -42,18 +42,9 @@ final class SignUpViewController: BaseViewController {
     
     
     private func configureTextFields() {
-        nameTextField.setTextFieldTitle(text: TextValues.name)
-        nameTextField.setTextFieldPlaceholder(text: TextValues.enterName)
+        vm?.setTextFieldsText(nameTextField: nameTextField, emailTextField: emailTextField, passwordTextField: passwordTextField, confirmPasswordTextField: confirmPasswordTextField)
         
-        emailTextField.setTextFieldTitle(text: TextValues.email)
-        emailTextField.setTextFieldPlaceholder(text: TextValues.enterEmail)
-        
-        passwordTextField.setTextFieldTitle(text: TextValues.password)
-        passwordTextField.setTextFieldPlaceholder(text: TextValues.createPassword)
         passwordTextField.setSecureField()
-        
-        confirmPasswordTextField.setTextFieldTitle(text: TextValues.confirmPassword)
-        confirmPasswordTextField.setTextFieldPlaceholder(text: TextValues.enterPassword)
         confirmPasswordTextField.setSecureField()
     }
     

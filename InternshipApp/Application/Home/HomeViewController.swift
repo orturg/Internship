@@ -53,8 +53,7 @@ final class HomeViewController: BaseViewController {
     
     
     func configureLabels() {
-        titleLabel.text = vm?.titleText
-        nameLabel.text = vm?.user?.userName
+        vm?.configureLabels(titleLabel: titleLabel, nameLabel: nameLabel)
     }
     
     

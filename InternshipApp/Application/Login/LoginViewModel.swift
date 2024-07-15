@@ -54,4 +54,13 @@ final class LoginViewModel {
             }
         }
     }
+    
+    
+    func setTextFieldsText(emailTextField: CustomTextField, passwordTextField: CustomTextField) {
+        emailTextField.setTextFieldTitle(text: TextValues.email)
+        emailTextField.setTextFieldPlaceholder(text: TextValues.enterEmail)
+        
+        passwordTextField.setTextFieldTitle(text: TextValues.password)
+        passwordTextField.setTextFieldPlaceholder(text: TextValues.createPassword)
+    }
 }

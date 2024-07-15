@@ -52,6 +52,21 @@ final class SignUpViewModel {
     }
     
     
+    func setTextFieldsText(nameTextField: CustomTextField, emailTextField: CustomTextField, passwordTextField: CustomTextField, confirmPasswordTextField: CustomTextField) {
+        nameTextField.setTextFieldTitle(text: TextValues.name)
+        nameTextField.setTextFieldPlaceholder(text: TextValues.enterName)
+        
+        emailTextField.setTextFieldTitle(text: TextValues.email)
+        emailTextField.setTextFieldPlaceholder(text: TextValues.enterEmail)
+        
+        passwordTextField.setTextFieldTitle(text: TextValues.password)
+        passwordTextField.setTextFieldPlaceholder(text: TextValues.createPassword)
+        
+        confirmPasswordTextField.setTextFieldTitle(text: TextValues.confirmPassword)
+        confirmPasswordTextField.setTextFieldPlaceholder(text: TextValues.enterPassword)
+    }
+    
+    
     func isValidFields(nameTextField: CustomTextField, name: String, emailTextField: CustomTextField, email: String, passwordTextField: CustomTextField, password: String, confirmedPasswordTextField: CustomTextField,confirmedPassword: String) -> Bool {
         let isValidName = isValid(name: name, textField: nameTextField)
         let isValidEmail = isValid(email: email, textField: emailTextField)

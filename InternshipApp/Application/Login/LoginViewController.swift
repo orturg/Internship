@@ -47,11 +47,7 @@ final class LoginViewController: BaseViewController {
     
     
     private func configureTextFields() {
-        emailTextField.setTextFieldTitle(text: TextValues.email)
-        emailTextField.setTextFieldPlaceholder(text: TextValues.enterName)
-        
-        passwordTextField.setTextFieldTitle(text: TextValues.password)
-        passwordTextField.setTextFieldPlaceholder(text: TextValues.enterPassword)
+        vm?.setTextFieldsText(emailTextField: emailTextField, passwordTextField: passwordTextField)
         passwordTextField.setSecureField()
     }
     

@@ -67,7 +67,7 @@ final class SignUpViewModel {
     }
     
     
-    func isValidFields(nameTextField: CustomTextField, name: String, emailTextField: CustomTextField, email: String, passwordTextField: CustomTextField, password: String, confirmedPasswordTextField: CustomTextField,confirmedPassword: String) -> Bool {
+    private func isValidFields(nameTextField: CustomTextField, name: String, emailTextField: CustomTextField, email: String, passwordTextField: CustomTextField, password: String, confirmedPasswordTextField: CustomTextField,confirmedPassword: String) -> Bool {
         let isValidName = isValid(name: name, textField: nameTextField)
         let isValidEmail = isValid(email: email, textField: emailTextField)
         let isValidPassword = isValid(password: password, textField: passwordTextField)
@@ -77,7 +77,7 @@ final class SignUpViewModel {
     }
     
     
-    func isValid(name: String, textField: CustomTextField) -> Bool {
+    private func isValid(name: String, textField: CustomTextField) -> Bool {
         let namePredicate = NSPredicate(format: TextValues.selfMatch, Constants.fullNamePattern)
         if namePredicate.evaluate(with: name) {
             return true
@@ -88,7 +88,7 @@ final class SignUpViewModel {
     }
     
     
-    func isValid(email: String, textField: CustomTextField) -> Bool {
+    private func isValid(email: String, textField: CustomTextField) -> Bool {
         let emailPredicate = NSPredicate(format: TextValues.selfMatch, Constants.emailPattern)
         if emailPredicate.evaluate(with: email) {
             return true
@@ -99,7 +99,7 @@ final class SignUpViewModel {
     }
     
     
-    func isValid(password: String, textField: CustomTextField) -> Bool {
+    private func isValid(password: String, textField: CustomTextField) -> Bool {
         let passwordPredicate = NSPredicate(format: TextValues.selfMatch, Constants.passwordPattern)
         if passwordPredicate.evaluate(with: password) {
             return true
@@ -110,7 +110,7 @@ final class SignUpViewModel {
     }
     
     
-    func areSamePasswords(password: String, passwordTextField: CustomTextField, confirmedPassword: String, confirmedPasswordTextField: CustomTextField) -> Bool {
+    private func areSamePasswords(password: String, passwordTextField: CustomTextField, confirmedPassword: String, confirmedPasswordTextField: CustomTextField) -> Bool {
         if password != confirmedPassword {
             passwordTextField.changeToRed()
             confirmedPasswordTextField.changeToRed()
@@ -122,7 +122,7 @@ final class SignUpViewModel {
     }
     
     
-    func createUser(userName: String, email: String, password: String, completion: @escaping(Result<String?, DataBaseError>) -> Void) {
+    private func createUser(userName: String, email: String, password: String, completion: @escaping(Result<String?, DataBaseError>) -> Void) {
         
         FirebaseService.shared.createUser(userName: userName, email: email, password: password) { [weak self] result in
             guard let self else { return }

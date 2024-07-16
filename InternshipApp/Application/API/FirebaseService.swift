@@ -129,4 +129,14 @@ class FirebaseService {
     func isAppDeleted() -> Bool {
         UserDefaults.standard.string(forKey: TextValues.userId) == nil
     }
+    
+    
+    func resetPassword(email: String, completion: @escaping(Result<String?, DataBaseError>) -> Void) {
+        Auth.auth().sendPasswordReset(withEmail: email) { error in
+            if let error {
+                completion(.failure(.errorResetingPassword))
+            }
+            completion(.success(nil))
+        }
+    }
 }

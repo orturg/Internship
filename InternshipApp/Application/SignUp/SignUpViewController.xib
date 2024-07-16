@@ -20,10 +20,12 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpViewController" customModule="InternshipApp" customModuleProvider="target">
             <connections>
                 <outlet property="confirmPasswordTextField" destination="yY3-Po-7vG" id="Qxe-ps-ZWh"/>
+                <outlet property="createYourAccountLabel" destination="BJa-tS-6ZF" id="QHH-Mk-Cbq"/>
                 <outlet property="emailTextField" destination="NzG-AT-ZG5" id="eb6-ov-oe3"/>
                 <outlet property="haveAccountLabel" destination="U7K-1c-XAd" id="v8R-aU-mJI"/>
                 <outlet property="nameTextField" destination="CyW-p8-ZhG" id="3N2-Ic-MCC"/>
                 <outlet property="passwordTextField" destination="i4Q-ki-Y6l" id="jZ5-PS-9IP"/>
+                <outlet property="superheroLabel" destination="sMM-Xz-jjW" id="Fer-Bj-gaN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

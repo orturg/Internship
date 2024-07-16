@@ -18,11 +18,13 @@ final class LoginViewController: BaseViewController {
     
     private let loginButton = CustomRoundedRectangleButton(buttonBackgroundColor: .appYellow, buttonText: TextValues.login, textColor: .black, height: Constants.customRoundedRectangleButtonHeight, width: Constants.customRoundedRectangleButtonWidth)
     
+    private let forgotPasswordButton = CustomButton(text: TextValues.forgotPassword, color: .appYellow)
+    
+    private let backToRegisterButton = CustomButton(text: "Back to register", color: .appYellow)
+    
     lazy var gradient: GradientView = {
         GradientView(width: Constants.gradientViewWidth, height: view.bounds.height, topColor: .clear, bottomColor: .black)
     }()
-    
-    private let forgotPasswordButton = CustomButton(text: TextValues.forgotPassword, color: .appYellow)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +38,9 @@ final class LoginViewController: BaseViewController {
         configureTextFields()
         setupSubviews()
         setupLayoutConstraints()
+        configureForgotPasswordButton()
         configureLoginButton()
+        configureBackToRegisterButton()
     }
     
     
@@ -47,12 +51,18 @@ final class LoginViewController: BaseViewController {
     
     
     private func configureTextFields() {
-        emailTextField.setTextFieldTitle(text: TextValues.email)
-        emailTextField.setTextFieldPlaceholder(text: TextValues.enterName)
-        
-        passwordTextField.setTextFieldTitle(text: TextValues.password)
-        passwordTextField.setTextFieldPlaceholder(text: TextValues.enterPassword)
+        vm?.setTextFieldsText(emailTextField: emailTextField, passwordTextField: passwordTextField)
         passwordTextField.setSecureField()
+    }
+    
+    
+    private func configureForgotPasswordButton() {
+        forgotPasswordButton.addTarget(self, action: #selector(forgotPasswordButtonAction), for: .touchUpInside)
+    }
+    
+    
+    @objc private func forgotPasswordButtonAction() {
+        vm?.setResetPasswordVC(navigationController: navigationController)
     }
     
     
@@ -62,7 +72,17 @@ final class LoginViewController: BaseViewController {
     
     
     @objc private func loginButtonAction() {
-        vm?.login(email: emailTextField.getText(), password: passwordTextField.getText(), vc: self, navigationController: navigationController)
+        vm?.login(emailTextField: emailTextField, passwordTextField: passwordTextField, vc: self, loginButton: loginButton, navigationController: navigationController)
+    }
+    
+    
+    private func configureBackToRegisterButton() {
+        backToRegisterButton.addTarget(self, action: #selector(backToRegisterButtonAction), for: .touchUpInside)
+    }
+    
+    
+    @objc private func backToRegisterButtonAction() {
+        vm?.backToRegister(navigationController: navigationController)
     }
     
     
@@ -74,6 +94,7 @@ final class LoginViewController: BaseViewController {
         view.addSubview(passwordTextField)
         view.addSubview(forgotPasswordButton)
         view.addSubview(loginButton)
+        view.addSubview(backToRegisterButton)
     }
     
     
@@ -90,6 +111,9 @@ final class LoginViewController: BaseViewController {
             loginButton.topAnchor.constraint(equalTo: forgotPasswordButton.bottomAnchor, constant: Constants.loginButtonTopAnchor),
             loginButton.leadingAnchor.constraint(equalTo: passwordTextField.leadingAnchor),
             loginButton.trailingAnchor.constraint(equalTo: passwordTextField.trailingAnchor),
+            
+            backToRegisterButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            backToRegisterButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -Constants.backButtonBottomAnchor)
         ])
     }
 }

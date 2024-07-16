@@ -5,7 +5,7 @@
 //  Created by Artur Nozhenko on 29.06.2024.
 //
 
-import Foundation
+import UIKit
 
 final class HomeViewModel {
     weak var homeCoordinator: HomeCoordinator?
@@ -16,6 +16,12 @@ final class HomeViewModel {
     init(titleText: String?, isMan: Bool) {
         self.titleText = titleText
         self.isMan = isMan
+    }
+    
+    
+    func configureLabels(titleLabel: UILabel, nameLabel: UILabel) {
+        titleLabel.text = titleText
+        nameLabel.text = user?.userName
     }
     
     

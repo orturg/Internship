@@ -12,6 +12,7 @@ enum TextValues {
     static let backToLoginLabel = "Back to login"
     static let deleteAccountLabel = "Delete account"
     static let customRoundedRectangleButtonLabelFont = "Saira-Regular"
+    static let sairaRegular = "Saira-Regular"
     static let buttonLabelFont = "Saira-Bold"
     static let superManLabel = "SUPERMAN"
     static let superGirlLabel = "SUPERGIRL"
@@ -36,4 +37,6 @@ enum TextValues {
     static let userId = "userId"
     static let forgotPassword = "Forgot Password?"
     static let loginButtonText = "Login"
+    static let forgotPasswordInstructionLabelText = "Enter the email address associated with your account and we'll send you a form to reset your password."
+    static let continueLabel = "Continue"
 }

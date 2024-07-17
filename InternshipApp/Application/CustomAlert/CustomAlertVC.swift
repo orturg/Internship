@@ -7,18 +7,20 @@
 
 import UIKit
 
+
 final class CustomAlertVC: UIViewController {
     
     var vm: CustomAlertViewModel?
     
     private var messageText: String
     private let isSuccessAlert: Bool
-    private let resetPasswordVC: UIViewController
     lazy var containerView = {
-        let containerView = ContainerView(messageText: messageText, isSuccessAlert: isSuccessAlert, alertVC: self, resetPasswordVC: resetPasswordVC)
+        let containerView = ContainerView(messageText: messageText, isSuccessAlert: isSuccessAlert, alertVC: self)
         containerView.vm = vm
         return containerView
     }()
+    
+    weak var delegate: ResetPasswordVCDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,10 +29,9 @@ final class CustomAlertVC: UIViewController {
     }
     
     
-    init(isSuccessAlert: Bool, messageText: String, resetPasswordVC: UIViewController) {
+    init(isSuccessAlert: Bool, messageText: String) {
         self.isSuccessAlert = isSuccessAlert
         self.messageText = messageText
-        self.resetPasswordVC = resetPasswordVC
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -65,7 +66,15 @@ final class CustomAlertVC: UIViewController {
     
     
     @objc private func handleTapOutside(sender: UITapGestureRecognizer) {
-        vm?.handleTapOutside(sender: sender, view: view, containerView: containerView, vc: self)
+        let location = sender.location(in: view)
+        if !containerView.frame.contains(location) {
+            dismiss(animated: true)
+        }
+    }
+    
+    
+    func dimissVC() {
+        delegate?.dismissVC()
     }
     
     
@@ -78,3 +87,6 @@ final class CustomAlertVC: UIViewController {
         ])
     }
 }
+
+
+

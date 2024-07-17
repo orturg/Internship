@@ -10,21 +10,14 @@ import UIKit
 final class CustomAlertViewModel {
     weak var coordinator: CustomAlertCoordinator?
     
-    func okButtonAction(alertVC: UIViewController) {
+    func okButtonAction(alertVC: CustomAlertVC) {
         alertVC.dismiss(animated: true)
     }
     
     
-    func cancelButtonAction(alertVC: UIViewController, resetPasswordVC: UIViewController) {
-        alertVC.dismiss(animated: true)
-        resetPasswordVC.navigationController?.popViewController(animated: true)
-    }
-    
-    
-    func handleTapOutside(sender: UITapGestureRecognizer, view: UIView, containerView: ContainerView, vc: UIViewController) {
-        let location = sender.location(in: view)
-        if !containerView.frame.contains(location) {
-            vc.dismiss(animated: true)
+    func cancelButtonAction(alertVC: CustomAlertVC) {
+        alertVC.dismiss(animated: true) {
+            alertVC.dimissVC()
         }
     }
 }

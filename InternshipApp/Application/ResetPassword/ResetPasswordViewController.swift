@@ -24,12 +24,12 @@ final class ResetPasswordViewController: BaseViewController {
         GradientView(width: Constants.gradientViewWidth, height: view.bounds.height, topColor: .clear, bottomColor: .black)
     }()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configure()
     }
-    
     
     private func configure() {
         configureVC()
@@ -87,7 +87,8 @@ final class ResetPasswordViewController: BaseViewController {
     
     
     @objc private func continueButtonAction() {
-        vm?.continueButtonAction(emailTextField: emailTextField, continueButton: continueButton, vc: self)
+        vm?.continueButtonAction(emailTextField: emailTextField, continueButton: continueButton, navigationController: navigationController)
+        vm?.resetPasswordVCDelegate = self
     }
     
     
@@ -120,5 +121,11 @@ final class ResetPasswordViewController: BaseViewController {
             backToLoginButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -Constants.backButtonBottomAnchor)
             
         ])
+    }
+}
+
+extension ResetPasswordViewController: ResetPasswordVCDelegate {
+    func dismissVC() {
+        navigationController?.popViewController(animated: true)
     }
 }

@@ -12,6 +12,7 @@
 		720119322C4713860075CDF6 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720119312C4713860075CDF6 /* ContainerView.swift */; };
 		720119342C478EB00075CDF6 /* CustomAlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720119332C478EB00075CDF6 /* CustomAlertViewModel.swift */; };
 		720119362C478ED80075CDF6 /* CustomAlertCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720119352C478ED80075CDF6 /* CustomAlertCoordinator.swift */; };
+		723821E92C47B8130055053A /* ResetPasswordVCProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723821E82C47B8130055053A /* ResetPasswordVCProtocol.swift */; };
 		7238CF412C41488F006F5B27 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7238CF402C41488F006F5B27 /* GoogleService-Info.plist */; };
 		723C8E802C369FA6000C19BA /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 723C8E7F2C369FA6000C19BA /* HomeViewController.xib */; };
 		723C8E832C36D7AF000C19BA /* TextValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723C8E822C36D7AF000C19BA /* TextValues.swift */; };
@@ -209,6 +210,7 @@
 		720119312C4713860075CDF6 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		720119332C478EB00075CDF6 /* CustomAlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewModel.swift; sourceTree = "<group>"; };
 		720119352C478ED80075CDF6 /* CustomAlertCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertCoordinator.swift; sourceTree = "<group>"; };
+		723821E82C47B8130055053A /* ResetPasswordVCProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVCProtocol.swift; sourceTree = "<group>"; };
 		7238CF3F2C4146FD006F5B27 /* InternshipApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InternshipApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7238CF402C41488F006F5B27 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		723C8E7F2C369FA6000C19BA /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -851,6 +853,7 @@
 				72F3F1592C4694320034B823 /* ResetPasswordViewController.xib */,
 				72F3F15C2C46944D0034B823 /* ResetPasswordViewModel.swift */,
 				72F3F15E2C4694590034B823 /* ResetPasswordCoordinator.swift */,
+				723821E82C47B8130055053A /* ResetPasswordVCProtocol.swift */,
 			);
 			path = ResetPassword;
 			sourceTree = "<group>";
@@ -1159,6 +1162,7 @@
 				720119362C478ED80075CDF6 /* CustomAlertCoordinator.swift in Sources */,
 				729BB3DD2C39256200F06383 /* ProgressCoordinator.swift in Sources */,
 				7284E2112C301CC00081F8D1 /* HomeCoordinator.swift in Sources */,
+				723821E92C47B8130055053A /* ResetPasswordVCProtocol.swift in Sources */,
 				729BB3EF2C39262D00F06383 /* CalculatorViewModel.swift in Sources */,
 				7272675B2C3408A5004BF6B6 /* CustomTextField.swift in Sources */,
 			);

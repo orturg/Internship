@@ -17,15 +17,13 @@ final class ContainerView: UIView {
     private var messageText: String
     private var isSuccessAlert: Bool
     private var messageLabel = UILabel()
-    private let alertVC: UIViewController
-    private let resetPasswordVC: UIViewController
+    private let alertVC: CustomAlertVC
     
     
-    init(messageText: String, isSuccessAlert: Bool, alertVC: UIViewController, resetPasswordVC: UIViewController) {
+    init(messageText: String, isSuccessAlert: Bool, alertVC: CustomAlertVC) {
         self.messageText = messageText
         self.isSuccessAlert = isSuccessAlert
         self.alertVC = alertVC
-        self.resetPasswordVC = resetPasswordVC
         super.init(frame: .zero)
         configure()
     }
@@ -96,7 +94,7 @@ final class ContainerView: UIView {
     
     
     @objc private func cancelButtonAction() {
-        vm?.cancelButtonAction(alertVC: alertVC, resetPasswordVC: resetPasswordVC)
+        vm?.cancelButtonAction(alertVC: alertVC)
     }
     
     

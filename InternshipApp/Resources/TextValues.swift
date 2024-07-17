@@ -39,4 +39,10 @@ enum TextValues {
     static let loginButtonText = "Login"
     static let forgotPasswordInstructionLabelText = "Enter the email address associated with your account and we'll send you a form to reset your password."
     static let continueLabel = "Continue"
+    static let ok = "Ok"
+    static let success = "Success"
+    static let successResetMessage = "The form has been sent to your e-mail."
+    static let failedResetMessage = "Please check the email you entered. Something seems to be wrong"
+    static let cancel = "Cancel"
+    static let helveticaNeue = "Helvetica Neue"
 }

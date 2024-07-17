@@ -35,13 +35,29 @@ final class ResetPasswordViewModel {
             
             switch result {
             case .success(_):
-                break
-            case .failure(let error):
-                vc.showAlert(vc: vc, error: error)
+                self.showSuccessAlert(vc: vc)
+            case .failure(_):
+                self.showFailureAlert(vc: vc)
             }
             continueButton.isEnabled = true
         }
         
+    }
+    
+    
+    private func showSuccessAlert(vc: UIViewController) {
+        guard let navigationController = vc.navigationController else { return }
+        
+        let alertCoordinator = CustomAlertCoordinator(navigationController: navigationController, isSuccessAlert: true, messageText: TextValues.successResetMessage, resetPasswordVC: vc)
+        alertCoordinator.start()
+    }
+    
+    
+    private func showFailureAlert(vc: UIViewController) {
+        guard let navigationController = vc.navigationController else { return }
+
+        let alertCoordinator = CustomAlertCoordinator(navigationController: navigationController, isSuccessAlert: false, messageText: TextValues.failedResetMessage, resetPasswordVC: vc)
+        alertCoordinator.start()
     }
     
     

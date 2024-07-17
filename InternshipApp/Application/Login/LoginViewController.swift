@@ -3,7 +3,7 @@
 //  InternshipApp
 //
 //  Created by Artur Nozhenko on 12.07.2024.
-//
+
 
 import UIKit
 
@@ -35,6 +35,7 @@ final class LoginViewController: BaseViewController {
     
     private func configure() {
         configureVC()
+        createDismissTapGesture()
         configureTextFields()
         setupSubviews()
         setupLayoutConstraints()
@@ -47,6 +48,12 @@ final class LoginViewController: BaseViewController {
     private func configureVC() {
         let backBarButtonItem = UIBarButtonItem(customView: UIView())
         navigationItem.leftBarButtonItem = backBarButtonItem
+    }
+    
+    
+    private func createDismissTapGesture() {
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
     }
     
     

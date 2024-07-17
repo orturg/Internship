@@ -33,11 +33,18 @@ final class SignUpViewController: BaseViewController {
     
     
     private func configure() {
+        createDismissTapGesture()
         configureTextFields()
         setupSubviews()
         configureScrollView()
         setupLayoutConstraints()
         configureButtons()
+    }
+    
+    
+    private func createDismissTapGesture() {
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
     }
     
     

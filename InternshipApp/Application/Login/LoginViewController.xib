@@ -29,9 +29,9 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SUPERHERO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fX6-KG-JMn">
-                    <rect key="frame" x="119" y="88" width="155" height="32"/>
+                    <rect key="frame" x="93" y="88" width="207" height="42"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="24"/>
+                    <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="32"/>
                     <color key="textColor" name="appYellow"/>
                     <nil key="highlightedColor"/>
                 </label>

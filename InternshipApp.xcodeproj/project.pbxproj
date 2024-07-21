@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		46AB61E800FC076992F83744 /* Pods_InternshipApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87E55BAE319D883015806322 /* Pods_InternshipApp.framework */; };
+		7201192F2C4713690075CDF6 /* CustomAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7201192D2C4713690075CDF6 /* CustomAlertVC.swift */; };
+		720119322C4713860075CDF6 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720119312C4713860075CDF6 /* ContainerView.swift */; };
+		720119342C478EB00075CDF6 /* CustomAlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720119332C478EB00075CDF6 /* CustomAlertViewModel.swift */; };
+		720119362C478ED80075CDF6 /* CustomAlertCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720119352C478ED80075CDF6 /* CustomAlertCoordinator.swift */; };
+		723821E92C47B8130055053A /* ResetPasswordVCProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723821E82C47B8130055053A /* ResetPasswordVCProtocol.swift */; };
 		7238CF412C41488F006F5B27 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7238CF402C41488F006F5B27 /* GoogleService-Info.plist */; };
 		723C8E802C369FA6000C19BA /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 723C8E7F2C369FA6000C19BA /* HomeViewController.xib */; };
 		723C8E832C36D7AF000C19BA /* TextValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723C8E822C36D7AF000C19BA /* TextValues.swift */; };
@@ -201,6 +206,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7201192D2C4713690075CDF6 /* CustomAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertVC.swift; sourceTree = "<group>"; };
+		720119312C4713860075CDF6 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
+		720119332C478EB00075CDF6 /* CustomAlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewModel.swift; sourceTree = "<group>"; };
+		720119352C478ED80075CDF6 /* CustomAlertCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertCoordinator.swift; sourceTree = "<group>"; };
+		723821E82C47B8130055053A /* ResetPasswordVCProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVCProtocol.swift; sourceTree = "<group>"; };
 		7238CF3F2C4146FD006F5B27 /* InternshipApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InternshipApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7238CF402C41488F006F5B27 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		723C8E7F2C369FA6000C19BA /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -425,6 +435,17 @@
 				D890426480538D3E52BE33F8 /* Pods-InternshipApp.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		7201192C2C4713380075CDF6 /* CustomAlert */ = {
+			isa = PBXGroup;
+			children = (
+				7201192D2C4713690075CDF6 /* CustomAlertVC.swift */,
+				720119312C4713860075CDF6 /* ContainerView.swift */,
+				720119332C478EB00075CDF6 /* CustomAlertViewModel.swift */,
+				720119352C478ED80075CDF6 /* CustomAlertCoordinator.swift */,
+			);
+			path = CustomAlert;
 			sourceTree = "<group>";
 		};
 		723C8E812C36B1B8000C19BA /* CustomTextField */ = {
@@ -691,6 +712,7 @@
 				726988C72C3D43FB00124AD3 /* SignUp */,
 				72557E8E2C415A4D002625AA /* Login */,
 				72F3F1572C4693F60034B823 /* ResetPassword */,
+				7201192C2C4713380075CDF6 /* CustomAlert */,
 				7284E2142C3035630081F8D1 /* Home */,
 				729BB3D42C3924A900F06383 /* Progress */,
 				729BB3D52C3924B300F06383 /* Calculator */,
@@ -831,6 +853,7 @@
 				72F3F1592C4694320034B823 /* ResetPasswordViewController.xib */,
 				72F3F15C2C46944D0034B823 /* ResetPasswordViewModel.swift */,
 				72F3F15E2C4694590034B823 /* ResetPasswordCoordinator.swift */,
+				723821E82C47B8130055053A /* ResetPasswordVCProtocol.swift */,
 			);
 			path = ResetPassword;
 			sourceTree = "<group>";
@@ -1098,6 +1121,7 @@
 				7271070E2C3A7BA00036E9AC /* CustomRoundedRectangleButton.swift in Sources */,
 				729BB3F72C39265F00F06383 /* MusclesViewModel.swift in Sources */,
 				72F3F15D2C46944D0034B823 /* ResetPasswordViewModel.swift in Sources */,
+				7201192F2C4713690075CDF6 /* CustomAlertVC.swift in Sources */,
 				7284E20D2C3016F60081F8D1 /* Coordinator.swift in Sources */,
 				726988D22C3D449000124AD3 /* SignUpViewController.swift in Sources */,
 				729BB3EA2C3925D000F06383 /* CalculatorViewController.swift in Sources */,
@@ -1111,6 +1135,7 @@
 				729BB3E12C39258F00F06383 /* ProgressViewModel.swift in Sources */,
 				72F3F15A2C4694320034B823 /* ResetPasswordViewController.swift in Sources */,
 				7272697A2C35317A004BF6B6 /* CustomSwitch.swift in Sources */,
+				720119342C478EB00075CDF6 /* CustomAlertViewModel.swift in Sources */,
 				727107212C3AC29F0036E9AC /* FirebaseService.swift in Sources */,
 				727269802C35ABA7004BF6B6 /* CustomRadioButton.swift in Sources */,
 				72557E982C415A9B002625AA /* LoginCoordinator.swift in Sources */,
@@ -1118,6 +1143,7 @@
 				7284E20F2C3017D90081F8D1 /* AppCoordinator.swift in Sources */,
 				723C8E862C36D895000C19BA /* Constants.swift in Sources */,
 				726988D62C3D5AFC00124AD3 /* RegistrationData.swift in Sources */,
+				720119322C4713860075CDF6 /* ContainerView.swift in Sources */,
 				72F3F15F2C4694590034B823 /* ResetPasswordCoordinator.swift in Sources */,
 				7284E2162C3035880081F8D1 /* HomeViewModel.swift in Sources */,
 				7284E1EE2C2FFA8E0081F8D1 /* AppDelegate.swift in Sources */,
@@ -1133,8 +1159,10 @@
 				7272697E2C3536B1004BF6B6 /* CustomCheckboxSwitch.swift in Sources */,
 				729BB3F12C39264600F06383 /* MusclesCoordinator.swift in Sources */,
 				729BB4042C39564C00F06383 /* StartViewModel.swift in Sources */,
+				720119362C478ED80075CDF6 /* CustomAlertCoordinator.swift in Sources */,
 				729BB3DD2C39256200F06383 /* ProgressCoordinator.swift in Sources */,
 				7284E2112C301CC00081F8D1 /* HomeCoordinator.swift in Sources */,
+				723821E92C47B8130055053A /* ResetPasswordVCProtocol.swift in Sources */,
 				729BB3EF2C39262D00F06383 /* CalculatorViewModel.swift in Sources */,
 				7272675B2C3408A5004BF6B6 /* CustomTextField.swift in Sources */,
 			);

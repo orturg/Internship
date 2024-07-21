@@ -9,6 +9,7 @@ import UIKit
 
 final class ResetPasswordViewModel {
     weak var coordinator: ResetPasswordCoordinator?
+    weak var resetPasswordVCDelegate: ResetPasswordVCDelegate?
     
     func setTextFieldsLabel(emailTextField: CustomTextField) {
         emailTextField.setTextFieldTitle(text: TextValues.email)
@@ -23,7 +24,7 @@ final class ResetPasswordViewModel {
     }
     
     
-    func continueButtonAction(emailTextField: CustomTextField, continueButton: CustomRoundedRectangleButton, vc: UIViewController) {
+    func continueButtonAction(emailTextField: CustomTextField, continueButton: CustomRoundedRectangleButton, navigationController: UINavigationController?) {
         let email = emailTextField.getText()
         
         guard isValidFields(emailTextField: emailTextField, email: email) else { return }
@@ -35,13 +36,30 @@ final class ResetPasswordViewModel {
             
             switch result {
             case .success(_):
-                break
-            case .failure(let error):
-                vc.showAlert(vc: vc, error: error)
+                self.showSuccessAlert(navigationController: navigationController)
+            case .failure(_):
+                self.showFailureAlert(navigationController: navigationController)
             }
             continueButton.isEnabled = true
         }
         
+    }
+    
+    
+    private func showSuccessAlert(navigationController: UINavigationController?) {
+        guard let navigationController else { return }
+        
+        let alertCoordinator = CustomAlertCoordinator(navigationController: navigationController, isSuccessAlert: true, messageText: TextValues.successResetMessage)
+        alertCoordinator.start()
+    }
+    
+    
+    private func showFailureAlert(navigationController: UINavigationController?) {
+        guard let navigationController else { return }
+
+        let alertCoordinator = CustomAlertCoordinator(navigationController: navigationController, isSuccessAlert: false, messageText: TextValues.failedResetMessage)
+        alertCoordinator.delegate = resetPasswordVCDelegate
+        alertCoordinator.start()
     }
     
     

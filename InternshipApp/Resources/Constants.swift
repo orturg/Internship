@@ -51,5 +51,13 @@ enum Constants {
     static let instructionLabelHeight: CGFloat = 75
     static let continueButtonTopAnchor: CGFloat = 80
     static let backButtonBottomAnchor: CGFloat = 28
-    
+    static let customAlertRoundedRectangleButtonWidth: CGFloat = 120
+    static let customAlertCornerRadius: CGFloat = 12
+    static let customAlertBorderWidth: CGFloat = 2
+    static let alertContainerMessageLabelSize: CGFloat = 16
+    static let alertContainerMessageLabelPadding: CGFloat = 16
+    static let alertContainerViewWidth: CGFloat = 283
+    static let alertContainerViewHeight: CGFloat = 153
+    static let alertContainerCancelButtonLeadingAnchor: CGFloat = 50
+    static let alertContainerOkButtonLeadingAnchor: CGFloat = 50
 }

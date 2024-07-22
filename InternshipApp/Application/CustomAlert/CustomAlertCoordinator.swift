@@ -23,7 +23,9 @@ final class CustomAlertCoordinator: Coordinator {
     
     func start() {
         if isSuccessAlert {
+            
             alert = CustomAlertVC(isSuccessAlert: true, messageText: TextValues.successResetMessage)
+            
         } else {
             alert = CustomAlertVC(isSuccessAlert: false, messageText: TextValues.failedResetMessage)
             alert?.delegate = delegate

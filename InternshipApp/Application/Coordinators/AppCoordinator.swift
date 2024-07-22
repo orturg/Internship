@@ -50,9 +50,6 @@ final class AppCoordinator: Coordinator {
             let signUpCoordinator = SignUpCoordinator(navigationController: navigationController)
             signUpCoordinator.start()
         }
-        
-//        let loginCoordinator = LoginCoordinator(navigationController: navigationController)
-//        loginCoordinator.start()
     }
     
     

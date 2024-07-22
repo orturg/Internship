@@ -60,6 +60,35 @@ class FirebaseService {
     }
     
     
+    func updateUsername(name: String, completion: @escaping (Result<String?, DataBaseError>) -> Void) {
+        collection.document(id).updateData([
+            "userName": name
+        ]) { error in
+            if let error {
+                completion(.failure(.errorUpdatingUser))
+            } else {
+                completion(.success(nil))
+            }
+        }
+    }
+    
+    
+    func updateAvatar(image: UIImage, completion: @escaping (Result<String?, DataBaseError>) -> Void) {
+        let imageData = image.compress(to: 1024)
+        
+        collection.document(id).updateData([
+            "profileImage": imageData
+        ]) { error in
+            if let error {
+                print("error1")
+                completion(.failure(.errorUpdatingUser))
+            } else {
+                completion(.success(nil))
+            }
+        }
+    }
+    
+    
     func getUser(completion: @escaping (Result<RegistrationData?, DataBaseError>) -> Void) {
         guard let currentUser = Auth.auth().currentUser else {
             completion(.failure(.errorGettingUser))
@@ -85,7 +114,8 @@ class FirebaseService {
                     email: data["email"] as? String ?? "",
                     sex: data["sex"] as? String ?? "",
                     password: "",
-                    id: data["id"] as? String ?? ""
+                    id: data["id"] as? String ?? "",
+                    profileImage: data["profileImage"] as? Data ?? Data()
                 )
                 completion(.success(user))
             } else {
@@ -93,7 +123,7 @@ class FirebaseService {
             }
         }
     }
-
+    
     
     func login(email: String, password: String, completion: @escaping(Result<String?, DataBaseError>) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] result, error in
@@ -139,4 +169,26 @@ class FirebaseService {
             completion(.success(nil))
         }
     }
+    
+    
+    func getImage(completion: @escaping (Result<UIImage, DataBaseError>) -> Void) {
+        getUser { result in
+            switch result {
+            case .success(let user):
+                guard let user else { return }
+                if let imageData = user.profileImage {
+                    if let image = UIImage(data: imageData) {
+                        completion(.success(image))
+                    } else {
+                        completion(.failure(.errorGettingUser))
+                    }
+                } else {
+                    completion(.failure(.errorGettingUser))
+                }
+            case .failure(_):
+                completion(.failure(.errorGettingUser))
+            }
+        }
+    }
+
 }

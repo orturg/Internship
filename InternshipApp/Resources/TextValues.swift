@@ -45,4 +45,10 @@ enum TextValues {
     static let failedResetMessage = "Please check the email you entered. Something seems to be wrong"
     static let cancel = "Cancel"
     static let helveticaNeue = "Helvetica Neue"
+    static let profileInstruction = "Select an option to display on the main screen."
+    static let addOptions = "Add options"
+    static let sairaMedium = "Saira-Medium"
+    static let profile = "Profile"
+    static let successSavedProfile = "Profile has been saved!"
+    static let save = "Save"
 }

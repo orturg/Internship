@@ -11,7 +11,7 @@ final class ContainerView: UIView {
     
     var vm: CustomAlertViewModel?
     
-    private let okButton = CustomRoundedRectangleButton(buttonBackgroundColor: .appYellow, buttonText: TextValues.ok, textColor: .black, height: Constants.customRoundedRectangleButtonHeight, width: Constants.customAlertRoundedRectangleButtonWidth)
+    var okButton: CustomRoundedRectangleButton? = CustomRoundedRectangleButton(buttonBackgroundColor: .appYellow, buttonText: TextValues.ok, textColor: .black, height: Constants.customRoundedRectangleButtonHeight, width: Constants.customAlertRoundedRectangleButtonWidth)
     
     private var cancelButton: CustomButton? = CustomButton()
     private var messageText: String
@@ -27,7 +27,7 @@ final class ContainerView: UIView {
         super.init(frame: .zero)
         configure()
     }
-
+    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -55,12 +55,13 @@ final class ContainerView: UIView {
     
     private func setupSubviews() {
         addSubview(messageLabel)
+        guard let okButton else { return }
         addSubview(okButton)
         
         if !isSuccessAlert {
             guard let cancelButton else { return }
             addSubview(cancelButton)
-        } 
+        }
     }
     
     
@@ -76,6 +77,7 @@ final class ContainerView: UIView {
     
     
     private func configureOkButton() {
+        guard let okButton else { return }
         okButton.addTarget(self, action: #selector(okButtonAction), for: .touchUpInside)
     }
     
@@ -103,8 +105,11 @@ final class ContainerView: UIView {
             messageLabel.topAnchor.constraint(equalTo: topAnchor, constant: Constants.alertContainerMessageLabelPadding),
             messageLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.alertContainerMessageLabelPadding),
             messageLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constants.alertContainerMessageLabelPadding),
-            
-            
+        ])
+        
+        guard let okButton else { return }
+        
+        NSLayoutConstraint.activate([
             okButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Constants.alertContainerMessageLabelPadding)
         ])
         

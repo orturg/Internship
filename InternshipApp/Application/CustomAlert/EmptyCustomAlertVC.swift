@@ -1,27 +1,23 @@
 //
-//  CustomAlertVC.swift
+//  EmptyCustomAlertVC.swift
 //  InternshipApp
 //
-//  Created by Artur Nozhenko on 16.07.2024.
+//  Created by Artur Nozhenko on 22.07.2024.
 //
 
 import UIKit
 
-
-final class CustomAlertVC: UIViewController {
-    
-    var vm: CustomAlertViewModel?
+class EmptyCustomAlertVC: UIViewController {
+    var vm: EmptyAlertViewModel?
     
     private var messageText: String
-    private let isSuccessAlert: Bool
     
     lazy var containerView = {
-        let containerView = ContainerView(messageText: messageText, isSuccessAlert: isSuccessAlert, alertVC: self)
+        let containerView = EmptyContainerView(messageText: messageText)
         containerView.vm = vm
         return containerView
     }()
     
-    weak var delegate: ResetPasswordVCDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +26,7 @@ final class CustomAlertVC: UIViewController {
     }
     
     
-    init(isSuccessAlert: Bool, messageText: String) {
-        self.isSuccessAlert = isSuccessAlert
+    init(messageText: String) {
         self.messageText = messageText
         super.init(nibName: nil, bundle: nil)
     }
@@ -74,20 +69,12 @@ final class CustomAlertVC: UIViewController {
     }
     
     
-    func dimissVC() {
-        delegate?.dismissVC()
-    }
-    
-    
     private func setupLayoutConstraints() {
         NSLayoutConstraint.activate([
             containerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             containerView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             containerView.widthAnchor.constraint(equalToConstant: Constants.alertContainerViewWidth),
-            containerView.heightAnchor.constraint(equalToConstant: Constants.alertContainerViewHeight)
+            containerView.heightAnchor.constraint(equalToConstant: Constants.emptyAlertHeight)
         ])
     }
 }
-
-
-

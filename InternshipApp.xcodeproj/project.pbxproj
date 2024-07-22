@@ -26,6 +26,7 @@
 		726988D22C3D449000124AD3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726988D02C3D448F00124AD3 /* SignUpViewController.swift */; };
 		726988D32C3D449000124AD3 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 726988D12C3D449000124AD3 /* SignUpViewController.xib */; };
 		726988D62C3D5AFC00124AD3 /* RegistrationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726988D52C3D5AFC00124AD3 /* RegistrationData.swift */; };
+		72708AA92C4EA36300CB4E7B /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72708AA82C4EA36300CB4E7B /* UIImage+Ext.swift */; };
 		727107092C39D9910036E9AC /* GradientDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727107082C39D9910036E9AC /* GradientDivider.swift */; };
 		7271070C2C3A71220036E9AC /* GradientDivider.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7271070B2C3A71220036E9AC /* GradientDivider.xib */; };
 		7271070E2C3A7BA00036E9AC /* CustomRoundedRectangleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7271070D2C3A7BA00036E9AC /* CustomRoundedRectangleButton.swift */; };
@@ -166,6 +167,10 @@
 		7272697E2C3536B1004BF6B6 /* CustomCheckboxSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7272697D2C3536B1004BF6B6 /* CustomCheckboxSwitch.swift */; };
 		727269802C35ABA7004BF6B6 /* CustomRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7272697F2C35ABA7004BF6B6 /* CustomRadioButton.swift */; };
 		727269822C368966004BF6B6 /* CustomTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 727269812C368966004BF6B6 /* CustomTextField.xib */; };
+		727AE3752C4D7BEB00F8A2AD /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AE3742C4D7BEB00F8A2AD /* ProfileViewModel.swift */; };
+		727AE3772C4D7BFC00F8A2AD /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AE3762C4D7BFC00F8A2AD /* ProfileCoordinator.swift */; };
+		727AE37C2C4E1FFB00F8A2AD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AE37A2C4E1FFB00F8A2AD /* ProfileViewController.swift */; };
+		727AE37D2C4E1FFB00F8A2AD /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 727AE37B2C4E1FFB00F8A2AD /* ProfileViewController.xib */; };
 		7284E1EE2C2FFA8E0081F8D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7284E1ED2C2FFA8E0081F8D1 /* AppDelegate.swift */; };
 		7284E1F02C2FFA8E0081F8D1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7284E1EF2C2FFA8E0081F8D1 /* SceneDelegate.swift */; };
 		7284E1F72C2FFA8F0081F8D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7284E1F62C2FFA8F0081F8D1 /* Assets.xcassets */; };
@@ -197,6 +202,10 @@
 		729BB4022C3955BB00F06383 /* StartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729BB4012C3955BB00F06383 /* StartCoordinator.swift */; };
 		729BB4042C39564C00F06383 /* StartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729BB4032C39564C00F06383 /* StartViewModel.swift */; };
 		729BB4082C3961AB00F06383 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729BB4072C3961AB00F06383 /* GradientView.swift */; };
+		729EEF722C4ECA0E00A6DA80 /* EmptyCustomAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729EEF712C4ECA0E00A6DA80 /* EmptyCustomAlertVC.swift */; };
+		729EEF742C4ECA4600A6DA80 /* EmptyContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729EEF732C4ECA4600A6DA80 /* EmptyContainerView.swift */; };
+		729EEF762C4ECA5D00A6DA80 /* EmptyAlertCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729EEF752C4ECA5D00A6DA80 /* EmptyAlertCoordinator.swift */; };
+		729EEF782C4ECA6B00A6DA80 /* EmptyAlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729EEF772C4ECA6B00A6DA80 /* EmptyAlertViewModel.swift */; };
 		72AAD2252C3FAD7C0066EF8C /* DataBaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AAD2242C3FAD7C0066EF8C /* DataBaseError.swift */; };
 		72AB5B532C4263AF0021FC33 /* ViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AB5B522C4263AF0021FC33 /* ViewController+Ext.swift */; };
 		72F3F15A2C4694320034B823 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F3F1582C4694320034B823 /* ResetPasswordViewController.swift */; };
@@ -225,6 +234,7 @@
 		726988D02C3D448F00124AD3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		726988D12C3D449000124AD3 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		726988D52C3D5AFC00124AD3 /* RegistrationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationData.swift; sourceTree = "<group>"; };
+		72708AA82C4EA36300CB4E7B /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
 		727107082C39D9910036E9AC /* GradientDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientDivider.swift; sourceTree = "<group>"; };
 		7271070B2C3A71220036E9AC /* GradientDivider.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GradientDivider.xib; sourceTree = "<group>"; };
 		7271070D2C3A7BA00036E9AC /* CustomRoundedRectangleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRoundedRectangleButton.swift; sourceTree = "<group>"; };
@@ -365,6 +375,10 @@
 		7272697D2C3536B1004BF6B6 /* CustomCheckboxSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCheckboxSwitch.swift; sourceTree = "<group>"; };
 		7272697F2C35ABA7004BF6B6 /* CustomRadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRadioButton.swift; sourceTree = "<group>"; };
 		727269812C368966004BF6B6 /* CustomTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTextField.xib; sourceTree = "<group>"; };
+		727AE3742C4D7BEB00F8A2AD /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		727AE3762C4D7BFC00F8A2AD /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		727AE37A2C4E1FFB00F8A2AD /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		727AE37B2C4E1FFB00F8A2AD /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		7284E1ED2C2FFA8E0081F8D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7284E1EF2C2FFA8E0081F8D1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7284E1F62C2FFA8F0081F8D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -397,6 +411,10 @@
 		729BB4012C3955BB00F06383 /* StartCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCoordinator.swift; sourceTree = "<group>"; };
 		729BB4032C39564C00F06383 /* StartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewModel.swift; sourceTree = "<group>"; };
 		729BB4072C3961AB00F06383 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		729EEF712C4ECA0E00A6DA80 /* EmptyCustomAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCustomAlertVC.swift; sourceTree = "<group>"; };
+		729EEF732C4ECA4600A6DA80 /* EmptyContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyContainerView.swift; sourceTree = "<group>"; };
+		729EEF752C4ECA5D00A6DA80 /* EmptyAlertCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyAlertCoordinator.swift; sourceTree = "<group>"; };
+		729EEF772C4ECA6B00A6DA80 /* EmptyAlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyAlertViewModel.swift; sourceTree = "<group>"; };
 		72AAD2242C3FAD7C0066EF8C /* DataBaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseError.swift; sourceTree = "<group>"; };
 		72AB5B522C4263AF0021FC33 /* ViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Ext.swift"; sourceTree = "<group>"; };
 		72F3F1582C4694320034B823 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
@@ -444,6 +462,10 @@
 				720119312C4713860075CDF6 /* ContainerView.swift */,
 				720119332C478EB00075CDF6 /* CustomAlertViewModel.swift */,
 				720119352C478ED80075CDF6 /* CustomAlertCoordinator.swift */,
+				729EEF712C4ECA0E00A6DA80 /* EmptyCustomAlertVC.swift */,
+				729EEF732C4ECA4600A6DA80 /* EmptyContainerView.swift */,
+				729EEF752C4ECA5D00A6DA80 /* EmptyAlertCoordinator.swift */,
+				729EEF772C4ECA6B00A6DA80 /* EmptyAlertViewModel.swift */,
 			);
 			path = CustomAlert;
 			sourceTree = "<group>";
@@ -677,6 +699,17 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		727AE36F2C4D7BB900F8A2AD /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				727AE3742C4D7BEB00F8A2AD /* ProfileViewModel.swift */,
+				727AE3762C4D7BFC00F8A2AD /* ProfileCoordinator.swift */,
+				727AE37A2C4E1FFB00F8A2AD /* ProfileViewController.swift */,
+				727AE37B2C4E1FFB00F8A2AD /* ProfileViewController.xib */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		7284E1E12C2FFA8E0081F8D1 = {
 			isa = PBXGroup;
 			children = (
@@ -714,6 +747,7 @@
 				72F3F1572C4693F60034B823 /* ResetPassword */,
 				7201192C2C4713380075CDF6 /* CustomAlert */,
 				7284E2142C3035630081F8D1 /* Home */,
+				727AE36F2C4D7BB900F8A2AD /* Profile */,
 				729BB3D42C3924A900F06383 /* Progress */,
 				729BB3D52C3924B300F06383 /* Calculator */,
 				729BB3D72C3924D100F06383 /* Muscles */,
@@ -842,6 +876,7 @@
 			isa = PBXGroup;
 			children = (
 				72AB5B522C4263AF0021FC33 /* ViewController+Ext.swift */,
+				72708AA82C4EA36300CB4E7B /* UIImage+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1010,6 +1045,7 @@
 				727268F42C352BBF004BF6B6 /* Saira_ExtraCondensed-Black.ttf in Resources */,
 				727269722C352BBF004BF6B6 /* OFL.txt in Resources */,
 				7272695D2C352BBF004BF6B6 /* Saira_Expanded-Black.ttf in Resources */,
+				727AE37D2C4E1FFB00F8A2AD /* ProfileViewController.xib in Resources */,
 				727269102C352BBF004BF6B6 /* Saira_Condensed-BoldItalic.ttf in Resources */,
 				727269612C352BBF004BF6B6 /* Saira_Expanded-BoldItalic.ttf in Resources */,
 				727268F82C352BBF004BF6B6 /* Saira_SemiCondensed-Italic.ttf in Resources */,
@@ -1124,7 +1160,9 @@
 				7201192F2C4713690075CDF6 /* CustomAlertVC.swift in Sources */,
 				7284E20D2C3016F60081F8D1 /* Coordinator.swift in Sources */,
 				726988D22C3D449000124AD3 /* SignUpViewController.swift in Sources */,
+				727AE3772C4D7BFC00F8A2AD /* ProfileCoordinator.swift in Sources */,
 				729BB3EA2C3925D000F06383 /* CalculatorViewController.swift in Sources */,
+				727AE3752C4D7BEB00F8A2AD /* ProfileViewModel.swift in Sources */,
 				72AB5B532C4263AF0021FC33 /* ViewController+Ext.swift in Sources */,
 				727107092C39D9910036E9AC /* GradientDivider.swift in Sources */,
 				7284E20A2C3010120081F8D1 /* BaseViewController.swift in Sources */,
@@ -1145,8 +1183,10 @@
 				726988D62C3D5AFC00124AD3 /* RegistrationData.swift in Sources */,
 				720119322C4713860075CDF6 /* ContainerView.swift in Sources */,
 				72F3F15F2C4694590034B823 /* ResetPasswordCoordinator.swift in Sources */,
+				727AE37C2C4E1FFB00F8A2AD /* ProfileViewController.swift in Sources */,
 				7284E2162C3035880081F8D1 /* HomeViewModel.swift in Sources */,
 				7284E1EE2C2FFA8E0081F8D1 /* AppDelegate.swift in Sources */,
+				729EEF722C4ECA0E00A6DA80 /* EmptyCustomAlertVC.swift in Sources */,
 				72557E912C415A74002625AA /* LoginViewController.swift in Sources */,
 				7284E1F02C2FFA8E0081F8D1 /* SceneDelegate.swift in Sources */,
 				726988CF2C3D447700124AD3 /* SignUpViewModel.swift in Sources */,
@@ -1154,15 +1194,19 @@
 				72557E942C415A7F002625AA /* LoginViewModel.swift in Sources */,
 				729BB4082C3961AB00F06383 /* GradientView.swift in Sources */,
 				7284E2132C301D790081F8D1 /* HomeViewController.swift in Sources */,
+				729EEF782C4ECA6B00A6DA80 /* EmptyAlertViewModel.swift in Sources */,
+				729EEF762C4ECA5D00A6DA80 /* EmptyAlertCoordinator.swift in Sources */,
 				729BB3E72C3925C000F06383 /* CalculatorCoordinator.swift in Sources */,
 				729BB3E42C3925B000F06383 /* ProgressViewController.swift in Sources */,
 				7272697E2C3536B1004BF6B6 /* CustomCheckboxSwitch.swift in Sources */,
 				729BB3F12C39264600F06383 /* MusclesCoordinator.swift in Sources */,
 				729BB4042C39564C00F06383 /* StartViewModel.swift in Sources */,
+				729EEF742C4ECA4600A6DA80 /* EmptyContainerView.swift in Sources */,
 				720119362C478ED80075CDF6 /* CustomAlertCoordinator.swift in Sources */,
 				729BB3DD2C39256200F06383 /* ProgressCoordinator.swift in Sources */,
 				7284E2112C301CC00081F8D1 /* HomeCoordinator.swift in Sources */,
 				723821E92C47B8130055053A /* ResetPasswordVCProtocol.swift in Sources */,
+				72708AA92C4EA36300CB4E7B /* UIImage+Ext.swift in Sources */,
 				729BB3EF2C39262D00F06383 /* CalculatorViewModel.swift in Sources */,
 				7272675B2C3408A5004BF6B6 /* CustomTextField.swift in Sources */,
 			);

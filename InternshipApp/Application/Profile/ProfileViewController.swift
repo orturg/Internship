@@ -169,6 +169,13 @@ final class ProfileViewController: BaseViewController {
         avatarImageView.image = image
     }
     
+    
+    func setBorder() {
+        avatarImageView.layer.borderWidth = Constants.homeAvatarImageViewBorderWidth
+        avatarImageView.layer.borderColor = UIColor.appYellow.cgColor
+    }
+    
+    
     private func setupLayoutConstraints() {
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         contentView.translatesAutoresizingMaskIntoConstraints = false

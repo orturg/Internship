@@ -18,12 +18,15 @@ final class ContainerView: UIView {
     private var isSuccessAlert: Bool
     private var messageLabel = UILabel()
     private let alertVC: CustomAlertVC
+    private var withButtons: Bool
+    var imageView: UIImageView?
     
     
-    init(messageText: String, isSuccessAlert: Bool, alertVC: CustomAlertVC) {
+    init(messageText: String, isSuccessAlert: Bool, alertVC: CustomAlertVC, withButtons: Bool) {
         self.messageText = messageText
         self.isSuccessAlert = isSuccessAlert
         self.alertVC = alertVC
+        self.withButtons = withButtons
         super.init(frame: .zero)
         configure()
     }
@@ -55,8 +58,14 @@ final class ContainerView: UIView {
     
     private func setupSubviews() {
         addSubview(messageLabel)
-        guard let okButton else { return }
-        addSubview(okButton)
+        if let imageView {
+            addSubview(imageView)
+        }
+        
+        if withButtons {
+            guard let okButton else { return }
+            addSubview(okButton)
+        }
         
         if !isSuccessAlert {
             guard let cancelButton else { return }
@@ -77,8 +86,10 @@ final class ContainerView: UIView {
     
     
     private func configureOkButton() {
-        guard let okButton else { return }
-        okButton.addTarget(self, action: #selector(okButtonAction), for: .touchUpInside)
+        if withButtons {
+            guard let okButton else { return }
+            okButton.addTarget(self, action: #selector(okButtonAction), for: .touchUpInside)
+        }
     }
     
     
@@ -101,31 +112,57 @@ final class ContainerView: UIView {
     
     
     private func setupLayoutConstraints() {
-        NSLayoutConstraint.activate([
-            messageLabel.topAnchor.constraint(equalTo: topAnchor, constant: Constants.alertContainerMessageLabelPadding),
-            messageLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.alertContainerMessageLabelPadding),
-            messageLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constants.alertContainerMessageLabelPadding),
-        ])
-        
-        guard let okButton else { return }
-        
-        NSLayoutConstraint.activate([
-            okButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Constants.alertContainerMessageLabelPadding)
-        ])
-        
-        if isSuccessAlert {
+        if withButtons {
             NSLayoutConstraint.activate([
-                okButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-                
+                messageLabel.topAnchor.constraint(equalTo: topAnchor, constant: Constants.alertContainerMessageLabelPadding),
+                messageLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.alertContainerMessageLabelPadding),
+                messageLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constants.alertContainerMessageLabelPadding),
             ])
         } else {
-            guard let cancelButton else { return }
-            NSLayoutConstraint.activate([
-                cancelButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.alertContainerCancelButtonLeadingAnchor),
-                cancelButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Constants.alertContainerMessageLabelPadding),
+            
+            if let imageView {
+                NSLayoutConstraint.activate([
+                    imageView.centerYAnchor.constraint(equalTo: centerYAnchor),
+                    imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.alertContainerMessageLabelPadding),
+                    imageView.widthAnchor.constraint(equalToConstant: Constants.emptyAlertSuccessImageViewWidth),
+                    imageView.heightAnchor.constraint(equalToConstant: Constants.emptyAlertSuccessImageViewHeight)
+                ])
                 
-                okButton.leadingAnchor.constraint(equalTo: cancelButton.trailingAnchor, constant: Constants.alertContainerOkButtonLeadingAnchor)
+                NSLayoutConstraint.activate([
+                    messageLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+                    messageLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: Constants.emptyAlertMessageLeadingPadding),
+                    messageLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constants.alertContainerMessageLabelPadding),
+                ])
+            } else {
+                NSLayoutConstraint.activate([
+                    messageLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+                    messageLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.alertContainerMessageLabelPadding),
+                    messageLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constants.alertContainerMessageLabelPadding),
+                ])
+            }
+        }
+        
+        if withButtons {
+            guard let okButton else { return }
+            
+            NSLayoutConstraint.activate([
+                okButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Constants.alertContainerMessageLabelPadding)
             ])
+            
+            if isSuccessAlert {
+                NSLayoutConstraint.activate([
+                    okButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+                    
+                ])
+            } else {
+                guard let cancelButton else { return }
+                NSLayoutConstraint.activate([
+                    cancelButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.alertContainerCancelButtonLeadingAnchor),
+                    cancelButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Constants.alertContainerMessageLabelPadding),
+                    
+                    okButton.leadingAnchor.constraint(equalTo: cancelButton.trailingAnchor, constant: Constants.alertContainerOkButtonLeadingAnchor)
+                ])
+            }
         }
     }
 }

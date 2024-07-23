@@ -40,6 +40,9 @@ final class ProfileViewModel {
                 guard let user else { return }
                 vc.set(user.userName)
                 vc.set(self.avatarImage)
+                if avatarImage != UIImage.profileAvatarPlaceholder {
+                    vc.setBorder()
+                }
             case .failure(_):
                 vc.set("")
             }
@@ -54,7 +57,7 @@ final class ProfileViewModel {
             FirebaseService.shared.updateUsername(name: nameTextField.getText()) { result in
                 switch result {
                 case .success(_):
-                    let alertCoordinator = EmptyAlertCoordinator(navigationController: navigationController, messageText: TextValues.successSavedProfile)
+                    let alertCoordinator = CustomAlertCoordinator(navigationController: navigationController, isSuccessAlert: true, messageText: TextValues.successSavedProfile, withButtons: false, containerHeight: Constants.emptyAlertHeight, image: UIImage.success)
                     alertCoordinator.start()
                 case .failure(_):
                     vc.showAlert(vc: vc, error: .errorUpdatingUser)
@@ -74,7 +77,7 @@ final class ProfileViewModel {
             FirebaseService.shared.updateAvatar(image: avatarImage) { result in
                 switch result {
                 case .success(_):
-                    let alertCoordinator = EmptyAlertCoordinator(navigationController: navigationController, messageText: TextValues.successSavedProfile)
+                    let alertCoordinator = CustomAlertCoordinator(navigationController: navigationController, isSuccessAlert: true, messageText: TextValues.successSavedProfile, withButtons: false, containerHeight: Constants.emptyAlertHeight, image: UIImage.success)
                     alertCoordinator.start()
                 case .failure(_):
                     vc.showAlert(vc: vc, error: .errorUpdatingUser)

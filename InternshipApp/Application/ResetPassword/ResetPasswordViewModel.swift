@@ -49,7 +49,7 @@ final class ResetPasswordViewModel {
     private func showSuccessAlert(navigationController: UINavigationController?) {
         guard let navigationController else { return }
         
-        let alertCoordinator = CustomAlertCoordinator(navigationController: navigationController, isSuccessAlert: true, messageText: TextValues.successResetMessage)
+        let alertCoordinator = CustomAlertCoordinator(navigationController: navigationController, isSuccessAlert: true, messageText: TextValues.successResetMessage, withButtons: true, containerHeight: Constants.alertContainerViewHeight, image: nil)
         alertCoordinator.start()
     }
     
@@ -57,7 +57,7 @@ final class ResetPasswordViewModel {
     private func showFailureAlert(navigationController: UINavigationController?) {
         guard let navigationController else { return }
 
-        let alertCoordinator = CustomAlertCoordinator(navigationController: navigationController, isSuccessAlert: false, messageText: TextValues.failedResetMessage)
+        let alertCoordinator = CustomAlertCoordinator(navigationController: navigationController, isSuccessAlert: false, messageText: TextValues.failedResetMessage, withButtons: true, containerHeight: Constants.alertContainerViewHeight, image: nil)
         alertCoordinator.delegate = resetPasswordVCDelegate
         alertCoordinator.start()
     }

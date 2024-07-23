@@ -13,4 +13,5 @@ struct RegistrationData {
     var sex: String?
     var password: String
     var id: String
+    var profileImage: Data? = nil
 }

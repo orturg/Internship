@@ -12,27 +12,42 @@ final class CustomAlertCoordinator: Coordinator {
     let isSuccessAlert: Bool
     let messageText: String
     var alert: CustomAlertVC?
+    var withButtons: Bool
+    var containerHeight: CGFloat
+    var image: UIImage?
     
     weak var delegate: ResetPasswordVCDelegate?
     
-    init(navigationController: UINavigationController, isSuccessAlert: Bool, messageText: String) {
+    init(navigationController: UINavigationController, isSuccessAlert: Bool, messageText: String, withButtons: Bool, containerHeight: CGFloat, image: UIImage?) {
         self.navigationController = navigationController
         self.isSuccessAlert = isSuccessAlert
         self.messageText = messageText
+        self.withButtons = withButtons
+        self.containerHeight = containerHeight
+        self.image = image
     }
     
     func start() {
-        if isSuccessAlert {
-            alert = CustomAlertVC(isSuccessAlert: true, messageText: TextValues.successResetMessage)
+        if withButtons {
+            if isSuccessAlert {
+                alert = CustomAlertVC(isSuccessAlert: true, messageText: messageText, withButtons: true, containerHeight: containerHeight)
+                
+            } else {
+                alert = CustomAlertVC(isSuccessAlert: false, messageText: messageText, withButtons: true, containerHeight: containerHeight)
+                alert?.delegate = delegate
+            }
         } else {
-            alert = CustomAlertVC(isSuccessAlert: false, messageText: TextValues.failedResetMessage)
-            alert?.delegate = delegate
+            alert = CustomAlertVC(isSuccessAlert: true, messageText: messageText, withButtons: false, containerHeight: containerHeight)
         }
         guard let alert else { return }
         
         let alertVM = CustomAlertViewModel()
         alert.vm = alertVM
         alert.vm?.coordinator = self
+        
+        if let image { 
+            alert.setImageView(image: image)
+        }
         
         navigationController.present(alert, animated: true)
     }

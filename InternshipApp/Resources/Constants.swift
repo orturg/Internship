@@ -60,4 +60,22 @@ enum Constants {
     static let alertContainerViewHeight: CGFloat = 153
     static let alertContainerCancelButtonLeadingAnchor: CGFloat = 50
     static let alertContainerOkButtonLeadingAnchor: CGFloat = 50
+    static let homeAvatarImageViewCornerRadius: CGFloat = 8
+    static let homeAvatarImageViewBorderWidth: CGFloat = 1
+    static let profileInstructionLabelSize: CGFloat = 16
+    static let addOptionsBottomAnchor: CGFloat = 48
+    static let emptyAlertHeight: CGFloat = 75
+    static let emptyAlertSuccessImageViewWidth: CGFloat = 21
+    static let emptyAlertSuccessImageViewHeight: CGFloat = 21
+    static let emptyAlertMessageLeadingPadding: CGFloat = 15
+    static let profileTitleSize: CGFloat = 18
+    static let backButtonLeadingPadding: CGFloat = 16
+    static let backButtonWidth: CGFloat = 62
+    static let backButtonHeight: CGFloat = 28
+    static let screenTitleLeadingPadding: CGFloat = 82
+    static let screenTitleWidth: CGFloat = 56
+    static let screenTitleHeight: CGFloat = 28
+    static let saveButtonLeadingPadding: CGFloat = 93
+    static let saveButtonTitleTrailingPadding: CGFloat = 16
+    static let saveButtonHeight: CGFloat = 28
 }

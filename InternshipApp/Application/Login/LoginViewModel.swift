@@ -10,7 +10,6 @@ import UIKit
 final class LoginViewModel {
     weak var coordinator: LoginCoordinator?
     
-    
     private func createNewScreen(navigationController: UINavigationController) {
         getUser(navigationController: navigationController) { [weak self] user in
             guard let self = self else { return }

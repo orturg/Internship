@@ -12,10 +12,12 @@ final class HomeViewModel {
     var titleText: String?
     var isMan: Bool
     var user: RegistrationData?
+    var avatarImage = UIImage.maleAvatarPlaceholder
     
     init(titleText: String?, isMan: Bool) {
         self.titleText = titleText
         self.isMan = isMan
+        getImage()
     }
     
     
@@ -26,6 +28,8 @@ final class HomeViewModel {
     
     
     func getUser(vc: HomeViewController) {
+        getImage()
+        
         FirebaseService.shared.getUser { [weak self] result in
             guard let self = self else { return }
             
@@ -33,8 +37,30 @@ final class HomeViewModel {
             case .success(let user):
                 self.user = user
                 vc.configureLabels()
+                vc.set(avatarImage)
             case .failure(let error):
                 vc.showAlert(vc: vc, error: error)
+            }
+        }
+    }
+    
+    
+    func avatarImageViewAction(navigationController: UINavigationController?) {
+        guard let navigationController else { return }
+        
+        let profileCoordinator = ProfileCoordinator(navigationController: navigationController, isMan: isMan)
+        profileCoordinator.start()
+    }
+    
+    
+    private func getImage() {
+        FirebaseService.shared.getImage { [weak self] result in
+            guard let self else { return }
+            switch result {
+            case .success(let image):
+                self.avatarImage = image
+            case .failure(_):
+                self.avatarImage = UIImage.maleAvatarPlaceholder
             }
         }
     }

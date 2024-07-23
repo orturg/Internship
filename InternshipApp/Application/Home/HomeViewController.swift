@@ -10,8 +10,9 @@ import UIKit
 final class HomeViewController: BaseViewController {
     var vm: HomeViewModel?
     
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var avatarImageView: UIImageView!
     
     lazy var gradient: GradientView = {
         GradientView(width: Constants.gradientViewWidth, height: view.bounds.height, topColor: .clear, bottomColor: .black)
@@ -22,6 +23,15 @@ final class HomeViewController: BaseViewController {
         vm?.getUser(vc: self)
         configure()
     }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = false
+        vm?.getUser(vc: self)
+        configureLabels()
+    }
+    
     
     init(vm: HomeViewModel? = nil) {
         super.init(nibName: nil, bundle: nil)
@@ -36,14 +46,13 @@ final class HomeViewController: BaseViewController {
     private func configure() {
         configureVC()
         configureLabels()
+        configureAvatarImageView()
         setupSubviews()
         setupLayoutConstraints()
     }
     
     
     private func configureVC() {
-        let backBarButtonItem = UIBarButtonItem(customView: UIView())
-        navigationItem.leftBarButtonItem = backBarButtonItem
         guard let vm else { return }
         if !vm.isMan {
             super.removeBackground()
@@ -61,7 +70,30 @@ final class HomeViewController: BaseViewController {
         view.addSubview(gradient)
         view.addSubview(titleLabel)
         view.addSubview(nameLabel)
+        view.addSubview(avatarImageView)
+    }
+    
+    
+    private func configureAvatarImageView() {
+        avatarImageView.layer.cornerRadius = Constants.homeAvatarImageViewCornerRadius
+        avatarImageView.layer.borderWidth = Constants.homeAvatarImageViewBorderWidth
+        avatarImageView.layer.borderColor = UIColor.appYellow.cgColor
+        avatarImageView.image = UIImage.maleAvatarPlaceholder
+        avatarImageView.contentMode = .scaleAspectFill
+        avatarImageView.isUserInteractionEnabled = true
         
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(avatarImageViewAction))
+        avatarImageView.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    
+    func set(_ image: UIImage) {
+        avatarImageView.image = image
+    }
+    
+    
+    @objc private func avatarImageViewAction() {
+        vm?.avatarImageViewAction(navigationController: navigationController)
     }
     
     

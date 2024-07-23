@@ -16,6 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="InternshipApp" customModuleProvider="target">
             <connections>
+                <outlet property="avatarImageView" destination="IVf-j1-ug6" id="6Xt-37-YNn"/>
                 <outlet property="nameLabel" destination="eYo-BI-bBp" id="uZM-SV-kdP"/>
                 <outlet property="titleLabel" destination="KaE-cd-icE" id="sOW-vy-YXD"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Zd1-Eq-yHv"/>
@@ -26,15 +27,20 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IVf-j1-ug6">
+                    <rect key="frame" x="327" y="178" width="50" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KaE-cd-icE">
-                    <rect key="frame" x="0.0" y="76" width="393" height="21"/>
+                    <rect key="frame" x="81" y="76" width="231" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="Saira-Regular" family="Saira" pointSize="24"/>
                     <color key="textColor" name="appWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eYo-BI-bBp">
-                    <rect key="frame" x="0.0" y="105" width="393" height="21"/>
+                    <rect key="frame" x="81" y="105" width="231" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="Saira-Regular" family="Saira" pointSize="16"/>
                     <color key="textColor" name="appWhite"/>

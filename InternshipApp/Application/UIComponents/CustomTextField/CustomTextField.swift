@@ -8,8 +8,8 @@
 import UIKit
 
 final class CustomTextField: UIView {
-    @IBOutlet private weak var textField: UITextField!
-    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var titleLabel: UILabel!
     var placeholderText: String?
     
     required init?(coder: NSCoder) {
@@ -85,6 +85,11 @@ final class CustomTextField: UIView {
         titleLabel.textColor = .appRed
         textField.layer.borderColor = UIColor.appRed.cgColor
         textField.textColor = UIColor.appRed
+    }
+    
+    
+    func setTextFieldText(text: String) {
+        textField.text = text
     }
     
     

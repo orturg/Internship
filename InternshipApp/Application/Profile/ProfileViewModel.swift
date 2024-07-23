@@ -88,5 +88,13 @@ final class ProfileViewModel {
         isAvatarChanged = false
         saveButton.set(.appSecondary)
     }
+    
+    
+    func addOptionsButtonAction(navigationController: UINavigationController?) {
+        guard let navigationController else { return }
+        
+        let selectOptionsCoordinator = SelectOptionsCoordinator(navigationController: navigationController)
+        selectOptionsCoordinator.start()
+    }
 }
 

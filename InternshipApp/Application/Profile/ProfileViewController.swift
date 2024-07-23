@@ -43,6 +43,7 @@ final class ProfileViewController: BaseViewController {
         configureAvatarImageView()
         configureTextFields()
         configureInstructionLabel()
+        configureAddOptionsButton()
         setupSubviews()
         setupLayoutConstraints()
     }
@@ -104,12 +105,13 @@ final class ProfileViewController: BaseViewController {
         contentView.addSubview(avatarImageView)
         contentView.addSubview(nameTextField)
         contentView.addSubview(instructionLabel)
-        contentView.addSubview(addOptionsButton)
+//        contentView.addSubview(addOptionsButton)
         
         view.addSubview(backButton)
         view.addSubview(saveButton)
         view.addSubview(avatarImageView)
         view.addSubview(nameTextField)
+        view.addSubview(addOptionsButton)
     }
     
     private func configureAvatarImageView() {
@@ -160,6 +162,17 @@ final class ProfileViewController: BaseViewController {
         instructionLabel.translatesAutoresizingMaskIntoConstraints = false
     }
     
+    
+    private func configureAddOptionsButton() {
+        addOptionsButton.addTarget(self, action: #selector(addOptionsButtonTarget), for: .touchUpInside)
+    }
+    
+    
+    @objc private func addOptionsButtonTarget() {
+        vm?.addOptionsButtonAction(navigationController: navigationController)
+    }
+    
+    
     func set(_ name: String) {
         nameTextField.setTextFieldText(text: name)
         vm?.nameTextFieldText = name
@@ -197,27 +210,27 @@ final class ProfileViewController: BaseViewController {
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
             
-            backButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 108),
-            backButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.backButtonLeadingPadding),
+            backButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 108),
+            backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.backButtonLeadingPadding),
             backButton.widthAnchor.constraint(equalToConstant: Constants.backButtonWidth),
             backButton.heightAnchor.constraint(equalToConstant: Constants.backButtonHeight),
             
-            screenTitle.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 108),
+            screenTitle.topAnchor.constraint(equalTo: view.topAnchor, constant: 108),
             screenTitle.leadingAnchor.constraint(equalTo: backButton.trailingAnchor, constant: Constants.screenTitleLeadingPadding),
             screenTitle.widthAnchor.constraint(equalToConstant: Constants.screenTitleWidth),
             screenTitle.heightAnchor.constraint(equalToConstant: Constants.screenTitleHeight),
             
-            saveButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 108),
+            saveButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 108),
             saveButton.leadingAnchor.constraint(equalTo: screenTitle.trailingAnchor, constant: Constants.saveButtonLeadingPadding),
-            saveButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constants.saveButtonTitleTrailingPadding),
+            saveButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.saveButtonTitleTrailingPadding),
             saveButton.heightAnchor.constraint(equalToConstant: Constants.saveButtonHeight),
             
             instructionLabel.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: Constants.instructionLabelTopAnchor),
             instructionLabel.leadingAnchor.constraint(equalTo: nameTextField.leadingAnchor),
             instructionLabel.widthAnchor.constraint(equalToConstant: Constants.instructionLabelWidth),
             
-            addOptionsButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            addOptionsButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Constants.addOptionsBottomAnchor),
+            addOptionsButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            addOptionsButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -Constants.addOptionsBottomAnchor),
         ])
     }
 }

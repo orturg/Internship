@@ -208,6 +208,10 @@
 		729EEF782C4ECA6B00A6DA80 /* EmptyAlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729EEF772C4ECA6B00A6DA80 /* EmptyAlertViewModel.swift */; };
 		72AAD2252C3FAD7C0066EF8C /* DataBaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AAD2242C3FAD7C0066EF8C /* DataBaseError.swift */; };
 		72AB5B532C4263AF0021FC33 /* ViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AB5B522C4263AF0021FC33 /* ViewController+Ext.swift */; };
+		72C2C06B2C4FCFFD0091C256 /* SelectOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C2C06A2C4FCFFD0091C256 /* SelectOptionsViewController.swift */; };
+		72C2C06D2C4FD00D0091C256 /* SelectOptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C2C06C2C4FD00D0091C256 /* SelectOptionsViewModel.swift */; };
+		72C2C06F2C4FD01A0091C256 /* SelectOptionsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C2C06E2C4FD01A0091C256 /* SelectOptionsCoordinator.swift */; };
+		72C2C0712C4FD02A0091C256 /* SelectOptionsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C2C0702C4FD02A0091C256 /* SelectOptionsContainer.swift */; };
 		72F3F15A2C4694320034B823 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F3F1582C4694320034B823 /* ResetPasswordViewController.swift */; };
 		72F3F15B2C4694320034B823 /* ResetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72F3F1592C4694320034B823 /* ResetPasswordViewController.xib */; };
 		72F3F15D2C46944D0034B823 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F3F15C2C46944D0034B823 /* ResetPasswordViewModel.swift */; };
@@ -417,6 +421,10 @@
 		729EEF772C4ECA6B00A6DA80 /* EmptyAlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyAlertViewModel.swift; sourceTree = "<group>"; };
 		72AAD2242C3FAD7C0066EF8C /* DataBaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseError.swift; sourceTree = "<group>"; };
 		72AB5B522C4263AF0021FC33 /* ViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Ext.swift"; sourceTree = "<group>"; };
+		72C2C06A2C4FCFFD0091C256 /* SelectOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionsViewController.swift; sourceTree = "<group>"; };
+		72C2C06C2C4FD00D0091C256 /* SelectOptionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionsViewModel.swift; sourceTree = "<group>"; };
+		72C2C06E2C4FD01A0091C256 /* SelectOptionsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionsCoordinator.swift; sourceTree = "<group>"; };
+		72C2C0702C4FD02A0091C256 /* SelectOptionsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionsContainer.swift; sourceTree = "<group>"; };
 		72F3F1582C4694320034B823 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		72F3F1592C4694320034B823 /* ResetPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResetPasswordViewController.xib; sourceTree = "<group>"; };
 		72F3F15C2C46944D0034B823 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
@@ -748,6 +756,7 @@
 				7201192C2C4713380075CDF6 /* CustomAlert */,
 				7284E2142C3035630081F8D1 /* Home */,
 				727AE36F2C4D7BB900F8A2AD /* Profile */,
+				72C2C0692C4FCFD70091C256 /* SelectOptions */,
 				729BB3D42C3924A900F06383 /* Progress */,
 				729BB3D52C3924B300F06383 /* Calculator */,
 				729BB3D72C3924D100F06383 /* Muscles */,
@@ -879,6 +888,17 @@
 				72708AA82C4EA36300CB4E7B /* UIImage+Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		72C2C0692C4FCFD70091C256 /* SelectOptions */ = {
+			isa = PBXGroup;
+			children = (
+				72C2C06A2C4FCFFD0091C256 /* SelectOptionsViewController.swift */,
+				72C2C06C2C4FD00D0091C256 /* SelectOptionsViewModel.swift */,
+				72C2C06E2C4FD01A0091C256 /* SelectOptionsCoordinator.swift */,
+				72C2C0702C4FD02A0091C256 /* SelectOptionsContainer.swift */,
+			);
+			path = SelectOptions;
 			sourceTree = "<group>";
 		};
 		72F3F1572C4693F60034B823 /* ResetPassword */ = {
@@ -1153,6 +1173,7 @@
 			files = (
 				723C8E832C36D7AF000C19BA /* TextValues.swift in Sources */,
 				726988CD2C3D446700124AD3 /* SignUpCoordinator.swift in Sources */,
+				72C2C0712C4FD02A0091C256 /* SelectOptionsContainer.swift in Sources */,
 				729BB3FF2C3955AD00F06383 /* StartViewController.swift in Sources */,
 				7271070E2C3A7BA00036E9AC /* CustomRoundedRectangleButton.swift in Sources */,
 				729BB3F72C39265F00F06383 /* MusclesViewModel.swift in Sources */,
@@ -1162,6 +1183,7 @@
 				726988D22C3D449000124AD3 /* SignUpViewController.swift in Sources */,
 				727AE3772C4D7BFC00F8A2AD /* ProfileCoordinator.swift in Sources */,
 				729BB3EA2C3925D000F06383 /* CalculatorViewController.swift in Sources */,
+				72C2C06B2C4FCFFD0091C256 /* SelectOptionsViewController.swift in Sources */,
 				727AE3752C4D7BEB00F8A2AD /* ProfileViewModel.swift in Sources */,
 				72AB5B532C4263AF0021FC33 /* ViewController+Ext.swift in Sources */,
 				727107092C39D9910036E9AC /* GradientDivider.swift in Sources */,
@@ -1183,6 +1205,7 @@
 				726988D62C3D5AFC00124AD3 /* RegistrationData.swift in Sources */,
 				720119322C4713860075CDF6 /* ContainerView.swift in Sources */,
 				72F3F15F2C4694590034B823 /* ResetPasswordCoordinator.swift in Sources */,
+				72C2C06F2C4FD01A0091C256 /* SelectOptionsCoordinator.swift in Sources */,
 				727AE37C2C4E1FFB00F8A2AD /* ProfileViewController.swift in Sources */,
 				7284E2162C3035880081F8D1 /* HomeViewModel.swift in Sources */,
 				7284E1EE2C2FFA8E0081F8D1 /* AppDelegate.swift in Sources */,
@@ -1201,6 +1224,7 @@
 				7272697E2C3536B1004BF6B6 /* CustomCheckboxSwitch.swift in Sources */,
 				729BB3F12C39264600F06383 /* MusclesCoordinator.swift in Sources */,
 				729BB4042C39564C00F06383 /* StartViewModel.swift in Sources */,
+				72C2C06D2C4FD00D0091C256 /* SelectOptionsViewModel.swift in Sources */,
 				729EEF742C4ECA4600A6DA80 /* EmptyContainerView.swift in Sources */,
 				720119362C478ED80075CDF6 /* CustomAlertCoordinator.swift in Sources */,
 				729BB3DD2C39256200F06383 /* ProgressCoordinator.swift in Sources */,

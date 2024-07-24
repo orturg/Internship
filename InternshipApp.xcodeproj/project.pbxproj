@@ -212,6 +212,7 @@
 		72C2C06D2C4FD00D0091C256 /* SelectOptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C2C06C2C4FD00D0091C256 /* SelectOptionsViewModel.swift */; };
 		72C2C06F2C4FD01A0091C256 /* SelectOptionsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C2C06E2C4FD01A0091C256 /* SelectOptionsCoordinator.swift */; };
 		72C2C0712C4FD02A0091C256 /* SelectOptionsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C2C0702C4FD02A0091C256 /* SelectOptionsContainer.swift */; };
+		72C2C0732C4FE6CF0091C256 /* ProfileStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72C2C0722C4FE6CF0091C256 /* ProfileStoryboard.storyboard */; };
 		72F3F15A2C4694320034B823 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F3F1582C4694320034B823 /* ResetPasswordViewController.swift */; };
 		72F3F15B2C4694320034B823 /* ResetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72F3F1592C4694320034B823 /* ResetPasswordViewController.xib */; };
 		72F3F15D2C46944D0034B823 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F3F15C2C46944D0034B823 /* ResetPasswordViewModel.swift */; };
@@ -425,6 +426,7 @@
 		72C2C06C2C4FD00D0091C256 /* SelectOptionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionsViewModel.swift; sourceTree = "<group>"; };
 		72C2C06E2C4FD01A0091C256 /* SelectOptionsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionsCoordinator.swift; sourceTree = "<group>"; };
 		72C2C0702C4FD02A0091C256 /* SelectOptionsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionsContainer.swift; sourceTree = "<group>"; };
+		72C2C0722C4FE6CF0091C256 /* ProfileStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProfileStoryboard.storyboard; sourceTree = "<group>"; };
 		72F3F1582C4694320034B823 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		72F3F1592C4694320034B823 /* ResetPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResetPasswordViewController.xib; sourceTree = "<group>"; };
 		72F3F15C2C46944D0034B823 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
@@ -710,6 +712,7 @@
 		727AE36F2C4D7BB900F8A2AD /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				72C2C0722C4FE6CF0091C256 /* ProfileStoryboard.storyboard */,
 				727AE3742C4D7BEB00F8A2AD /* ProfileViewModel.swift */,
 				727AE3762C4D7BFC00F8A2AD /* ProfileCoordinator.swift */,
 				727AE37A2C4E1FFB00F8A2AD /* ProfileViewController.swift */,
@@ -1003,6 +1006,7 @@
 				727269822C368966004BF6B6 /* CustomTextField.xib in Resources */,
 				7272696A2C352BBF004BF6B6 /* Saira_ExtraCondensed-Bold.ttf in Resources */,
 				727269202C352BBF004BF6B6 /* Saira_SemiCondensed-LightItalic.ttf in Resources */,
+				72C2C0732C4FE6CF0091C256 /* ProfileStoryboard.storyboard in Resources */,
 				727268F62C352BBF004BF6B6 /* Saira-Medium.ttf in Resources */,
 				729BB4002C3955AD00F06383 /* StartViewController.xib in Resources */,
 				727269062C352BBF004BF6B6 /* Saira_SemiCondensed-Light.ttf in Resources */,

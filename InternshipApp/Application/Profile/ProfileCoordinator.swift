@@ -17,12 +17,14 @@ final class ProfileCoordinator: Coordinator {
     }
     
     func start() {
-        let profileVC = ProfileViewController()
+        let storyboard = UIStoryboard(name: "ProfileStoryboard", bundle: nil)
+        let profileVC = storyboard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+         
         let profileVM = ProfileViewModel(isMan: isMan)
-        
+         
         profileVC.vm = profileVM
         profileVC.vm?.coordinator = self
-        
+         
         navigationController.pushViewController(profileVC, animated: true)
-    }
+      }
 }

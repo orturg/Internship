@@ -5,7 +5,9 @@ final class ProfileViewController: BaseViewController {
     var vm: ProfileViewModel?
     
     @IBOutlet weak var nameTextField: CustomTextField!
+   
     @IBOutlet weak var avatarImageView: UIImageView!
+    
     
     private var backButton = UIImageView()
     private var screenTitle = UILabel()

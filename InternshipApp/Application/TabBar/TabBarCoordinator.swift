@@ -13,15 +13,14 @@ final class TabBarCoordinator: Coordinator {
     let progressNavController = UINavigationController()
     let calculatorNavController = UINavigationController()
     let musclesNavController = UINavigationController()
-    var isMan: Bool = true
-    var titleText: String?
+    var isMan: Bool
+    var titleText: String
     
     init(navigationController: UINavigationController, titleText: String, isMan: Bool) {
         self.navigationController = navigationController
         self.titleText = titleText
         self.isMan = isMan
     }
-    
     
     func start() {
         let homeCoordinator = HomeCoordinator(navigationController: homeNavController, titleText: titleText, isMan: isMan)

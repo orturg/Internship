@@ -49,7 +49,7 @@ final class ProfileViewController: BaseViewController {
     }
     
     private func configureVC() {
-        navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.isHidden = false
         tabBarController?.tabBar.isHidden = true
     }
     

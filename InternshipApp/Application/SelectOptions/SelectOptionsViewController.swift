@@ -9,8 +9,7 @@ import UIKit
 class SelectOptionsViewController: UIViewController {
 
     var vm: SelectOptionsViewModel?
-    
-    
+        
     lazy var containerView = {
         let containerView = SelectOptionsContainer()
         containerView.vm = vm
@@ -46,8 +45,8 @@ class SelectOptionsViewController: UIViewController {
         NSLayoutConstraint.activate([
             containerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             containerView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            containerView.widthAnchor.constraint(equalToConstant: Constants.alertContainerViewWidth),
-            containerView.heightAnchor.constraint(equalToConstant: Constants.emptyAlertHeight)
+            containerView.widthAnchor.constraint(equalToConstant: Constants.selectOptionsContainerWidth),
+            containerView.heightAnchor.constraint(equalToConstant: Constants.selectOptionsContainerHeight)
         ])
     }
 }

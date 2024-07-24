@@ -17,6 +17,9 @@
 		723C8E802C369FA6000C19BA /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 723C8E7F2C369FA6000C19BA /* HomeViewController.xib */; };
 		723C8E832C36D7AF000C19BA /* TextValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723C8E822C36D7AF000C19BA /* TextValues.swift */; };
 		723C8E862C36D895000C19BA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723C8E852C36D895000C19BA /* Constants.swift */; };
+		724C38D62C50CC2300DA1495 /* PopupTransitioningPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724C38D52C50CC2300DA1495 /* PopupTransitioningPresentationController.swift */; };
+		724C38D82C50CC4300DA1495 /* PopupTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724C38D72C50CC4300DA1495 /* PopupTransitioningDelegate.swift */; };
+		724C38DA2C50D81700DA1495 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724C38D92C50D81700DA1495 /* TabBarViewModel.swift */; };
 		72557E912C415A74002625AA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72557E8F2C415A74002625AA /* LoginViewController.swift */; };
 		72557E922C415A74002625AA /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72557E902C415A74002625AA /* LoginViewController.xib */; };
 		72557E942C415A7F002625AA /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72557E932C415A7F002625AA /* LoginViewModel.swift */; };
@@ -229,6 +232,9 @@
 		723C8E7F2C369FA6000C19BA /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		723C8E822C36D7AF000C19BA /* TextValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextValues.swift; sourceTree = "<group>"; };
 		723C8E852C36D895000C19BA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		724C38D52C50CC2300DA1495 /* PopupTransitioningPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupTransitioningPresentationController.swift; sourceTree = "<group>"; };
+		724C38D72C50CC4300DA1495 /* PopupTransitioningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupTransitioningDelegate.swift; sourceTree = "<group>"; };
+		724C38D92C50D81700DA1495 /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
 		72557E8F2C415A74002625AA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		72557E902C415A74002625AA /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		72557E932C415A7F002625AA /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -485,6 +491,15 @@
 				727269812C368966004BF6B6 /* CustomTextField.xib */,
 			);
 			path = CustomTextField;
+			sourceTree = "<group>";
+		};
+		724C38D42C50CC0D00DA1495 /* CustomTransition */ = {
+			isa = PBXGroup;
+			children = (
+				724C38D52C50CC2300DA1495 /* PopupTransitioningPresentationController.swift */,
+				724C38D72C50CC4300DA1495 /* PopupTransitioningDelegate.swift */,
+			);
+			path = CustomTransition;
 			sourceTree = "<group>";
 		};
 		72557E8E2C415A4D002625AA /* Login */ = {
@@ -844,6 +859,7 @@
 				729BB3CF2C3922BB00F06383 /* TabBarController.swift */,
 				729BB3D02C3922BB00F06383 /* TabBarController.xib */,
 				729BB3F92C39287C00F06383 /* TabBarCoordinator.swift */,
+				724C38D92C50D81700DA1495 /* TabBarViewModel.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -893,6 +909,7 @@
 		72C2C0692C4FCFD70091C256 /* SelectOptions */ = {
 			isa = PBXGroup;
 			children = (
+				724C38D42C50CC0D00DA1495 /* CustomTransition */,
 				72C2C06A2C4FCFFD0091C256 /* SelectOptionsViewController.swift */,
 				72C2C06C2C4FD00D0091C256 /* SelectOptionsViewModel.swift */,
 				72C2C06E2C4FD01A0091C256 /* SelectOptionsCoordinator.swift */,
@@ -1171,6 +1188,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				724C38DA2C50D81700DA1495 /* TabBarViewModel.swift in Sources */,
 				723C8E832C36D7AF000C19BA /* TextValues.swift in Sources */,
 				726988CD2C3D446700124AD3 /* SignUpCoordinator.swift in Sources */,
 				72C2C0712C4FD02A0091C256 /* SelectOptionsContainer.swift in Sources */,
@@ -1195,6 +1213,7 @@
 				729BB3E12C39258F00F06383 /* ProgressViewModel.swift in Sources */,
 				72F3F15A2C4694320034B823 /* ResetPasswordViewController.swift in Sources */,
 				7272697A2C35317A004BF6B6 /* CustomSwitch.swift in Sources */,
+				724C38D62C50CC2300DA1495 /* PopupTransitioningPresentationController.swift in Sources */,
 				720119342C478EB00075CDF6 /* CustomAlertViewModel.swift in Sources */,
 				727107212C3AC29F0036E9AC /* FirebaseService.swift in Sources */,
 				727269802C35ABA7004BF6B6 /* CustomRadioButton.swift in Sources */,
@@ -1208,6 +1227,7 @@
 				72C2C06F2C4FD01A0091C256 /* SelectOptionsCoordinator.swift in Sources */,
 				727AE37C2C4E1FFB00F8A2AD /* ProfileViewController.swift in Sources */,
 				7284E2162C3035880081F8D1 /* HomeViewModel.swift in Sources */,
+				724C38D82C50CC4300DA1495 /* PopupTransitioningDelegate.swift in Sources */,
 				7284E1EE2C2FFA8E0081F8D1 /* AppDelegate.swift in Sources */,
 				729EEF722C4ECA0E00A6DA80 /* EmptyCustomAlertVC.swift in Sources */,
 				72557E912C415A74002625AA /* LoginViewController.swift in Sources */,

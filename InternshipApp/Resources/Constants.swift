@@ -78,4 +78,6 @@ enum Constants {
     static let saveButtonLeadingPadding: CGFloat = 93
     static let saveButtonTitleTrailingPadding: CGFloat = 16
     static let saveButtonHeight: CGFloat = 28
+    static let selectOptionsContainerWidth: CGFloat = 328
+    static let selectOptionsContainerHeight: CGFloat = 656
 }

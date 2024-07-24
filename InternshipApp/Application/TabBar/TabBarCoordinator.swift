@@ -25,6 +25,7 @@ final class TabBarCoordinator: Coordinator {
     
     func start() {
         let homeCoordinator = HomeCoordinator(navigationController: homeNavController, titleText: titleText, isMan: isMan)
+        
         homeCoordinator.start()
         
         let progressCoordinator = ProgressCoordinator(navigationController: progressNavController)

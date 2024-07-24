@@ -11,6 +11,15 @@ class SelectOptionsContainer: UIView {
     
     var vm: SelectOptionsViewModel?
     
+    init() {
+        super.init(frame: .zero)
+        configure()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     private func configure() {
         configureContainer()
         setupSubviews()
@@ -28,11 +37,12 @@ class SelectOptionsContainer: UIView {
     
     
     private func setupSubviews() {
-        
-    }
 
+    }
+    
     
     private func setupLayoutConstraints() {
-        
+
     }
 }
+

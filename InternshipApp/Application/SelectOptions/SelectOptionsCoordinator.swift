@@ -10,6 +10,7 @@ import UIKit
 class SelectOptionsCoordinator: Coordinator {
     
     var navigationController: UINavigationController
+    let popupTransitioningDelegate = PopupTransitioningDelegate()
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -21,6 +22,9 @@ class SelectOptionsCoordinator: Coordinator {
         
         selectOptionsVC.vm = selectOptionsVM
         selectOptionsVC.vm?.coordinator = self
+        
+        selectOptionsVC.modalPresentationStyle = .custom
+        selectOptionsVC.transitioningDelegate = popupTransitioningDelegate
         
         navigationController.present(selectOptionsVC, animated: true)
     }

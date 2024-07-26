@@ -33,8 +33,8 @@ final class ProfileViewController: BaseViewController {
         super.viewDidLoad()
         vm?.getData(vc: self) { [weak self] in
             guard let self else { return }
-            tableView.reloadData()
             self.configure()
+            //            tableView.reloadData()
         }
         
     }
@@ -46,8 +46,8 @@ final class ProfileViewController: BaseViewController {
         //        guard let vm else { return }
         //        print("Options: ")
         //        vm.cells.forEach { print($0.optionLabel.text) }
-        tableView.reloadData()
         configure()
+        //        tableView.reloadData()
     }
     
     
@@ -112,8 +112,8 @@ final class ProfileViewController: BaseViewController {
     @objc private func saveButtonAction() {
         guard let vm else { return }
         
-        vm.nameTextFieldText = nameTextField.getText()
-        vm.updateTextFields(with: vm.textFieldCells)
+        //        vm.nameTextFieldText = nameTextField.getText()
+        //        vm.updateTextFields(with: vm.textFieldCells)
         
         vm.saveButtonAction(saveButton: saveButton, nameTextField: nameTextField, vc: self, navigationController: navigationController)
         vm.updateAvatar(saveButton: saveButton, vc: self, navigationController: navigationController)
@@ -135,6 +135,15 @@ final class ProfileViewController: BaseViewController {
                 textFieldCell.setUnitsText(text: cell.textField.titleLabel.text == "Weight" ? "kg" : "cm")
                 textFieldCell.customSwitch.isOn = cell.customSwitch.isOn
                 vm?.textFieldCells.append(textFieldCell)
+                
+                if (textFieldCell.textField.titleLabel.text == "Weight" || textFieldCell.textField.titleLabel.text == "Height") && Int(textFieldCell.textField.getText()) ?? 0 > 300 {
+                    saveButton.set(.appSecondary)
+                    vm?.isTableViewActive = false
+                } else if Int(textFieldCell.textField.getText()) ?? 0 > 100 {
+                    saveButton.set(.appSecondary)
+                    vm?.isTableViewActive = false
+                }
+                
             }
         }
     }
@@ -154,7 +163,6 @@ final class ProfileViewController: BaseViewController {
         contentView.addSubview(avatarImageView)
         contentView.addSubview(nameTextField)
         
-        //        contentView.addSubview(addOptionsButton)
         
         view.addSubview(backButton)
         view.addSubview(saveButton)
@@ -245,18 +253,18 @@ final class ProfileViewController: BaseViewController {
     
     @objc private func tableCellTextFieldDidChange(index: Int, text: String) {
         guard let vm else { return }
-//        guard nameTextField.getText() != vm.nameTextFieldText && !nameTextField.getText().isEmpty else {
-//            if nameTextField.getText().isEmpty && vm.isAvatarChanged {
-//                saveButton.set(.appYellow)
-//                return
-//            }
-//            saveButton.set(.appSecondary)
-//            vm.isTextChanged = false
-//            return
-//        }
-//        vm.isTextChanged = true
-//        saveButton.set(.appYellow)
-//        vm.updateOptionsAction(navigationController: navigationController)
+        //        guard nameTextField.getText() != vm.nameTextFieldText && !nameTextField.getText().isEmpty else {
+        //            if nameTextField.getText().isEmpty && vm.isAvatarChanged {
+        //                saveButton.set(.appYellow)
+        //                return
+        //            }
+        //            saveButton.set(.appSecondary)
+        //            vm.isTextChanged = false
+        //            return
+        //        }
+        //        vm.isTextChanged = true
+        //        saveButton.set(.appYellow)
+        //        vm.updateOptionsAction(navigationController: navigationController)
     }
     
     
@@ -324,7 +332,6 @@ final class ProfileViewController: BaseViewController {
             saveButton.heightAnchor.constraint(equalToConstant: Constants.saveButtonHeight),
             
             
-            
             addOptionsButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             addOptionsButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -Constants.addOptionsBottomAnchor),
         ])
@@ -335,7 +342,7 @@ final class ProfileViewController: BaseViewController {
     
     func layoutTableView() {
         guard let vm else { return }
-        tableView.reloadData()
+        //        tableView.reloadData()
         
         if !cells.isEmpty || !vm.textFieldCells.isEmpty {
             instructionLabel.removeFromSuperview()
@@ -382,7 +389,7 @@ extension ProfileViewController: ProfileVCDelegate {
         cells.append(cell)
         tableView.reloadData()
     }
-
+    
     func remove(_ cell: OptionCell) {
         cells.removeAll { $0.optionLabel.text == cell.optionLabel.text }
         vm?.textFieldCells.removeAll { $0.textField.titleLabel.text == cell.optionLabel.text }
@@ -399,9 +406,9 @@ extension ProfileViewController: UITableViewDelegate {
 
 extension ProfileViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        guard let vm else { return 0 }
-//        return vm.textFieldCells.count
-//        print(vm?.textFieldCells.count)
+        //        guard let vm else { return 0 }
+        //        return vm.textFieldCells.count
+        //        print(vm?.textFieldCells.count)
         print(cells.count)
         return cells.count
     }
@@ -421,8 +428,8 @@ extension ProfileViewController: UITableViewDataSource {
         
         
         if !vm.textFieldCells.contains(where: { $0.textField.titleLabel.text == cell.textField.titleLabel.text }) {
-                vm.textFieldCells.append(cell)
-            }
+            vm.textFieldCells.append(cell)
+        }
         
         cell.setTextFieldText(text: vm.textFieldCells[indexPath.row].textField.getText())
         cell.setSwitch(isOn: vm.textFieldCells[indexPath.row].customSwitch.isOn)
@@ -433,14 +440,14 @@ extension ProfileViewController: UITableViewDataSource {
 
 extension ProfileViewController: TextFieldCellDelegate {
     func textFieldCell(_ cell: TextFieldCell, didChangeText text: String) {
-//        guard let vm else { return }
+        //        guard let vm else { return }
         
         var isTextChanged = false
         for i in 0..<cells.count {
             let indexPath = IndexPath(row: i, section: 0)
             if let cell = tableView.cellForRow(at: indexPath) as? TextFieldCell {
                 if cell.textField.textField.text != text {
-                    vm?.textFieldCells[indexPath.row].setTextFieldText(text: cell.textField.textField.text ?? "")
+                    //                    vm?.textFieldCells[indexPath.row].setTextFieldText(text: cell.textField.textField.text ?? "")
                     isTextChanged = true
                     break
                 }
@@ -455,4 +462,11 @@ extension ProfileViewController: TextFieldCellDelegate {
             vm?.isTableViewActive = false
         }
     }
+    
+    
+    func textFieldCell(_ cell: TextFieldCell, didChangeSwitchValue isOn: Bool) {
+        saveButton.set(.appYellow)
+        vm?.isTableViewActive = true
+    }
+    
 }

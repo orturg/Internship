@@ -94,11 +94,11 @@ final class ProfileViewModel {
     }
     
     
-    func updateTextFields(with cells: [TextFieldCell]) {
-        for (index, cell) in cells.enumerated() {
-            textFieldCells[index].setTextFieldText(text: cell.textField.getText())
-        }
-    }
+//    func updateTextFields(with cells: [TextFieldCell]) {
+//        for (index, cell) in cells.enumerated() {
+//            textFieldCells[index].setTextFieldText(text: cell.textField.getText())
+//        }
+//    }
     
     
     func getUser(vc: ProfileViewController) {

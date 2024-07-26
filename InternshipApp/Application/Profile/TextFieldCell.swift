@@ -9,7 +9,9 @@ import UIKit
 
 protocol TextFieldCellDelegate: AnyObject {
     func textFieldCell(_ cell: TextFieldCell, didChangeText text: String)
+    func textFieldCell(_ cell: TextFieldCell, didChangeSwitchValue isOn: Bool)
 }
+
 
 class TextFieldCell: UITableViewCell {
     static let reuseID = "TextFieldCell"
@@ -57,6 +59,12 @@ class TextFieldCell: UITableViewCell {
     
     private func configureCustomSwitch() {
         customSwitch.isUserInteractionEnabled = true
+        customSwitch.addTarget(self, action: #selector(switchValueChanged), for: .valueChanged)
+    }
+    
+    
+    @objc private func switchValueChanged() {
+        delegate?.textFieldCell(self, didChangeSwitchValue: customSwitch.isOn)
     }
     
     
@@ -98,9 +106,10 @@ class TextFieldCell: UITableViewCell {
             unitsLabel.heightAnchor.constraint(equalToConstant: 22),
             
             customSwitch.bottomAnchor.constraint(equalTo: textField.bottomAnchor),
-            customSwitch.trailingAnchor.constraint(equalTo: trailingAnchor)
+            customSwitch.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5)
         ])
     }
+    
     
     @objc private func textFieldDidChange() {
         delegate?.textFieldCell(self, didChangeText: textField.textField.text ?? "")

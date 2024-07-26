@@ -135,6 +135,11 @@ final class ProfileViewController: BaseViewController {
                     vm?.isTableViewActive = false
                 }
                 
+                if Int(textFieldCell.textField.titleLabel.text!) == 0 || textFieldCell.textField.titleLabel.text == nil {
+                    saveButton.set(.appSecondary)
+                    vm?.isTableViewActive = false
+                }
+                
             }
         }
     }

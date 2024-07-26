@@ -123,6 +123,7 @@ final class ProfileViewModel {
     func updateOptionTextFields(saveButton: CustomButton, textFields: [TextFieldCell], vc: UIViewController, navigationController: UINavigationController?) {
         guard let navigationController else { return }
         
+        
         if isTableViewActive {
             FirebaseService.shared.updateOptionData(textFields: textFields) { result in
                 switch result {

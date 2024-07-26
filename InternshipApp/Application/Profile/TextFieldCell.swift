@@ -98,7 +98,7 @@ class TextFieldCell: UITableViewCell {
         NSLayoutConstraint.activate([
             textField.topAnchor.constraint(equalTo: topAnchor),
             textField.leadingAnchor.constraint(equalTo: leadingAnchor),
-            textField.widthAnchor.constraint(equalToConstant: Constants.textFieldBorderWidth),
+            textField.widthAnchor.constraint(equalToConstant: Constants.textFieldCellTextFieldWidth),
             
             unitsLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             unitsLabel.leadingAnchor.constraint(equalTo: textField.trailingAnchor, constant: Constants.unitsLabelLeadingAnchor),

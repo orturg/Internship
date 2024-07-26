@@ -11,7 +11,7 @@ class SelectOptionsViewController: UIViewController {
     var vm: SelectOptionsViewModel?
         
     lazy var containerView = {
-        let containerView = SelectOptionsContainer()
+        let containerView = SelectOptionsContainer(vc: self)
         containerView.vm = vm
         return containerView
     }()

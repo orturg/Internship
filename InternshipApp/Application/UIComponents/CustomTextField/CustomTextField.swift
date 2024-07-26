@@ -12,6 +12,11 @@ final class CustomTextField: UIView {
     @IBOutlet weak var titleLabel: UILabel!
     var placeholderText: String?
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        configure()
+    }
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         configure()
@@ -91,6 +96,19 @@ final class CustomTextField: UIView {
     func setTextFieldText(text: String) {
         textField.text = text
     }
+    
+    
+//    func setTextFieldWidth(width: CGFloat, height: CGFloat) {
+//        textField.translatesAutoresizingMaskIntoConstraints = false
+//        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+//        NSLayoutConstraint.activate([
+//            textField.widthAnchor.constraint(equalToConstant: width),
+//            textField.heightAnchor.constraint(equalToConstant: height),
+//            
+//            titleLabel.bottomAnchor.constraint(equalTo: textField.topAnchor, constant: -10),
+//            titleLabel.leadingAnchor.constraint(equalTo: textField.leadingAnchor)
+//        ])
+//    }
     
     
     @IBAction func textfieldTapped(_ sender: UITextField) {

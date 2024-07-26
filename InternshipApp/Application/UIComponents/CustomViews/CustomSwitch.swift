@@ -30,5 +30,6 @@ final class CustomSwitch: UISwitch {
     private func configure() {
         onTintColor = color
         translatesAutoresizingMaskIntoConstraints = false
+        isOn = true
     }
 }

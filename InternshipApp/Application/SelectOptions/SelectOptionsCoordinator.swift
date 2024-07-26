@@ -11,6 +11,7 @@ class SelectOptionsCoordinator: Coordinator {
     
     var navigationController: UINavigationController
     let popupTransitioningDelegate = PopupTransitioningDelegate()
+    weak var delegate: ProfileVCDelegate?
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -22,6 +23,8 @@ class SelectOptionsCoordinator: Coordinator {
         
         selectOptionsVC.vm = selectOptionsVM
         selectOptionsVC.vm?.coordinator = self
+        
+        selectOptionsVC.vm?.delegate = delegate
         
         selectOptionsVC.modalPresentationStyle = .custom
         selectOptionsVC.transitioningDelegate = popupTransitioningDelegate

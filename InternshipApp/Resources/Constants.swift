@@ -80,4 +80,13 @@ enum Constants {
     static let saveButtonHeight: CGFloat = 28
     static let selectOptionsContainerWidth: CGFloat = 328
     static let selectOptionsContainerHeight: CGFloat = 656
+    static let selectOptionsContainerTitleSize: CGFloat = 18
+    static let selectOptionsContainerTopAnchor: CGFloat = 19
+    static let selectOptionsContainerTitleWidth: CGFloat = 112
+    static let selectOptionsContainerTitleHeight: CGFloat = 28
+    static let selectOptionsContainerButtonWidth: CGFloat = 120
+    static let selectOptionsContainerButtonHeight: CGFloat = 40
+    static let selectOptionsContainerCancelButtonLeadingAnchor: CGFloat = 11
+    static let selectOptionsContainerButtonBottomAnchor: CGFloat = 8
+    static let selectOptionsContainerSelectButtonTrailingAnchor: CGFloat = 18
 }

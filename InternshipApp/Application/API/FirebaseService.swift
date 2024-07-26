@@ -77,16 +77,41 @@ class FirebaseService {
         let imageData = image.compress(to: 1024)
         
         collection.document(id).updateData([
-            "profileImage": imageData
+            "profileImage" : imageData
         ]) { error in
             if let error {
-                print("error1")
                 completion(.failure(.errorUpdatingUser))
             } else {
                 completion(.success(nil))
             }
         }
     }
+    
+    
+    func updateOptionData(textFields: [TextFieldCell], completion: @escaping (Result<String?, DataBaseError>) -> Void) {
+        
+        var dataDic: [[String : Any]] = []
+        
+        textFields.forEach { dataDic.append([
+            "optionName": $0.textField.titleLabel.text,
+            "value": Int($0.textField.getText()),
+            "isShown": $0.customSwitch.isOn
+        ]) }
+        
+        
+        let data: [String : Any] = ["userOptions" : dataDic]
+        
+        
+        
+        collection.document(id).updateData(data) { error in
+            if let error {
+                completion(.failure(.errorUpdatingUser))
+            } else {
+                completion(.success(nil))
+            }
+        }
+    }
+    
     
     
     func getUser(completion: @escaping (Result<RegistrationData?, DataBaseError>) -> Void) {
@@ -123,6 +148,42 @@ class FirebaseService {
             }
         }
     }
+    
+    
+    func getOptionData(completion: @escaping (Result<[OptionData]?, DataBaseError>) -> Void) {
+        guard let currentUser = Auth.auth().currentUser else {
+            completion(.failure(.errorGettingUser))
+            return
+        }
+        
+        id = currentUser.uid
+        
+        collection.document(id).getDocument { documentSnapshot, error in
+            if let error {
+                completion(.failure(.errorGettingUser))
+                return
+            }
+            
+            guard let documentSnapshot = documentSnapshot, documentSnapshot.exists else {
+                completion(.failure(.errorGettingUser))
+                return
+            }
+            
+            if let selectedOptionsData = documentSnapshot.get("userOptions") as? [[String: Any]] {
+                do {
+                    let jsonData = try JSONSerialization.data(withJSONObject: selectedOptionsData, options: [])
+                    let userOptions = try JSONDecoder().decode([OptionData].self, from: jsonData)
+                    completion(.success(userOptions))
+                } catch {
+                    completion(.failure(.errorGettingUser))
+                }
+            } else {
+                completion(.failure(.errorGettingUser))
+            }
+        }
+    }
+
+    
     
     
     func login(email: String, password: String, completion: @escaping(Result<String?, DataBaseError>) -> Void) {
@@ -190,5 +251,5 @@ class FirebaseService {
             }
         }
     }
-
+    
 }

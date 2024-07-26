@@ -51,4 +51,6 @@ enum TextValues {
     static let profile = "Profile"
     static let successSavedProfile = "Profile has been saved!"
     static let save = "Save"
+    static let select = "Select"
+    static let selectOption = "Select Option"
 }

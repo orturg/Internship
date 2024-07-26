@@ -14,4 +14,5 @@ struct RegistrationData {
     var password: String
     var id: String
     var profileImage: Data? = nil
+//    var options: [OptionData]?
 }

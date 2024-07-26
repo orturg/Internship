@@ -98,10 +98,7 @@ class FirebaseService {
             "isShown": $0.customSwitch.isOn
         ]) }
         
-        
         let data: [String : Any] = ["userOptions" : dataDic]
-        
-        
         
         collection.document(id).updateData(data) { error in
             if let error {
@@ -111,7 +108,6 @@ class FirebaseService {
             }
         }
     }
-    
     
     
     func getUser(completion: @escaping (Result<RegistrationData?, DataBaseError>) -> Void) {
@@ -169,9 +165,9 @@ class FirebaseService {
                 return
             }
             
-            if let selectedOptionsData = documentSnapshot.get("userOptions") as? [[String: Any]] {
+            if let optionsData = documentSnapshot.get("userOptions") as? [[String: Any]] {
                 do {
-                    let jsonData = try JSONSerialization.data(withJSONObject: selectedOptionsData, options: [])
+                    let jsonData = try JSONSerialization.data(withJSONObject: optionsData, options: [])
                     let userOptions = try JSONDecoder().decode([OptionData].self, from: jsonData)
                     completion(.success(userOptions))
                 } catch {
@@ -182,8 +178,6 @@ class FirebaseService {
             }
         }
     }
-
-    
     
     
     func login(email: String, password: String, completion: @escaping(Result<String?, DataBaseError>) -> Void) {
@@ -251,5 +245,4 @@ class FirebaseService {
             }
         }
     }
-    
 }

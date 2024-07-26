@@ -89,4 +89,23 @@ enum Constants {
     static let selectOptionsContainerCancelButtonLeadingAnchor: CGFloat = 11
     static let selectOptionsContainerButtonBottomAnchor: CGFloat = 8
     static let selectOptionsContainerSelectButtonTrailingAnchor: CGFloat = 18
+    static let textFieldCellHeight: CGFloat = 90
+    static let profileVCTableViewBottomAnchor: CGFloat = 20
+    static let unitsLabelSize: CGFloat = 18
+    static let textFieldCellTextFieldWidth: CGFloat = 114
+    static let unitsLabelLeadingAnchor: CGFloat = 10
+    static let unitsLabelWidth: CGFloat = 26
+    static let unitsLabelHeight: CGFloat = 22
+    static let textFieldCellCustomSwitchTrailingAnchor: CGFloat = 5
+    static let selectOptionsTableViewPadding: CGFloat = 10
+    static let selectOptionsCellHeight: CGFloat = 40
+    static let optionCellOptionLabelSize: CGFloat = 18
+    static let optionCellButtonLeadingAnchor: CGFloat = 20
+    static let optionCellButtonWidth: CGFloat = 16
+    static let optionCellButtonHeight: CGFloat = 16
+    static let optionCellOptionLabelLeadingAnchor: CGFloat = 18
+    static let programmaticCustomTextFieldTitleLabelSize: CGFloat = 18
+    static let programmaticCustomTextFieldHeight: CGFloat = 70
+    static let programmaticCustomTextFieldTitleLabelHeight: CGFloat = 7
+    static let programmaticCustomTextFieldTitleTextFieldHeight: CGFloat = 42
 }

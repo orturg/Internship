@@ -34,7 +34,6 @@ final class ProfileViewController: BaseViewController {
         vm?.getData(vc: self) { [weak self] in
             guard let self else { return }
             self.configure()
-            //            tableView.reloadData()
         }
         
     }
@@ -43,11 +42,7 @@ final class ProfileViewController: BaseViewController {
         super.viewWillAppear(animated)
         vm?.getUser(vc: self)
         
-        //        guard let vm else { return }
-        //        print("Options: ")
-        //        vm.cells.forEach { print($0.optionLabel.text) }
         configure()
-        //        tableView.reloadData()
     }
     
     
@@ -62,7 +57,6 @@ final class ProfileViewController: BaseViewController {
         configureTextFields()
         configureInstructionLabel()
         configureTableView()
-        configureCellTextFields()
         configureAddOptionsButton()
         setupSubviews()
         setupLayoutConstraints()
@@ -112,9 +106,6 @@ final class ProfileViewController: BaseViewController {
     @objc private func saveButtonAction() {
         guard let vm else { return }
         
-        //        vm.nameTextFieldText = nameTextField.getText()
-        //        vm.updateTextFields(with: vm.textFieldCells)
-        
         vm.saveButtonAction(saveButton: saveButton, nameTextField: nameTextField, vc: self, navigationController: navigationController)
         vm.updateAvatar(saveButton: saveButton, vc: self, navigationController: navigationController)
         updateCells()
@@ -132,11 +123,11 @@ final class ProfileViewController: BaseViewController {
                 let textFieldCell = TextFieldCell()
                 textFieldCell.setTextFieldTitle(text: cell.textField.titleLabel.text ?? "")
                 textFieldCell.setTextFieldText(text: cell.textField.getText())
-                textFieldCell.setUnitsText(text: cell.textField.titleLabel.text == "Weight" ? "kg" : "cm")
+                textFieldCell.setUnitsText(text: cell.textField.titleLabel.text == TextValues.weight ? TextValues.kg : TextValues.cm)
                 textFieldCell.customSwitch.isOn = cell.customSwitch.isOn
                 vm?.textFieldCells.append(textFieldCell)
                 
-                if (textFieldCell.textField.titleLabel.text == "Weight" || textFieldCell.textField.titleLabel.text == "Height") && Int(textFieldCell.textField.getText()) ?? 0 > 300 {
+                if (textFieldCell.textField.titleLabel.text == TextValues.weight || textFieldCell.textField.titleLabel.text == TextValues.height) && Int(textFieldCell.textField.getText()) ?? 0 > 300 {
                     saveButton.set(.appSecondary)
                     vm?.isTableViewActive = false
                 } else if Int(textFieldCell.textField.getText()) ?? 0 > 100 {
@@ -150,8 +141,6 @@ final class ProfileViewController: BaseViewController {
     
     
     private func setupSubviews() {
-        guard let vm else { return }
-        
         view.addSubview(gradient)
         view.addSubview(scrollView)
         
@@ -225,7 +214,7 @@ final class ProfileViewController: BaseViewController {
     
     private func configureTableView() {
         tableView.frame = view.bounds
-        tableView.rowHeight = 90
+        tableView.rowHeight = Constants.textFieldCellHeight
         tableView.backgroundColor = .black
         
         tableView.register(TextFieldCell.self, forCellReuseIdentifier: TextFieldCell.reuseID)
@@ -235,36 +224,6 @@ final class ProfileViewController: BaseViewController {
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
         vm?.tableView = tableView
-    }
-    
-    
-    private func configureCellTextFields() {
-        nameTextField.textField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
-        
-        for i in 0..<cells.count {
-            let indexPath = IndexPath(row: i, section: 0)
-            if let cell = tableView.cellForRow(at: indexPath) as? TextFieldCell {
-                cell.textField.textField.addTarget(self, action: #selector(tableCellTextFieldDidChange), for: .editingChanged)
-            }
-        }
-    }
-    
-    
-    
-    @objc private func tableCellTextFieldDidChange(index: Int, text: String) {
-        guard let vm else { return }
-        //        guard nameTextField.getText() != vm.nameTextFieldText && !nameTextField.getText().isEmpty else {
-        //            if nameTextField.getText().isEmpty && vm.isAvatarChanged {
-        //                saveButton.set(.appYellow)
-        //                return
-        //            }
-        //            saveButton.set(.appSecondary)
-        //            vm.isTextChanged = false
-        //            return
-        //        }
-        //        vm.isTextChanged = true
-        //        saveButton.set(.appYellow)
-        //        vm.updateOptionsAction(navigationController: navigationController)
     }
     
     
@@ -342,7 +301,6 @@ final class ProfileViewController: BaseViewController {
     
     func layoutTableView() {
         guard let vm else { return }
-        //        tableView.reloadData()
         
         if !cells.isEmpty || !vm.textFieldCells.isEmpty {
             instructionLabel.removeFromSuperview()
@@ -352,7 +310,7 @@ final class ProfileViewController: BaseViewController {
                 tableView.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: Constants.instructionLabelTopAnchor),
                 tableView.leadingAnchor.constraint(equalTo: nameTextField.leadingAnchor),
                 tableView.trailingAnchor.constraint(equalTo: nameTextField.trailingAnchor),
-                tableView.bottomAnchor.constraint(equalTo: addOptionsButton.topAnchor, constant: -20),
+                tableView.bottomAnchor.constraint(equalTo: addOptionsButton.topAnchor, constant: -Constants.profileVCTableViewBottomAnchor),
             ])
         } else {
             tableView.removeFromSuperview()
@@ -406,11 +364,7 @@ extension ProfileViewController: UITableViewDelegate {
 
 extension ProfileViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //        guard let vm else { return 0 }
-        //        return vm.textFieldCells.count
-        //        print(vm?.textFieldCells.count)
-        print(cells.count)
-        return cells.count
+        cells.count
     }
     
     
@@ -422,7 +376,7 @@ extension ProfileViewController: UITableViewDataSource {
         let optionTitle = cells[indexPath.row].optionLabel.text
         guard let optionTitle else { return UITableViewCell() }
         cell.setTextFieldTitle(text: optionTitle)
-        cell.setUnitsText(text: optionTitle == "Weight" ? "kg" : "cm")
+        cell.setUnitsText(text: optionTitle == TextValues.weight ? TextValues.kg : TextValues.cm)
         
         cell.delegate = self
         
@@ -440,14 +394,12 @@ extension ProfileViewController: UITableViewDataSource {
 
 extension ProfileViewController: TextFieldCellDelegate {
     func textFieldCell(_ cell: TextFieldCell, didChangeText text: String) {
-        //        guard let vm else { return }
         
         var isTextChanged = false
         for i in 0..<cells.count {
             let indexPath = IndexPath(row: i, section: 0)
             if let cell = tableView.cellForRow(at: indexPath) as? TextFieldCell {
                 if cell.textField.textField.text != text {
-                    //                    vm?.textFieldCells[indexPath.row].setTextFieldText(text: cell.textField.textField.text ?? "")
                     isTextChanged = true
                     break
                 }
@@ -468,5 +420,4 @@ extension ProfileViewController: TextFieldCellDelegate {
         saveButton.set(.appYellow)
         vm?.isTableViewActive = true
     }
-    
 }

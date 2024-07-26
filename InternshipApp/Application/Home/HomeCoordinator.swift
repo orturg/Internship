@@ -23,8 +23,6 @@ final class HomeCoordinator: Coordinator {
         let homeVC = HomeViewController()
         let homeVM = HomeViewModel(titleText: titleText, isMan: isMan)
         
-//        navigationController = UINavigationController(rootViewController: homeVC)
-        
         homeVC.vm = homeVM
         homeVC.vm?.homeCoordinator = self
         

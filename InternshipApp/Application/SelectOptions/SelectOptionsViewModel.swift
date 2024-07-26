@@ -12,6 +12,7 @@ class SelectOptionsViewModel {
     weak var delegate: ProfileVCDelegate?
     var tableView: UITableView?
     
+    
     func cancelButtonAction(vc: UIViewController) {
         vc.dismiss(animated: true)
     }
@@ -34,9 +35,7 @@ class SelectOptionsViewModel {
             if let cell = tableView.cellForRow(at: indexPath) as? OptionCell, !cell.button.isActive {
                 delegate.remove(cell)
             }
-            
         }
-        
         self.delegate?.viewWillAppear(true)
     }
 }

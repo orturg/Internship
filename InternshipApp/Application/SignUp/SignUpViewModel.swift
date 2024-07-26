@@ -118,7 +118,6 @@ final class SignUpViewModel {
         } else {
             return true
         }
-        
     }
     
     

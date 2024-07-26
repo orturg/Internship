@@ -9,7 +9,7 @@ import UIKit
 
 class OptionCell: UITableViewCell {
 
-    static let reuseID = "OptionCell"
+    static let reuseID = TextValues.optionCellReuseID
     let button = CustomCheckboxSwitch(color: .appYellow)
     let optionLabel = UILabel()
     
@@ -39,7 +39,7 @@ class OptionCell: UITableViewCell {
     
     
     private func configureOptionLabel() {
-        optionLabel.font = UIFont(name: TextValues.sairaRegular, size: 18)
+        optionLabel.font = UIFont(name: TextValues.sairaRegular, size: Constants.optionCellOptionLabelSize)
         optionLabel.textColor = .appWhite
         optionLabel.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -69,12 +69,12 @@ class OptionCell: UITableViewCell {
     private func setupLayoutConstraints() {
         NSLayoutConstraint.activate([
             button.centerYAnchor.constraint(equalTo: centerYAnchor),
-            button.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            button.widthAnchor.constraint(equalToConstant: 16),
-            button.heightAnchor.constraint(equalToConstant: 16),
+            button.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.optionCellButtonLeadingAnchor),
+            button.widthAnchor.constraint(equalToConstant: Constants.optionCellButtonWidth),
+            button.heightAnchor.constraint(equalToConstant: Constants.optionCellButtonHeight),
             
             optionLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            optionLabel.leadingAnchor.constraint(equalTo: button.trailingAnchor, constant: 18),
+            optionLabel.leadingAnchor.constraint(equalTo: button.trailingAnchor, constant: Constants.optionCellOptionLabelLeadingAnchor),
             optionLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
             optionLabel.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])

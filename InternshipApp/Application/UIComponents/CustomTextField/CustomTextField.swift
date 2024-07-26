@@ -98,19 +98,6 @@ final class CustomTextField: UIView {
     }
     
     
-//    func setTextFieldWidth(width: CGFloat, height: CGFloat) {
-//        textField.translatesAutoresizingMaskIntoConstraints = false
-//        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-//        NSLayoutConstraint.activate([
-//            textField.widthAnchor.constraint(equalToConstant: width),
-//            textField.heightAnchor.constraint(equalToConstant: height),
-//            
-//            titleLabel.bottomAnchor.constraint(equalTo: textField.topAnchor, constant: -10),
-//            titleLabel.leadingAnchor.constraint(equalTo: textField.leadingAnchor)
-//        ])
-//    }
-    
-    
     @IBAction func textfieldTapped(_ sender: UITextField) {
         titleLabel.textColor = UIColor.appWhite
         textField.layer.borderColor = UIColor.appWhite.cgColor

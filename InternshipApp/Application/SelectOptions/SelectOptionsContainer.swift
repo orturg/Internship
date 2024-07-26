@@ -61,7 +61,7 @@ class SelectOptionsContainer: UIView {
     
     private func configureTableView() {
         tableView.frame = bounds
-        tableView.rowHeight = 40
+        tableView.rowHeight = Constants.selectOptionsCellHeight
         tableView.backgroundColor = .black
         
         tableView.delegate = self
@@ -109,10 +109,10 @@ class SelectOptionsContainer: UIView {
             title.widthAnchor.constraint(equalToConstant: Constants.selectOptionsContainerTitleWidth),
             title.heightAnchor.constraint(equalToConstant: Constants.selectOptionsContainerTitleHeight),
             
-            tableView.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 10),
-            tableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            tableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-            tableView.bottomAnchor.constraint(equalTo: cancelButton.topAnchor, constant: -10),
+            tableView.topAnchor.constraint(equalTo: title.bottomAnchor, constant: Constants.selectOptionsTableViewPadding),
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.selectOptionsTableViewPadding),
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constants.selectOptionsTableViewPadding),
+            tableView.bottomAnchor.constraint(equalTo: cancelButton.topAnchor, constant: -Constants.selectOptionsTableViewPadding),
             
             cancelButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.selectOptionsContainerCancelButtonLeadingAnchor),
             cancelButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Constants.selectOptionsContainerButtonBottomAnchor),
@@ -127,13 +127,13 @@ class SelectOptionsContainer: UIView {
     }
 }
 
+
 extension SelectOptionsContainer: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let cell = tableView.cellForRow(at: indexPath) as? OptionCell else { return }
         cell.toggle()
     }
 }
-
 
 extension SelectOptionsContainer: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

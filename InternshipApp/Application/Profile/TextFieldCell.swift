@@ -14,11 +14,11 @@ protocol TextFieldCellDelegate: AnyObject {
 
 
 class TextFieldCell: UITableViewCell {
-    static let reuseID = "TextFieldCell"
+    static let reuseID = TextValues.textFieldCellReuseID
     
     weak var delegate: TextFieldCellDelegate?
     
-    var textField = ProgrammaticCustomTextField(textFieldWidth: 114)
+    var textField = ProgrammaticCustomTextField()
     var unitsLabel = UILabel()
     var customSwitch = CustomSwitch(color: .appYellow)
     
@@ -52,7 +52,7 @@ class TextFieldCell: UITableViewCell {
     
     private func configureUnitsLabel() {
         unitsLabel.textColor = .appSecondary
-        unitsLabel.font = UIFont(name: TextValues.helveticaNeue, size: 18)
+        unitsLabel.font = UIFont(name: TextValues.helveticaNeue, size: Constants.unitsLabelSize)
         unitsLabel.translatesAutoresizingMaskIntoConstraints = false
     }
     
@@ -98,15 +98,15 @@ class TextFieldCell: UITableViewCell {
         NSLayoutConstraint.activate([
             textField.topAnchor.constraint(equalTo: topAnchor),
             textField.leadingAnchor.constraint(equalTo: leadingAnchor),
-            textField.widthAnchor.constraint(equalToConstant: 114),
+            textField.widthAnchor.constraint(equalToConstant: Constants.textFieldBorderWidth),
             
             unitsLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            unitsLabel.leadingAnchor.constraint(equalTo: textField.trailingAnchor, constant: 10),
-            unitsLabel.widthAnchor.constraint(equalToConstant: 26),
-            unitsLabel.heightAnchor.constraint(equalToConstant: 22),
+            unitsLabel.leadingAnchor.constraint(equalTo: textField.trailingAnchor, constant: Constants.unitsLabelLeadingAnchor),
+            unitsLabel.widthAnchor.constraint(equalToConstant: Constants.unitsLabelWidth),
+            unitsLabel.heightAnchor.constraint(equalToConstant: Constants.unitsLabelHeight),
             
             customSwitch.bottomAnchor.constraint(equalTo: textField.bottomAnchor),
-            customSwitch.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5)
+            customSwitch.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constants.textFieldCellCustomSwitchTrailingAnchor)
         ])
     }
     

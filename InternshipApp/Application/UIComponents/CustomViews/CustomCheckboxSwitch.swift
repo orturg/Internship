@@ -77,15 +77,5 @@ final class CustomCheckboxSwitch: UIButton {
             checkmarkImageView.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }
-    
-    
-//    func toggle() {
-//        backgroundColor = isActive ? color : .clear
-//        if isActive {
-//            addCheckmarkImageView()
-//        } else {
-//            checkmarkImageView.removeFromSuperview()
-//        }
-//    }
 }
 

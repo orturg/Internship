@@ -35,7 +35,7 @@ final class ProfileViewModel {
     }
     
     
-    func getData(vc: ProfileViewController, completion: @escaping () -> Void) {
+    func getData(completion: @escaping () -> Void) {
         FirebaseService.shared.getOptionData { [weak self] result in
             guard let self else { return }
             switch result {
@@ -51,7 +51,7 @@ final class ProfileViewModel {
                     let optionCell = OptionCell()
                     optionCell.set(text: $0.optionName.rawValue)
                     optionCell.setButton(isActive: $0.isShown)
-                    vc.cells.append(optionCell)
+                    self.delegate?.cells.append(optionCell)
                 }
                 completion()
             case .failure(_):
@@ -120,18 +120,21 @@ final class ProfileViewModel {
     }
     
     
-    func updateOptionTextFields(saveButton: CustomButton, textFields: [TextFieldCell], vc: UIViewController, navigationController: UINavigationController?) {
+    func updateOptionTextFields(saveButton: CustomButton, navigationController: UINavigationController?) {
         guard let navigationController else { return }
         
         
         if isTableViewActive {
-            FirebaseService.shared.updateOptionData(textFields: textFields) { result in
+            FirebaseService.shared.updateOptionData(textFields: textFieldCells) { [weak self] result in
+                guard let self else { return }
+                
                 switch result {
                 case .success(let success):
                     let alertCoordinator = CustomAlertCoordinator(navigationController: navigationController, isSuccessAlert: true, messageText: TextValues.successSavedProfile, withButtons: false, containerHeight: Constants.emptyAlertHeight, image: UIImage.success)
                     alertCoordinator.start()
                 case .failure(let failure):
-                    vc.showAlert(vc: vc, error: .errorUpdatingUser)
+                    guard let delegate else { return }
+                    self.delegate?.showAlert(vc: delegate, error: .errorUpdatingUser)
                 }
             }
         }

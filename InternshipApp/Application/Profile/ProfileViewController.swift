@@ -31,7 +31,8 @@ final class ProfileViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        vm?.getData(vc: self) { [weak self] in
+        vm?.delegate = self
+        vm?.getData { [weak self] in
             guard let self else { return }
             self.configure()
         }
@@ -65,7 +66,6 @@ final class ProfileViewController: BaseViewController {
     private func configureVC() {
         navigationController?.navigationBar.isHidden = true
         tabBarController?.tabBar.isHidden = true
-        vm?.delegate = self
     }
     
     
@@ -109,8 +109,7 @@ final class ProfileViewController: BaseViewController {
         vm.saveButtonAction(saveButton: saveButton, nameTextField: nameTextField, vc: self, navigationController: navigationController)
         vm.updateAvatar(saveButton: saveButton, vc: self, navigationController: navigationController)
         updateCells()
-        vm.updateOptionTextFields(saveButton: saveButton, textFields: vm.textFieldCells, vc: self, navigationController: navigationController)
-        
+        vm.updateOptionTextFields(saveButton: saveButton, navigationController: navigationController)
     }
     
     
@@ -127,12 +126,16 @@ final class ProfileViewController: BaseViewController {
                 textFieldCell.customSwitch.isOn = cell.customSwitch.isOn
                 vm?.textFieldCells.append(textFieldCell)
                 
-                if (textFieldCell.textField.titleLabel.text == TextValues.weight || textFieldCell.textField.titleLabel.text == TextValues.height) && Int(textFieldCell.textField.getText()) ?? 0 > 300 {
+                if (textFieldCell.textField.titleLabel.text == OptionDataName.weight.rawValue || textFieldCell.textField.titleLabel.text == OptionDataName.height.rawValue) && Int(textFieldCell.textField.getText()) ?? 0 > 300 {
                     saveButton.set(.appSecondary)
                     vm?.isTableViewActive = false
-                } else if Int(textFieldCell.textField.getText()) ?? 0 > 100 {
-                    saveButton.set(.appSecondary)
-                    vm?.isTableViewActive = false
+                }
+                
+                if (textFieldCell.textField.titleLabel.text != OptionDataName.weight.rawValue && textFieldCell.textField.titleLabel.text != OptionDataName.height.rawValue) {
+                    if Int(textFieldCell.textField.getText()) ?? 0 > 100  {
+                        saveButton.set(.appSecondary)
+                        vm?.isTableViewActive = false
+                    }
                 }
                 
                 if Int(textFieldCell.textField.titleLabel.text!) == 0 || textFieldCell.textField.titleLabel.text == nil {
@@ -348,6 +351,10 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
 
 
 extension ProfileViewController: ProfileVCDelegate {
+    func showAlert(vc: UIViewController, error: Error) {
+        showAlert(vc: vc, error: error)
+    }
+    
     func add(_ cell: OptionCell) {
         cells.append(cell)
         tableView.reloadData()

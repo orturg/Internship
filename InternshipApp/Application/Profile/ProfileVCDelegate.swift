@@ -11,4 +11,5 @@ protocol ProfileVCDelegate: UIViewController {
     var cells: [OptionCell] { get set }
     func add(_ cell: OptionCell)
     func remove(_ cell: OptionCell)
+    func showAlert(vc: UIViewController, error: Error)
 }

@@ -14,6 +14,11 @@ final class ProfileViewModel {
     var isTextChanged = false
     var isAvatarChanged = false
     var avatarImage = UIImage()
+    var optionCells: [OptionCell] = []
+    var textFieldCells: [TextFieldCell] = []
+    weak var delegate: ProfileVCDelegate?
+    var tableView: UITableView?
+    var isTableViewActive = false
     
     
     init(isMan: Bool) {
@@ -29,6 +34,31 @@ final class ProfileViewModel {
         }
     }
     
+    
+    func getData(completion: @escaping () -> Void) {
+        FirebaseService.shared.getOptionData { [weak self] result in
+            guard let self else { return }
+            switch result {
+            case .success(let options):
+                options?.forEach {
+                    let textFieldCell = TextFieldCell()
+                    textFieldCell.setTextFieldTitle(text: $0.optionName.rawValue)
+                    textFieldCell.setTextFieldText(text: String($0.value))
+                    textFieldCell.setUnitsText(text: $0.optionName.rawValue == TextValues.weight ? TextValues.kg : TextValues.cm)
+                    textFieldCell.customSwitch.isOn = $0.isShown
+                    self.textFieldCells.append(textFieldCell)
+                    
+                    let optionCell = OptionCell()
+                    optionCell.set(text: $0.optionName.rawValue)
+                    optionCell.setButton(isActive: $0.isShown)
+                    self.delegate?.cells.append(optionCell)
+                }
+                completion()
+            case .failure(_):
+                completion()
+            }
+        }
+    }
     
     
     func getUser(vc: ProfileViewController) {
@@ -87,6 +117,39 @@ final class ProfileViewModel {
         
         isAvatarChanged = false
         saveButton.set(.appSecondary)
+    }
+    
+    
+    func updateOptionTextFields(saveButton: CustomButton, navigationController: UINavigationController?) {
+        guard let navigationController else { return }
+        
+        
+        if isTableViewActive {
+            FirebaseService.shared.updateOptionData(textFields: textFieldCells) { [weak self] result in
+                guard let self else { return }
+                
+                switch result {
+                case .success(let success):
+                    let alertCoordinator = CustomAlertCoordinator(navigationController: navigationController, isSuccessAlert: true, messageText: TextValues.successSavedProfile, withButtons: false, containerHeight: Constants.emptyAlertHeight, image: UIImage.success)
+                    alertCoordinator.start()
+                case .failure(let failure):
+                    guard let delegate else { return }
+                    self.delegate?.showAlert(vc: delegate, error: .errorUpdatingUser)
+                }
+            }
+        }
+        
+        isTableViewActive = false
+        saveButton.set(.appSecondary)
+    }
+    
+    
+    func addOptionsButtonAction(navigationController: UINavigationController?) {
+        guard let navigationController else { return }
+        
+        let selectOptionsCoordinator = SelectOptionsCoordinator(navigationController: navigationController)
+        selectOptionsCoordinator.delegate = delegate
+        selectOptionsCoordinator.start()
     }
 }
 

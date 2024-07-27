@@ -51,4 +51,13 @@ enum TextValues {
     static let profile = "Profile"
     static let successSavedProfile = "Profile has been saved!"
     static let save = "Save"
+    static let select = "Select"
+    static let selectOption = "Select Option"
+    static let weight = "Weight"
+    static let kg = "kg"
+    static let cm = "cm"
+    static let height = "Height"
+    static let textFieldCellReuseID = "TextFieldCell"
+    static let optionCellReuseID = "OptionCell"
+    static let backToRegister = "Back to register"
 }

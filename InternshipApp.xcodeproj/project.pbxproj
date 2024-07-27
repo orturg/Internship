@@ -12,11 +12,18 @@
 		720119322C4713860075CDF6 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720119312C4713860075CDF6 /* ContainerView.swift */; };
 		720119342C478EB00075CDF6 /* CustomAlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720119332C478EB00075CDF6 /* CustomAlertViewModel.swift */; };
 		720119362C478ED80075CDF6 /* CustomAlertCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720119352C478ED80075CDF6 /* CustomAlertCoordinator.swift */; };
+		721F5AC72C52750C00012E1A /* OptionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721F5AC62C52750C00012E1A /* OptionData.swift */; };
 		723821E92C47B8130055053A /* ResetPasswordVCProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723821E82C47B8130055053A /* ResetPasswordVCProtocol.swift */; };
 		7238CF412C41488F006F5B27 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7238CF402C41488F006F5B27 /* GoogleService-Info.plist */; };
 		723C8E802C369FA6000C19BA /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 723C8E7F2C369FA6000C19BA /* HomeViewController.xib */; };
 		723C8E832C36D7AF000C19BA /* TextValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723C8E822C36D7AF000C19BA /* TextValues.swift */; };
 		723C8E862C36D895000C19BA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723C8E852C36D895000C19BA /* Constants.swift */; };
+		724C38D62C50CC2300DA1495 /* PopupTransitioningPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724C38D52C50CC2300DA1495 /* PopupTransitioningPresentationController.swift */; };
+		724C38D82C50CC4300DA1495 /* PopupTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724C38D72C50CC4300DA1495 /* PopupTransitioningDelegate.swift */; };
+		724C38DA2C50D81700DA1495 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724C38D92C50D81700DA1495 /* TabBarViewModel.swift */; };
+		724C38DC2C51094F00DA1495 /* OptionDataName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724C38DB2C51094F00DA1495 /* OptionDataName.swift */; };
+		724C38E02C510BE400DA1495 /* OptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724C38DF2C510BE400DA1495 /* OptionCell.swift */; };
+		724C38E22C5124E200DA1495 /* ProfileVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724C38E12C5124E200DA1495 /* ProfileVCDelegate.swift */; };
 		72557E912C415A74002625AA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72557E8F2C415A74002625AA /* LoginViewController.swift */; };
 		72557E922C415A74002625AA /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72557E902C415A74002625AA /* LoginViewController.xib */; };
 		72557E942C415A7F002625AA /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72557E932C415A7F002625AA /* LoginViewModel.swift */; };
@@ -208,6 +215,12 @@
 		729EEF782C4ECA6B00A6DA80 /* EmptyAlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729EEF772C4ECA6B00A6DA80 /* EmptyAlertViewModel.swift */; };
 		72AAD2252C3FAD7C0066EF8C /* DataBaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AAD2242C3FAD7C0066EF8C /* DataBaseError.swift */; };
 		72AB5B532C4263AF0021FC33 /* ViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AB5B522C4263AF0021FC33 /* ViewController+Ext.swift */; };
+		72B4DA442C52175600B74573 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4DA432C52175600B74573 /* TextFieldCell.swift */; };
+		72B4DA462C52178A00B74573 /* ProgrammaticCustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4DA452C52178A00B74573 /* ProgrammaticCustomTextField.swift */; };
+		72C2C06B2C4FCFFD0091C256 /* SelectOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C2C06A2C4FCFFD0091C256 /* SelectOptionsViewController.swift */; };
+		72C2C06D2C4FD00D0091C256 /* SelectOptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C2C06C2C4FD00D0091C256 /* SelectOptionsViewModel.swift */; };
+		72C2C06F2C4FD01A0091C256 /* SelectOptionsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C2C06E2C4FD01A0091C256 /* SelectOptionsCoordinator.swift */; };
+		72C2C0712C4FD02A0091C256 /* SelectOptionsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C2C0702C4FD02A0091C256 /* SelectOptionsContainer.swift */; };
 		72F3F15A2C4694320034B823 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F3F1582C4694320034B823 /* ResetPasswordViewController.swift */; };
 		72F3F15B2C4694320034B823 /* ResetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72F3F1592C4694320034B823 /* ResetPasswordViewController.xib */; };
 		72F3F15D2C46944D0034B823 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F3F15C2C46944D0034B823 /* ResetPasswordViewModel.swift */; };
@@ -219,12 +232,19 @@
 		720119312C4713860075CDF6 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		720119332C478EB00075CDF6 /* CustomAlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewModel.swift; sourceTree = "<group>"; };
 		720119352C478ED80075CDF6 /* CustomAlertCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertCoordinator.swift; sourceTree = "<group>"; };
+		721F5AC62C52750C00012E1A /* OptionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionData.swift; sourceTree = "<group>"; };
 		723821E82C47B8130055053A /* ResetPasswordVCProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVCProtocol.swift; sourceTree = "<group>"; };
 		7238CF3F2C4146FD006F5B27 /* InternshipApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InternshipApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7238CF402C41488F006F5B27 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		723C8E7F2C369FA6000C19BA /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		723C8E822C36D7AF000C19BA /* TextValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextValues.swift; sourceTree = "<group>"; };
 		723C8E852C36D895000C19BA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		724C38D52C50CC2300DA1495 /* PopupTransitioningPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupTransitioningPresentationController.swift; sourceTree = "<group>"; };
+		724C38D72C50CC4300DA1495 /* PopupTransitioningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupTransitioningDelegate.swift; sourceTree = "<group>"; };
+		724C38D92C50D81700DA1495 /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
+		724C38DB2C51094F00DA1495 /* OptionDataName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionDataName.swift; sourceTree = "<group>"; };
+		724C38DF2C510BE400DA1495 /* OptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCell.swift; sourceTree = "<group>"; };
+		724C38E12C5124E200DA1495 /* ProfileVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVCDelegate.swift; sourceTree = "<group>"; };
 		72557E8F2C415A74002625AA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		72557E902C415A74002625AA /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		72557E932C415A7F002625AA /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -417,6 +437,12 @@
 		729EEF772C4ECA6B00A6DA80 /* EmptyAlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyAlertViewModel.swift; sourceTree = "<group>"; };
 		72AAD2242C3FAD7C0066EF8C /* DataBaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseError.swift; sourceTree = "<group>"; };
 		72AB5B522C4263AF0021FC33 /* ViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Ext.swift"; sourceTree = "<group>"; };
+		72B4DA432C52175600B74573 /* TextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
+		72B4DA452C52178A00B74573 /* ProgrammaticCustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammaticCustomTextField.swift; sourceTree = "<group>"; };
+		72C2C06A2C4FCFFD0091C256 /* SelectOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionsViewController.swift; sourceTree = "<group>"; };
+		72C2C06C2C4FD00D0091C256 /* SelectOptionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionsViewModel.swift; sourceTree = "<group>"; };
+		72C2C06E2C4FD01A0091C256 /* SelectOptionsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionsCoordinator.swift; sourceTree = "<group>"; };
+		72C2C0702C4FD02A0091C256 /* SelectOptionsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionsContainer.swift; sourceTree = "<group>"; };
 		72F3F1582C4694320034B823 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		72F3F1592C4694320034B823 /* ResetPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResetPasswordViewController.xib; sourceTree = "<group>"; };
 		72F3F15C2C46944D0034B823 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
@@ -475,8 +501,18 @@
 			children = (
 				7272675A2C3408A5004BF6B6 /* CustomTextField.swift */,
 				727269812C368966004BF6B6 /* CustomTextField.xib */,
+				72B4DA452C52178A00B74573 /* ProgrammaticCustomTextField.swift */,
 			);
 			path = CustomTextField;
+			sourceTree = "<group>";
+		};
+		724C38D42C50CC0D00DA1495 /* CustomTransition */ = {
+			isa = PBXGroup;
+			children = (
+				724C38D52C50CC2300DA1495 /* PopupTransitioningPresentationController.swift */,
+				724C38D72C50CC4300DA1495 /* PopupTransitioningDelegate.swift */,
+			);
+			path = CustomTransition;
 			sourceTree = "<group>";
 		};
 		72557E8E2C415A4D002625AA /* Login */ = {
@@ -505,6 +541,7 @@
 			isa = PBXGroup;
 			children = (
 				726988D52C3D5AFC00124AD3 /* RegistrationData.swift */,
+				721F5AC62C52750C00012E1A /* OptionData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -706,6 +743,8 @@
 				727AE3762C4D7BFC00F8A2AD /* ProfileCoordinator.swift */,
 				727AE37A2C4E1FFB00F8A2AD /* ProfileViewController.swift */,
 				727AE37B2C4E1FFB00F8A2AD /* ProfileViewController.xib */,
+				724C38E12C5124E200DA1495 /* ProfileVCDelegate.swift */,
+				72B4DA432C52175600B74573 /* TextFieldCell.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -748,6 +787,7 @@
 				7201192C2C4713380075CDF6 /* CustomAlert */,
 				7284E2142C3035630081F8D1 /* Home */,
 				727AE36F2C4D7BB900F8A2AD /* Profile */,
+				72C2C0692C4FCFD70091C256 /* SelectOptions */,
 				729BB3D42C3924A900F06383 /* Progress */,
 				729BB3D52C3924B300F06383 /* Calculator */,
 				729BB3D72C3924D100F06383 /* Muscles */,
@@ -835,6 +875,7 @@
 				729BB3CF2C3922BB00F06383 /* TabBarController.swift */,
 				729BB3D02C3922BB00F06383 /* TabBarController.xib */,
 				729BB3F92C39287C00F06383 /* TabBarCoordinator.swift */,
+				724C38D92C50D81700DA1495 /* TabBarViewModel.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -879,6 +920,20 @@
 				72708AA82C4EA36300CB4E7B /* UIImage+Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		72C2C0692C4FCFD70091C256 /* SelectOptions */ = {
+			isa = PBXGroup;
+			children = (
+				724C38D42C50CC0D00DA1495 /* CustomTransition */,
+				72C2C06A2C4FCFFD0091C256 /* SelectOptionsViewController.swift */,
+				72C2C06C2C4FD00D0091C256 /* SelectOptionsViewModel.swift */,
+				72C2C06E2C4FD01A0091C256 /* SelectOptionsCoordinator.swift */,
+				72C2C0702C4FD02A0091C256 /* SelectOptionsContainer.swift */,
+				724C38DB2C51094F00DA1495 /* OptionDataName.swift */,
+				724C38DF2C510BE400DA1495 /* OptionCell.swift */,
+			);
+			path = SelectOptions;
 			sourceTree = "<group>";
 		};
 		72F3F1572C4693F60034B823 /* ResetPassword */ = {
@@ -1151,8 +1206,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				724C38DA2C50D81700DA1495 /* TabBarViewModel.swift in Sources */,
 				723C8E832C36D7AF000C19BA /* TextValues.swift in Sources */,
 				726988CD2C3D446700124AD3 /* SignUpCoordinator.swift in Sources */,
+				72C2C0712C4FD02A0091C256 /* SelectOptionsContainer.swift in Sources */,
 				729BB3FF2C3955AD00F06383 /* StartViewController.swift in Sources */,
 				7271070E2C3A7BA00036E9AC /* CustomRoundedRectangleButton.swift in Sources */,
 				729BB3F72C39265F00F06383 /* MusclesViewModel.swift in Sources */,
@@ -1162,6 +1219,7 @@
 				726988D22C3D449000124AD3 /* SignUpViewController.swift in Sources */,
 				727AE3772C4D7BFC00F8A2AD /* ProfileCoordinator.swift in Sources */,
 				729BB3EA2C3925D000F06383 /* CalculatorViewController.swift in Sources */,
+				72C2C06B2C4FCFFD0091C256 /* SelectOptionsViewController.swift in Sources */,
 				727AE3752C4D7BEB00F8A2AD /* ProfileViewModel.swift in Sources */,
 				72AB5B532C4263AF0021FC33 /* ViewController+Ext.swift in Sources */,
 				727107092C39D9910036E9AC /* GradientDivider.swift in Sources */,
@@ -1173,7 +1231,9 @@
 				729BB3E12C39258F00F06383 /* ProgressViewModel.swift in Sources */,
 				72F3F15A2C4694320034B823 /* ResetPasswordViewController.swift in Sources */,
 				7272697A2C35317A004BF6B6 /* CustomSwitch.swift in Sources */,
+				724C38D62C50CC2300DA1495 /* PopupTransitioningPresentationController.swift in Sources */,
 				720119342C478EB00075CDF6 /* CustomAlertViewModel.swift in Sources */,
+				724C38E22C5124E200DA1495 /* ProfileVCDelegate.swift in Sources */,
 				727107212C3AC29F0036E9AC /* FirebaseService.swift in Sources */,
 				727269802C35ABA7004BF6B6 /* CustomRadioButton.swift in Sources */,
 				72557E982C415A9B002625AA /* LoginCoordinator.swift in Sources */,
@@ -1182,9 +1242,12 @@
 				723C8E862C36D895000C19BA /* Constants.swift in Sources */,
 				726988D62C3D5AFC00124AD3 /* RegistrationData.swift in Sources */,
 				720119322C4713860075CDF6 /* ContainerView.swift in Sources */,
+				72B4DA462C52178A00B74573 /* ProgrammaticCustomTextField.swift in Sources */,
 				72F3F15F2C4694590034B823 /* ResetPasswordCoordinator.swift in Sources */,
+				72C2C06F2C4FD01A0091C256 /* SelectOptionsCoordinator.swift in Sources */,
 				727AE37C2C4E1FFB00F8A2AD /* ProfileViewController.swift in Sources */,
 				7284E2162C3035880081F8D1 /* HomeViewModel.swift in Sources */,
+				724C38D82C50CC4300DA1495 /* PopupTransitioningDelegate.swift in Sources */,
 				7284E1EE2C2FFA8E0081F8D1 /* AppDelegate.swift in Sources */,
 				729EEF722C4ECA0E00A6DA80 /* EmptyCustomAlertVC.swift in Sources */,
 				72557E912C415A74002625AA /* LoginViewController.swift in Sources */,
@@ -1192,6 +1255,7 @@
 				726988CF2C3D447700124AD3 /* SignUpViewModel.swift in Sources */,
 				727269782C352CC0004BF6B6 /* CustomButton.swift in Sources */,
 				72557E942C415A7F002625AA /* LoginViewModel.swift in Sources */,
+				724C38E02C510BE400DA1495 /* OptionCell.swift in Sources */,
 				729BB4082C3961AB00F06383 /* GradientView.swift in Sources */,
 				7284E2132C301D790081F8D1 /* HomeViewController.swift in Sources */,
 				729EEF782C4ECA6B00A6DA80 /* EmptyAlertViewModel.swift in Sources */,
@@ -1199,8 +1263,11 @@
 				729BB3E72C3925C000F06383 /* CalculatorCoordinator.swift in Sources */,
 				729BB3E42C3925B000F06383 /* ProgressViewController.swift in Sources */,
 				7272697E2C3536B1004BF6B6 /* CustomCheckboxSwitch.swift in Sources */,
+				72B4DA442C52175600B74573 /* TextFieldCell.swift in Sources */,
 				729BB3F12C39264600F06383 /* MusclesCoordinator.swift in Sources */,
+				724C38DC2C51094F00DA1495 /* OptionDataName.swift in Sources */,
 				729BB4042C39564C00F06383 /* StartViewModel.swift in Sources */,
+				72C2C06D2C4FD00D0091C256 /* SelectOptionsViewModel.swift in Sources */,
 				729EEF742C4ECA4600A6DA80 /* EmptyContainerView.swift in Sources */,
 				720119362C478ED80075CDF6 /* CustomAlertCoordinator.swift in Sources */,
 				729BB3DD2C39256200F06383 /* ProgressCoordinator.swift in Sources */,
@@ -1208,6 +1275,7 @@
 				723821E92C47B8130055053A /* ResetPasswordVCProtocol.swift in Sources */,
 				72708AA92C4EA36300CB4E7B /* UIImage+Ext.swift in Sources */,
 				729BB3EF2C39262D00F06383 /* CalculatorViewModel.swift in Sources */,
+				721F5AC72C52750C00012E1A /* OptionData.swift in Sources */,
 				7272675B2C3408A5004BF6B6 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

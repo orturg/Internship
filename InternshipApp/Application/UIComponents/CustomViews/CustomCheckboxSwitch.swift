@@ -10,8 +10,8 @@ import UIKit
 
 final class CustomCheckboxSwitch: UIButton {
     private  var color: UIColor?
-    private var isActive: Bool = false
-    private let checkmarkImageView = UIImageView(image: UIImage.checkmark)
+    var isActive: Bool = false
+    private let checkmarkImageView = UIImageView(image: UIImage.customCheckmark)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -55,7 +55,7 @@ final class CustomCheckboxSwitch: UIButton {
     }
     
     
-    @objc private func checkboxAction() {
+    @objc func checkboxAction() {
         isActive.toggle()
         backgroundColor = isActive ? color : .clear
         if isActive {

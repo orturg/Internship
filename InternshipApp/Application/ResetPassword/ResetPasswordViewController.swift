@@ -18,7 +18,7 @@ final class ResetPasswordViewController: BaseViewController {
     private let instructionLabel = UILabel()
     private let continueButton = CustomRoundedRectangleButton(buttonBackgroundColor: .appYellow, buttonText: TextValues.continueLabel, textColor: .black, height: Constants.customRoundedRectangleButtonHeight, width: Constants.customRoundedRectangleButtonWidth)
     
-    private let backToLoginButton = CustomButton(text: "Back to login", color: .appYellow)
+    private let backToLoginButton = CustomButton(text: TextValues.backToLoginLabel, color: .appYellow)
     
     lazy var gradient: GradientView = {
         GradientView(width: Constants.gradientViewWidth, height: view.bounds.height, topColor: .clear, bottomColor: .black)

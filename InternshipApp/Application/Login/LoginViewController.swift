@@ -20,7 +20,7 @@ final class LoginViewController: BaseViewController {
     
     private let forgotPasswordButton = CustomButton(text: TextValues.forgotPassword, color: .appYellow)
     
-    private let backToRegisterButton = CustomButton(text: "Back to register", color: .appYellow)
+    private let backToRegisterButton = CustomButton(text: TextValues.backToRegister, color: .appYellow)
     
     lazy var gradient: GradientView = {
         GradientView(width: Constants.gradientViewWidth, height: view.bounds.height, topColor: .clear, bottomColor: .black)

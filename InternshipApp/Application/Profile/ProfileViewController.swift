@@ -1,7 +1,8 @@
+
 import UIKit
 
 final class ProfileViewController: BaseViewController {
-
+    
     var vm: ProfileViewModel?
     
     @IBOutlet weak var nameTextField: CustomTextField!
@@ -10,6 +11,10 @@ final class ProfileViewController: BaseViewController {
     private var backButton = UIImageView()
     private var screenTitle = UILabel()
     private var saveButton = CustomButton(text: TextValues.save, color: .appSecondary)
+    
+    private lazy var tableView: UITableView = {
+        UITableView(frame: .zero, style: .plain)
+    }()
     
     private var addOptionsButton = CustomRoundedRectangleButton(buttonBackgroundColor: .appYellow, buttonText: TextValues.addOptions, textColor: .black, height: Constants.customRoundedRectangleButtonHeight, width: Constants.customRoundedRectangleButtonWidth)
     
@@ -22,16 +27,25 @@ final class ProfileViewController: BaseViewController {
     private let scrollView = UIScrollView()
     private let contentView = UIView()
     
+    var cells: [OptionCell] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        vm?.delegate = self
+        vm?.getData { [weak self] in
+            guard let self else { return }
+            self.configure()
+        }
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        vm?.getUser(vc: self)
         
         configure()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        vm?.getUser(vc: self)
-    }
     
     private func configure() {
         vm?.getUser(vc: self)
@@ -43,6 +57,8 @@ final class ProfileViewController: BaseViewController {
         configureAvatarImageView()
         configureTextFields()
         configureInstructionLabel()
+        configureTableView()
+        configureAddOptionsButton()
         setupSubviews()
         setupLayoutConstraints()
     }
@@ -88,9 +104,49 @@ final class ProfileViewController: BaseViewController {
     }
     
     @objc private func saveButtonAction() {
-        vm?.saveButtonAction(saveButton: saveButton, nameTextField: nameTextField, vc: self, navigationController: navigationController)
-        vm?.updateAvatar(saveButton: saveButton, vc: self, navigationController: navigationController)
+        guard let vm else { return }
+        
+        vm.saveButtonAction(saveButton: saveButton, nameTextField: nameTextField, vc: self, navigationController: navigationController)
+        vm.updateAvatar(saveButton: saveButton, vc: self, navigationController: navigationController)
+        updateCells()
+        vm.updateOptionTextFields(saveButton: saveButton, navigationController: navigationController)
     }
+    
+    
+    private func updateCells() {
+        vm?.textFieldCells = []
+        
+        for i in 0..<cells.count {
+            let indexPath = IndexPath(row: i, section: 0)
+            if let cell = tableView.cellForRow(at: indexPath) as? TextFieldCell {
+                let textFieldCell = TextFieldCell()
+                textFieldCell.setTextFieldTitle(text: cell.textField.titleLabel.text ?? "")
+                textFieldCell.setTextFieldText(text: cell.textField.getText())
+                textFieldCell.setUnitsText(text: cell.textField.titleLabel.text == TextValues.weight ? TextValues.kg : TextValues.cm)
+                textFieldCell.customSwitch.isOn = cell.customSwitch.isOn
+                vm?.textFieldCells.append(textFieldCell)
+                
+                if (textFieldCell.textField.titleLabel.text == OptionDataName.weight.rawValue || textFieldCell.textField.titleLabel.text == OptionDataName.height.rawValue) && Int(textFieldCell.textField.getText()) ?? 0 > 300 {
+                    saveButton.set(.appSecondary)
+                    vm?.isTableViewActive = false
+                }
+                
+                if (textFieldCell.textField.titleLabel.text != OptionDataName.weight.rawValue && textFieldCell.textField.titleLabel.text != OptionDataName.height.rawValue) {
+                    if Int(textFieldCell.textField.getText()) ?? 0 > 100  {
+                        saveButton.set(.appSecondary)
+                        vm?.isTableViewActive = false
+                    }
+                }
+                
+                if Int(textFieldCell.textField.titleLabel.text!) == 0 || textFieldCell.textField.titleLabel.text == nil {
+                    saveButton.set(.appSecondary)
+                    vm?.isTableViewActive = false
+                }
+                
+            }
+        }
+    }
+    
     
     private func setupSubviews() {
         view.addSubview(gradient)
@@ -103,13 +159,14 @@ final class ProfileViewController: BaseViewController {
         contentView.addSubview(saveButton)
         contentView.addSubview(avatarImageView)
         contentView.addSubview(nameTextField)
-        contentView.addSubview(instructionLabel)
-        contentView.addSubview(addOptionsButton)
+        
         
         view.addSubview(backButton)
         view.addSubview(saveButton)
         view.addSubview(avatarImageView)
         view.addSubview(nameTextField)
+        
+        view.addSubview(addOptionsButton)
     }
     
     private func configureAvatarImageView() {
@@ -135,6 +192,8 @@ final class ProfileViewController: BaseViewController {
         nameTextField.textField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
     }
     
+    
+    
     @objc private func textFieldDidChange() {
         guard let vm else { return }
         
@@ -159,6 +218,33 @@ final class ProfileViewController: BaseViewController {
         instructionLabel.lineBreakMode = .byWordWrapping
         instructionLabel.translatesAutoresizingMaskIntoConstraints = false
     }
+    
+    
+    private func configureTableView() {
+        tableView.frame = view.bounds
+        tableView.rowHeight = Constants.textFieldCellHeight
+        tableView.backgroundColor = .black
+        
+        tableView.register(TextFieldCell.self, forCellReuseIdentifier: TextFieldCell.reuseID)
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        vm?.tableView = tableView
+    }
+    
+    
+    private func configureAddOptionsButton() {
+        addOptionsButton.addTarget(self, action: #selector(addOptionsButtonTarget), for: .touchUpInside)
+    }
+    
+    
+    @objc private func addOptionsButtonTarget() {
+        vm?.delegate = self
+        vm?.addOptionsButtonAction(navigationController: navigationController)
+    }
+    
     
     func set(_ name: String) {
         nameTextField.setTextFieldText(text: name)
@@ -197,28 +283,53 @@ final class ProfileViewController: BaseViewController {
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
             
-            backButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 108),
-            backButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.backButtonLeadingPadding),
+            backButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 108),
+            backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.backButtonLeadingPadding),
             backButton.widthAnchor.constraint(equalToConstant: Constants.backButtonWidth),
             backButton.heightAnchor.constraint(equalToConstant: Constants.backButtonHeight),
             
-            screenTitle.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 108),
+            screenTitle.topAnchor.constraint(equalTo: view.topAnchor, constant: 108),
             screenTitle.leadingAnchor.constraint(equalTo: backButton.trailingAnchor, constant: Constants.screenTitleLeadingPadding),
             screenTitle.widthAnchor.constraint(equalToConstant: Constants.screenTitleWidth),
             screenTitle.heightAnchor.constraint(equalToConstant: Constants.screenTitleHeight),
             
-            saveButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 108),
+            saveButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 108),
             saveButton.leadingAnchor.constraint(equalTo: screenTitle.trailingAnchor, constant: Constants.saveButtonLeadingPadding),
-            saveButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constants.saveButtonTitleTrailingPadding),
+            saveButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.saveButtonTitleTrailingPadding),
             saveButton.heightAnchor.constraint(equalToConstant: Constants.saveButtonHeight),
             
-            instructionLabel.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: Constants.instructionLabelTopAnchor),
-            instructionLabel.leadingAnchor.constraint(equalTo: nameTextField.leadingAnchor),
-            instructionLabel.widthAnchor.constraint(equalToConstant: Constants.instructionLabelWidth),
             
-            addOptionsButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            addOptionsButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Constants.addOptionsBottomAnchor),
+            addOptionsButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            addOptionsButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -Constants.addOptionsBottomAnchor),
         ])
+        
+        layoutTableView()
+    }
+    
+    
+    func layoutTableView() {
+        guard let vm else { return }
+        
+        if !cells.isEmpty || !vm.textFieldCells.isEmpty {
+            instructionLabel.removeFromSuperview()
+            view.addSubview(tableView)
+            
+            NSLayoutConstraint.activate([
+                tableView.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: Constants.instructionLabelTopAnchor),
+                tableView.leadingAnchor.constraint(equalTo: nameTextField.leadingAnchor),
+                tableView.trailingAnchor.constraint(equalTo: nameTextField.trailingAnchor),
+                tableView.bottomAnchor.constraint(equalTo: addOptionsButton.topAnchor, constant: -Constants.profileVCTableViewBottomAnchor),
+            ])
+        } else {
+            tableView.removeFromSuperview()
+            contentView.addSubview(instructionLabel)
+            
+            NSLayoutConstraint.activate([
+                instructionLabel.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: Constants.instructionLabelTopAnchor),
+                instructionLabel.leadingAnchor.constraint(equalTo: nameTextField.leadingAnchor),
+                instructionLabel.widthAnchor.constraint(equalToConstant: Constants.instructionLabelWidth),
+            ])
+        }
     }
 }
 
@@ -238,3 +349,87 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
     }
 }
 
+
+extension ProfileViewController: ProfileVCDelegate {
+    func showAlert(vc: UIViewController, error: Error) {
+        showAlert(vc: vc, error: error)
+    }
+    
+    func add(_ cell: OptionCell) {
+        cells.append(cell)
+        tableView.reloadData()
+    }
+    
+    func remove(_ cell: OptionCell) {
+        cells.removeAll { $0.optionLabel.text == cell.optionLabel.text }
+        vm?.textFieldCells.removeAll { $0.textField.titleLabel.text == cell.optionLabel.text }
+        tableView.reloadData()
+    }
+    
+}
+
+
+extension ProfileViewController: UITableViewDelegate {
+    
+}
+
+
+extension ProfileViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        cells.count
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let vm else { return UITableViewCell() }
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: TextFieldCell.reuseID, for: indexPath) as? TextFieldCell else { return UITableViewCell() }
+        
+        let optionTitle = cells[indexPath.row].optionLabel.text
+        guard let optionTitle else { return UITableViewCell() }
+        cell.setTextFieldTitle(text: optionTitle)
+        cell.setUnitsText(text: optionTitle == TextValues.weight ? TextValues.kg : TextValues.cm)
+        
+        cell.delegate = self
+        
+        
+        if !vm.textFieldCells.contains(where: { $0.textField.titleLabel.text == cell.textField.titleLabel.text }) {
+            vm.textFieldCells.append(cell)
+        }
+        
+        cell.setTextFieldText(text: vm.textFieldCells[indexPath.row].textField.getText())
+        cell.setSwitch(isOn: vm.textFieldCells[indexPath.row].customSwitch.isOn)
+        
+        return cell
+    }
+}
+
+extension ProfileViewController: TextFieldCellDelegate {
+    func textFieldCell(_ cell: TextFieldCell, didChangeText text: String) {
+        
+        var isTextChanged = false
+        for i in 0..<cells.count {
+            let indexPath = IndexPath(row: i, section: 0)
+            if let cell = tableView.cellForRow(at: indexPath) as? TextFieldCell {
+                if cell.textField.textField.text != text {
+                    isTextChanged = true
+                    break
+                }
+            }
+        }
+        
+        if isTextChanged || !nameTextField.getText().isEmpty  {
+            saveButton.set(.appYellow)
+            vm?.isTableViewActive = true
+        } else {
+            saveButton.set(.appSecondary)
+            vm?.isTableViewActive = false
+        }
+    }
+    
+    
+    func textFieldCell(_ cell: TextFieldCell, didChangeSwitchValue isOn: Bool) {
+        saveButton.set(.appYellow)
+        vm?.isTableViewActive = true
+    }
+}

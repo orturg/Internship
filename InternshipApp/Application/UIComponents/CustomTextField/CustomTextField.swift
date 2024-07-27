@@ -12,6 +12,11 @@ final class CustomTextField: UIView {
     @IBOutlet weak var titleLabel: UILabel!
     var placeholderText: String?
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        configure()
+    }
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         configure()

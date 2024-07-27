@@ -43,7 +43,8 @@ final class ProfileViewModel {
                 options?.forEach {
                     let textFieldCell = TextFieldCell()
                     textFieldCell.setTextFieldTitle(text: $0.optionName.rawValue)
-                    textFieldCell.setTextFieldText(text: String(($0.valueArray[1] ?? $0.valueArray[0]) ?? 0))
+//                    textFieldCell.setTextFieldText(text: String(($0.valueArray[1] ?? $0.valueArray[0]) ?? 0))
+                    textFieldCell.setTextFieldText(text: String($0.value))
                     textFieldCell.setUnitsText(text: $0.optionName.rawValue == TextValues.weight ? TextValues.kg : TextValues.cm)
                     textFieldCell.customSwitch.isOn = $0.isShown
                     self.textFieldCells.append(textFieldCell)
@@ -52,6 +53,7 @@ final class ProfileViewModel {
                     optionCell.set(text: $0.optionName.rawValue)
                     optionCell.setButton(isActive: $0.isShown)
                     vc.cells.append(optionCell)
+//                    self.delegate?.cells.append(optionCell)
                 }
                 completion()
             case .failure(_):

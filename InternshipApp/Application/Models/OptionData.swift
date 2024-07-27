@@ -10,5 +10,7 @@ import Foundation
 struct OptionData: Codable {
     var isShown: Bool
     var optionName: OptionDataName
-    var value: Int
+    var valueArray: [Double?]
+    var changedValue: Int?
+    var dateArray: [Int]
 }

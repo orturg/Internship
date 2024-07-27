@@ -32,7 +32,7 @@ final class ProfileViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         vm?.delegate = self
-        vm?.getData { [weak self] in
+        vm?.getData(vc: self) { [weak self] in
             guard let self else { return }
             self.configure()
         }

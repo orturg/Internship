@@ -94,7 +94,7 @@ class FirebaseService {
         
         textFields.forEach { dataDic.append([
             "optionName": $0.textField.titleLabel.text,
-            "value": Int($0.textField.getText()),
+            "valueArray": Int($0.textField.getText()),
             "isShown": $0.customSwitch.isOn
         ]) }
         
@@ -108,6 +108,53 @@ class FirebaseService {
             }
         }
     }
+    
+    
+//    func updateOptionData(textFields: [TextFieldCell], completion: @escaping (Result<String?, DataBaseError>) -> Void) {
+//        let docRef = collection.document(id)
+//        
+//        docRef.getDocument { (document, error) in
+//            if let document = document, document.exists {
+//                var userOptions = document.data()?["userOptions"] as? [[String: Any]] ?? []
+//                
+//                textFields.forEach { cell in
+//                    if let index = userOptions.firstIndex(where: { $0["optionName"] as? String == cell.textField.titleLabel.text }) {
+//                        // Append new value to the existing valueArray
+//                        var valueArray = userOptions[index]["valueArray"] as? [Int] ?? []
+//                        if let newValue = Int(cell.textField.getText()) {
+//                            valueArray.append(newValue)
+//                        }
+//                        userOptions[index]["valueArray"] = valueArray
+//                        userOptions[index]["isShown"] = cell.customSwitch.isOn
+//                    } else {
+//                        // Create a new entry if it doesn't exist
+//                        var valueArray: [Int] = []
+//                        if let newValue = Int(cell.textField.getText()) {
+//                            valueArray.append(newValue)
+//                        }
+//                        userOptions.append([
+//                            "optionName": cell.textField.titleLabel.text ?? "",
+//                            "valueArray": valueArray,
+//                            "isShown": cell.customSwitch.isOn
+//                        ])
+//                    }
+//                }
+//                
+//                let data: [String: Any] = ["userOptions": userOptions]
+//                
+//                docRef.updateData(data) { error in
+//                    if let error = error {
+//                        completion(.failure(.errorUpdatingUser))
+//                    } else {
+//                        completion(.success(nil))
+//                    }
+//                }
+//            } else {
+//                completion(.failure(.errorGettingUser))
+//            }
+//        }
+//    }
+
     
     
     func getUser(completion: @escaping (Result<RegistrationData?, DataBaseError>) -> Void) {

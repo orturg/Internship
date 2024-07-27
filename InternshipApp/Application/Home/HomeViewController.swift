@@ -18,6 +18,18 @@ final class HomeViewController: BaseViewController {
         GradientView(width: Constants.gradientViewWidth, height: view.bounds.height, topColor: .clear, bottomColor: .black)
     }()
     
+    
+    private let collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .clear
+        collectionView.register(HomeCell.self, forCellWithReuseIdentifier: HomeCell.reuseID)
+        return collectionView
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         vm?.getUser(vc: self)
@@ -47,6 +59,7 @@ final class HomeViewController: BaseViewController {
         configureVC()
         configureLabels()
         configureAvatarImageView()
+        configureCollectionView()
         setupSubviews()
         setupLayoutConstraints()
     }
@@ -70,6 +83,7 @@ final class HomeViewController: BaseViewController {
         view.addSubview(gradient)
         view.addSubview(titleLabel)
         view.addSubview(nameLabel)
+        view.addSubview(collectionView)
         view.addSubview(avatarImageView)
     }
     
@@ -84,6 +98,14 @@ final class HomeViewController: BaseViewController {
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(avatarImageViewAction))
         avatarImageView.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    
+    private func configureCollectionView() {
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
     }
     
     
@@ -103,6 +125,47 @@ final class HomeViewController: BaseViewController {
             gradient.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             gradient.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             gradient.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            collectionView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 37),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
+            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -24)
         ])
+    }
+}
+
+
+extension HomeViewController: UICollectionViewDelegate {
+    
+}
+
+
+extension HomeViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCell.reuseID, for: indexPath) as? HomeCell else {
+            return UICollectionViewCell()
+        }
+        
+        cell.configure()
+        
+        cell.setTitleLabel("Height")
+        cell.setQuantityLabel(174)
+        cell.setMetricLabel("cm")
+        cell.setCircle(.red)
+        cell.setDifferenceLabel("+1")
+        
+        return cell
+    }
+}
+
+
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        CGSize(width: 300, height: 100)
     }
 }

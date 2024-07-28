@@ -108,4 +108,26 @@ enum Constants {
     static let programmaticCustomTextFieldHeight: CGFloat = 70
     static let programmaticCustomTextFieldTitleLabelHeight: CGFloat = 7
     static let programmaticCustomTextFieldTitleTextFieldHeight: CGFloat = 42
+    static let homeCollectionViewTopAnchor: CGFloat = 37
+    static let homeCollectionViewHorizontalAnchor: CGFloat = 40
+    static let homeCollectionViewBottomAnchor: CGFloat = 24
+    static let homeCollectionViewCellWidth: CGFloat = 270
+    static let homeCollectionViewCellHeight: CGFloat = 104
+    static let homeCollectionViewCellCornerRadius: CGFloat = 10
+    static let homeCollectionViewCellBorderWidth: CGFloat = 2
+    static let homeCollectionViewCellTitleSize: CGFloat = 20
+    static let homeCollectionViewCellQuantitySize: CGFloat = 30
+    static let homeCollectionViewCellMetricSize: CGFloat = 20
+    static let homeCollectionViewCellCircleCornerRadius: CGFloat = 23
+    static let homeCollectionViewCellDifferenceLabelSize: CGFloat = 19
+    static let homeCollectionViewCellTitleLabelTopAnchor: CGFloat = 16
+    static let homeCollectionViewCellTitleLabelLeadingAnchor: CGFloat = 32
+    static let homeCollectionViewCellQuantityLabelTopAnchor: CGFloat = 10
+    static let homeCollectionViewCellQuantityLabelLeadingAnchor: CGFloat = 36
+    static let homeCollectionViewCellMetricLabelLeadingAnchor: CGFloat = 10
+    static let homeCollectionViewCellMetricLabelBottomAnchor: CGFloat = 5
+    static let homeCollectionViewCellCircleTrailingAnchor: CGFloat = 21
+    static let homeCollectionViewCellCircleBottomAnchor: CGFloat = 13
+    static let homeCollectionViewCellCircleWidthAnchor: CGFloat = 45
+    static let homeCollectionViewCellCircleHeightAnchor: CGFloat = 45
 }

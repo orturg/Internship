@@ -32,7 +32,6 @@ final class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         vm?.getUser(vc: self)
-        configure()
     }
     
     
@@ -40,7 +39,16 @@ final class HomeViewController: BaseViewController {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = false
         vm?.getUser(vc: self)
-        configureLabels()
+        vm?.getCells { [weak self] in
+            guard let self else { return }
+            self.configure()
+            self.configureLabels()
+            self.collectionView.reloadData()
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
     }
     
     
@@ -125,10 +133,10 @@ final class HomeViewController: BaseViewController {
             gradient.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             gradient.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             
-            collectionView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 37),
-            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
-            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
-            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -24)
+            collectionView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: Constants.homeCollectionViewTopAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.homeCollectionViewHorizontalAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.homeCollectionViewHorizontalAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -Constants.homeCollectionViewBottomAnchor)
         ])
     }
 }
@@ -142,7 +150,7 @@ extension HomeViewController: UICollectionViewDelegate {
 extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        vm?.optionData.filter { $0.isShown }.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -152,11 +160,15 @@ extension HomeViewController: UICollectionViewDataSource {
         
         cell.configure()
         
-        cell.setTitleLabel("Height")
-        cell.setQuantityLabel(174)
-        cell.setMetricLabel("cm")
-        cell.setCircle(.red)
-        cell.setDifferenceLabel("+1")
+        var homeCellData = vm?.optionData[indexPath.row]
+        
+        cell.setTitleLabel(homeCellData?.optionName.rawValue ?? "")
+        cell.setQuantityLabel(String(homeCellData?.valueArray.last ?? 0))
+        cell.setMetricLabel(homeCellData?.optionName.rawValue == TextValues.weight ? TextValues.kg : TextValues.cm)
+        if homeCellData?.changedValue != 0 {
+            cell.setCircle(homeCellData?.changedValue ?? 0 < 0 ? .systemGreen : .appRed)
+            cell.setDifferenceLabel(homeCellData?.changedValue ?? 0 > 0 ? "+\( homeCellData?.changedValue ?? 0)" : String(homeCellData?.changedValue ?? 0))
+        }
         
         return cell
     }
@@ -165,6 +177,6 @@ extension HomeViewController: UICollectionViewDataSource {
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: 300, height: 100)
+        CGSize(width: Constants.homeCollectionViewCellWidth, height: Constants.homeCollectionViewCellHeight)
     }
 }

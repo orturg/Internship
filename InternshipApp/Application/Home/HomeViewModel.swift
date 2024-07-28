@@ -13,6 +13,7 @@ final class HomeViewModel {
     var isMan: Bool
     var user: RegistrationData?
     var avatarImage = UIImage.maleAvatarPlaceholder
+    var optionData: [OptionData] = []
     
     init(titleText: String?, isMan: Bool) {
         self.titleText = titleText
@@ -61,6 +62,25 @@ final class HomeViewModel {
                 self.avatarImage = image
             case .failure(_):
                 self.avatarImage = UIImage.maleAvatarPlaceholder
+            }
+        }
+    }
+    
+    
+    func getCells(completion: @escaping () -> Void) {
+        optionData.removeAll()
+        
+        FirebaseService.shared.getOptionData { [weak self] result in
+            guard let self else { return }
+            switch result {
+            case .success(let options):
+                let filteredOptions = options?.filter { $0.isShown == true }
+                filteredOptions?.forEach {
+                    self.optionData.append($0)
+                }
+                completion()
+            case .failure(_):
+                completion()
             }
         }
     }

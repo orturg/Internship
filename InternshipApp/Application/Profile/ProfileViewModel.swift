@@ -124,8 +124,17 @@ final class ProfileViewModel {
         guard let navigationController else { return }
         
         
+        var textFieldsDic: [[String: Any]] = []
+        
+        textFieldCells.forEach { textFieldsDic.append([
+            "optionName": $0.textField.titleLabel.text,
+            "isShown": $0.customSwitch.isOn,
+            "value": $0.textField.getText()
+            ]
+        ) }
+        
         if isTableViewActive {
-            FirebaseService.shared.updateOptionData(textFields: textFieldCells) { [weak self] result in
+            FirebaseService.shared.updateOptionData(textFieldsDic: textFieldsDic) { [weak self] result in
                 guard let self else { return }
                 
                 switch result {

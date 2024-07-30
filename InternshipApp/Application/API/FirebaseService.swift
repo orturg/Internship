@@ -88,7 +88,7 @@ class FirebaseService {
     }
     
     
-    func updateOptionData(textFields: [TextFieldCell], completion: @escaping (Result<String?, DataBaseError>) -> Void) {
+    func updateOptionData(textFieldsDic: [[String: Any]], completion: @escaping (Result<String?, DataBaseError>) -> Void) {
         let docRef = collection.document(id)
         
         docRef.getDocument { (document, error) in
@@ -96,8 +96,9 @@ class FirebaseService {
                 var userOptions = document.data()?["userOptions"] as? [[String: Any]] ?? []
                 var dataDic: [[String : Any]] = []
                 
-                textFields.forEach { cell in
-                    if let index = userOptions.firstIndex(where: { $0["optionName"] as? String == cell.textField.titleLabel.text }) {
+                textFieldsDic.forEach { cell in
+                    
+                    if let index = userOptions.firstIndex(where: { $0["optionName"] as? String == cell["optionName"] as? String }) {
                         
                         var valueArray = userOptions[index]["valueArray"] as? [Int] ?? []
                         var timeArray = userOptions[index]["dateArray"] as? [Double] ?? []
@@ -114,7 +115,7 @@ class FirebaseService {
                         
                         if timeDifference > 60 { isNewValue = true }
                         
-                        if let newValue = Int(cell.textField.getText()) {
+                        if let newValue = Int(cell["value"] as? String ?? "") {
                             if isNewValue {
                                 if valueArray.count == 1 {
                                     valueArray.append(newValue)
@@ -136,7 +137,7 @@ class FirebaseService {
                             dataDic.append([
                                 "optionName": userOptions[index]["optionName"],
                                 "valueArray": valueArray,
-                                "isShown": cell.customSwitch.isOn,
+                                "isShown": cell["isShown"],
                                 "changedValue": valueArray.count == 1 ? 0 : valueArray[1] - valueArray[0],
                                 "dateArray": timeArray
                             ])
@@ -145,15 +146,15 @@ class FirebaseService {
                         var valueArray: [Int] = []
                         var timeArray: [Double] = []
                         
-                        if let newValue = Int(cell.textField.getText()) {
+                        if let newValue = Int(cell["value"] as? String ?? "") {
                             valueArray.append(newValue)
                         }
                         timeArray.append(Date().timeIntervalSince1970)
                         
                         dataDic.append([
-                            "optionName": cell.textField.titleLabel.text ?? "",
+                            "optionName": cell["optionName"] as? String,
                             "valueArray": valueArray,
-                            "isShown": cell.customSwitch.isOn,
+                            "isShown": cell["isShown"],
                             "changedValue": 0,
                             "dateArray": timeArray
                         ])

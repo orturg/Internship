@@ -104,43 +104,30 @@ class FirebaseService {
                         var timeArray = userOptions[index]["dateArray"] as? [Double] ?? []
                         var isNewValue = false
                         
-                        if timeArray.count == 1 {
-                            timeArray.append(Date().timeIntervalSince1970)
-                        } else {
-                            timeArray[1] = Date().timeIntervalSince1970
-                        }
+                        let currentTime = Date().timeIntervalSince1970
                         
-                        let timeInterval = timeArray[1] - timeArray[0]
+                        let timeInterval = currentTime - timeArray[timeArray.count - 1]
                         let timeDifference = Int(timeInterval)
                         
                         if timeDifference > 60 { isNewValue = true }
                         
                         if let newValue = Int(cell["value"] as? String ?? "") {
                             if isNewValue {
-                                if valueArray.count == 1 {
-                                    valueArray.append(newValue)
-                                } else {
-                                    valueArray[0] = valueArray[1]
-                                    valueArray[1] = newValue
-                                }
+                                timeArray.append(currentTime)
+                                valueArray.append(newValue)
                             } else {
-                                if valueArray.count == 1 {
-                                    valueArray[0] = newValue
-                                } else {
-                                    valueArray[1] = newValue
-                                }
+                                timeArray[timeArray.count - 1] = currentTime
+                                valueArray[valueArray.count - 1] = newValue
                             }
-                            
-                            timeArray[0] = timeArray[1]
-                            timeArray[1] = 0
                             
                             dataDic.append([
                                 "optionName": userOptions[index]["optionName"],
                                 "valueArray": valueArray,
                                 "isShown": cell["isShown"],
-                                "changedValue": valueArray.count == 1 ? 0 : valueArray[1] - valueArray[0],
+                                "changedValue": valueArray.count == 1 ? 0 : valueArray[valueArray.count - 1] - valueArray[valueArray.count - 2],
                                 "dateArray": timeArray
                             ])
+                            print(dataDic)
                         }
                     } else {
                         var valueArray: [Int] = []

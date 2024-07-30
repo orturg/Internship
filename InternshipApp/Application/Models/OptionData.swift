@@ -6,9 +6,12 @@
 //
 
 import Foundation
+import FirebaseFirestoreInternal
 
 struct OptionData: Codable {
     var isShown: Bool
     var optionName: OptionDataName
-    var value: Int
+    var valueArray: [Int]
+    var changedValue: Int
+    var dateArray: [Double]
 }

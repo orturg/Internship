@@ -60,4 +60,6 @@ enum TextValues {
     static let textFieldCellReuseID = "TextFieldCell"
     static let optionCellReuseID = "OptionCell"
     static let backToRegister = "Back to register"
+    static let sairaBold = "Saira-Bold"
+    static let homeReuseID = "HomeCell"
 }

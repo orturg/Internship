@@ -88,23 +88,90 @@ class FirebaseService {
     }
     
     
-    func updateOptionData(textFields: [TextFieldCell], completion: @escaping (Result<String?, DataBaseError>) -> Void) {
+    func updateOptionData(textFieldsDic: [[String: Any]], completion: @escaping (Result<String?, DataBaseError>) -> Void) {
+        let docRef = collection.document(id)
         
-        var dataDic: [[String : Any]] = []
-        
-        textFields.forEach { dataDic.append([
-            "optionName": $0.textField.titleLabel.text,
-            "value": Int($0.textField.getText()),
-            "isShown": $0.customSwitch.isOn
-        ]) }
-        
-        let data: [String : Any] = ["userOptions" : dataDic]
-        
-        collection.document(id).updateData(data) { error in
-            if let error {
-                completion(.failure(.errorUpdatingUser))
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                var userOptions = document.data()?["userOptions"] as? [[String: Any]] ?? []
+                var dataDic: [[String : Any]] = []
+                
+                textFieldsDic.forEach { cell in
+                    
+                    if let index = userOptions.firstIndex(where: { $0["optionName"] as? String == cell["optionName"] as? String }) {
+                        
+                        var valueArray = userOptions[index]["valueArray"] as? [Int] ?? []
+                        var timeArray = userOptions[index]["dateArray"] as? [Double] ?? []
+                        var isNewValue = false
+                        
+                        if timeArray.count == 1 {
+                            timeArray.append(Date().timeIntervalSince1970)
+                        } else {
+                            timeArray[1] = Date().timeIntervalSince1970
+                        }
+                        
+                        let timeInterval = timeArray[1] - timeArray[0]
+                        let timeDifference = Int(timeInterval)
+                        
+                        if timeDifference > 60 { isNewValue = true }
+                        
+                        if let newValue = Int(cell["value"] as? String ?? "") {
+                            if isNewValue {
+                                if valueArray.count == 1 {
+                                    valueArray.append(newValue)
+                                } else {
+                                    valueArray[0] = valueArray[1]
+                                    valueArray[1] = newValue
+                                }
+                            } else {
+                                if valueArray.count == 1 {
+                                    valueArray[0] = newValue
+                                } else {
+                                    valueArray[1] = newValue
+                                }
+                            }
+                            
+                            timeArray[0] = timeArray[1]
+                            timeArray[1] = 0
+                            
+                            dataDic.append([
+                                "optionName": userOptions[index]["optionName"],
+                                "valueArray": valueArray,
+                                "isShown": cell["isShown"],
+                                "changedValue": valueArray.count == 1 ? 0 : valueArray[1] - valueArray[0],
+                                "dateArray": timeArray
+                            ])
+                        }
+                    } else {
+                        var valueArray: [Int] = []
+                        var timeArray: [Double] = []
+                        
+                        if let newValue = Int(cell["value"] as? String ?? "") {
+                            valueArray.append(newValue)
+                        }
+                        timeArray.append(Date().timeIntervalSince1970)
+                        
+                        dataDic.append([
+                            "optionName": cell["optionName"] as? String,
+                            "valueArray": valueArray,
+                            "isShown": cell["isShown"],
+                            "changedValue": 0,
+                            "dateArray": timeArray
+                        ])
+                    }
+                }
+                
+                let data: [String: Any] = ["userOptions": dataDic]
+                
+                docRef.updateData(data) { error in
+                    if let error = error {
+                        completion(.failure(.errorUpdatingUser))
+                    } else {
+                        completion(.success(nil))
+                    }
+                }
             } else {
-                completion(.success(nil))
+                completion(.failure(.errorGettingUser))
             }
         }
     }

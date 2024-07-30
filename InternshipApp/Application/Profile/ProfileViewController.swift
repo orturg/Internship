@@ -36,7 +36,6 @@ final class ProfileViewController: BaseViewController {
             guard let self else { return }
             self.configure()
         }
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {

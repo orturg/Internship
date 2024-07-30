@@ -174,6 +174,8 @@
 		7272697E2C3536B1004BF6B6 /* CustomCheckboxSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7272697D2C3536B1004BF6B6 /* CustomCheckboxSwitch.swift */; };
 		727269802C35ABA7004BF6B6 /* CustomRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7272697F2C35ABA7004BF6B6 /* CustomRadioButton.swift */; };
 		727269822C368966004BF6B6 /* CustomTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 727269812C368966004BF6B6 /* CustomTextField.xib */; };
+		7275D1A72C554E9800BA8E4B /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7275D1A62C554E9800BA8E4B /* HomeCell.swift */; };
+		7275D1A92C55735B00BA8E4B /* HomeVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7275D1A82C55735B00BA8E4B /* HomeVCDelegate.swift */; };
 		727AE3752C4D7BEB00F8A2AD /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AE3742C4D7BEB00F8A2AD /* ProfileViewModel.swift */; };
 		727AE3772C4D7BFC00F8A2AD /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AE3762C4D7BFC00F8A2AD /* ProfileCoordinator.swift */; };
 		727AE37C2C4E1FFB00F8A2AD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AE37A2C4E1FFB00F8A2AD /* ProfileViewController.swift */; };
@@ -395,6 +397,8 @@
 		7272697D2C3536B1004BF6B6 /* CustomCheckboxSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCheckboxSwitch.swift; sourceTree = "<group>"; };
 		7272697F2C35ABA7004BF6B6 /* CustomRadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRadioButton.swift; sourceTree = "<group>"; };
 		727269812C368966004BF6B6 /* CustomTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTextField.xib; sourceTree = "<group>"; };
+		7275D1A62C554E9800BA8E4B /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		7275D1A82C55735B00BA8E4B /* HomeVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCDelegate.swift; sourceTree = "<group>"; };
 		727AE3742C4D7BEB00F8A2AD /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		727AE3762C4D7BFC00F8A2AD /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		727AE37A2C4E1FFB00F8A2AD /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -822,6 +826,8 @@
 				723C8E7F2C369FA6000C19BA /* HomeViewController.xib */,
 				7284E2152C3035880081F8D1 /* HomeViewModel.swift */,
 				7284E2172C3035930081F8D1 /* Home.storyboard */,
+				7275D1A62C554E9800BA8E4B /* HomeCell.swift */,
+				7275D1A82C55735B00BA8E4B /* HomeVCDelegate.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1240,6 +1246,7 @@
 				729BB3D12C3922BB00F06383 /* TabBarController.swift in Sources */,
 				7284E20F2C3017D90081F8D1 /* AppCoordinator.swift in Sources */,
 				723C8E862C36D895000C19BA /* Constants.swift in Sources */,
+				7275D1A72C554E9800BA8E4B /* HomeCell.swift in Sources */,
 				726988D62C3D5AFC00124AD3 /* RegistrationData.swift in Sources */,
 				720119322C4713860075CDF6 /* ContainerView.swift in Sources */,
 				72B4DA462C52178A00B74573 /* ProgrammaticCustomTextField.swift in Sources */,
@@ -1267,6 +1274,7 @@
 				729BB3F12C39264600F06383 /* MusclesCoordinator.swift in Sources */,
 				724C38DC2C51094F00DA1495 /* OptionDataName.swift in Sources */,
 				729BB4042C39564C00F06383 /* StartViewModel.swift in Sources */,
+				7275D1A92C55735B00BA8E4B /* HomeVCDelegate.swift in Sources */,
 				72C2C06D2C4FD00D0091C256 /* SelectOptionsViewModel.swift in Sources */,
 				729EEF742C4ECA4600A6DA80 /* EmptyContainerView.swift in Sources */,
 				720119362C478ED80075CDF6 /* CustomAlertCoordinator.swift in Sources */,

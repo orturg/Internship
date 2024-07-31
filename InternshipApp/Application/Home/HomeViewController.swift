@@ -37,18 +37,18 @@ final class HomeViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        guard let vm else { return }
         tabBarController?.tabBar.isHidden = false
-        vm?.getUser(vc: self)
-        vm?.getCells { [weak self] in
+        vm.getUser(vc: self)
+        vm.getCells { [weak self] in
             guard let self else { return }
             self.configure()
             self.configureLabels()
-            self.collectionView.reloadData()
+            if vm.needToReload {
+                self.collectionView.reloadData()
+                vm.needToReload = false
+            }
         }
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
     }
     
     

@@ -14,6 +14,7 @@ final class HomeViewModel {
     var user: RegistrationData?
     var avatarImage = UIImage.maleAvatarPlaceholder
     var optionData: [OptionData] = []
+    var needToReload = false
     
     init(titleText: String?, isMan: Bool) {
         self.titleText = titleText
@@ -38,7 +39,9 @@ final class HomeViewModel {
             case .success(let user):
                 self.user = user
                 vc.configureLabels()
-                vc.set(avatarImage)
+                DispatchQueue.main.async {
+                    vc.set(self.avatarImage)
+                }
             case .failure(let error):
                 vc.showAlert(vc: vc, error: error)
             }
@@ -60,8 +63,10 @@ final class HomeViewModel {
             switch result {
             case .success(let image):
                 self.avatarImage = image
+//                completion()
             case .failure(_):
                 self.avatarImage = UIImage.maleAvatarPlaceholder
+//                completion()
             }
         }
     }
@@ -78,6 +83,7 @@ final class HomeViewModel {
                 filteredOptions?.forEach {
                     self.optionData.append($0)
                 }
+                needToReload = true
                 completion()
             case .failure(_):
                 completion()

@@ -67,12 +67,20 @@ final class ChartView: UIView {
             
             layer.addSublayer(barLayer)
             
-            let animation = CABasicAnimation(keyPath: TextValues.buildingBarAnimation)
-            animation.fromValue = 0
-            animation.toValue = barHeight
-            animation.duration = 1
-            barLayer.bounds.size.height = barHeight
-            barLayer.add(animation, forKey: TextValues.barAnimation)
+            let heightAnimation = CABasicAnimation(keyPath: TextValues.buildingBarAnimation)
+            heightAnimation.fromValue = 0
+            heightAnimation.toValue = barHeight
+            heightAnimation.duration = 1
+            heightAnimation.timingFunction = CAMediaTimingFunction(name: .easeOut)
+            
+            let positionAnimation = CABasicAnimation(keyPath: TextValues.positionAnimation)
+            positionAnimation.fromValue = graphHeight - dateLabelHeight - bottomPadding
+            positionAnimation.toValue = graphHeight - barHeight / 2 - dateLabelHeight - bottomPadding
+            positionAnimation.duration = 1
+            positionAnimation.timingFunction = CAMediaTimingFunction(name: .easeOut)
+            
+            barLayer.add(heightAnimation, forKey: TextValues.buildingBarAnimation)
+            barLayer.add(positionAnimation, forKey: TextValues.positionAnimation)
             
             let valueLabel = UILabel(frame: CGRect(x: x, y: graphHeight - barHeight - dateLabelHeight - bottomPadding - 25, width: barWidth, height: Constants.chartViewValueLabelHeight))
             valueLabel.text = "\(value) \(name == TextValues.weight ? TextValues.kg : TextValues.cm)"
@@ -98,7 +106,7 @@ final class ChartView: UIView {
                 
                 if difference != 0 {
                     let differenceView = UIView(frame: CGRect(x: x, y: graphHeight - barHeight - dateLabelHeight - bottomPadding - 55, width: Constants.chartViewDifferenceViewWidth, height: Constants.chartViewDifferenceViewHeight))
-                    differenceView.backgroundColor = .appRed
+                    differenceView.backgroundColor = difference < 0 ? .systemGreen : .appRed
                     differenceView.layer.cornerRadius = Constants.chartViewDifferenceViewCornerRadius
                     differenceView.alpha = 0
                     
@@ -108,7 +116,7 @@ final class ChartView: UIView {
                     differenceLabel.textAlignment = .center
                     differenceLabel.textColor = .white
                     
-                    differenceLabel.alpha = 0 
+                    differenceLabel.alpha = 0
                     differenceLabel.translatesAutoresizingMaskIntoConstraints = false
                     
                     differenceView.addSubview(differenceLabel)

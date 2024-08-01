@@ -65,7 +65,7 @@ enum TextValues {
     static let chart = "Chart"
     static let progressChartScreenDateLabelText = "Displaying dynamics relative to data from"
     static let buildingBarAnimation = "bounds.size.height"
-    static let barAnimation = "barAnimation"
+    static let positionAnimation = "position.y"
     static let progressVCEmptyStateScreen = "Options are not selected. To display them, add them to your profile."
     static let progressTableViewCellReuseID = "ProgressTableViewCell"
 }

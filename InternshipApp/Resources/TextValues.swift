@@ -62,4 +62,10 @@ enum TextValues {
     static let backToRegister = "Back to register"
     static let sairaBold = "Saira-Bold"
     static let homeReuseID = "HomeCell"
+    static let chart = "Chart"
+    static let progressChartScreenDateLabelText = "Displaying dynamics relative to data from"
+    static let buildingBarAnimation = "bounds.size.height"
+    static let positionAnimation = "position.y"
+    static let progressVCEmptyStateScreen = "Options are not selected. To display them, add them to your profile."
+    static let progressTableViewCellReuseID = "ProgressTableViewCell"
 }

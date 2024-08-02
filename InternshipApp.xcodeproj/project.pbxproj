@@ -12,6 +12,7 @@
 		720119322C4713860075CDF6 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720119312C4713860075CDF6 /* ContainerView.swift */; };
 		720119342C478EB00075CDF6 /* CustomAlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720119332C478EB00075CDF6 /* CustomAlertViewModel.swift */; };
 		720119362C478ED80075CDF6 /* CustomAlertCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720119352C478ED80075CDF6 /* CustomAlertCoordinator.swift */; };
+		720FA6392C5A268400425BE1 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720FA6382C5A268400425BE1 /* ChartView.swift */; };
 		721F5AC72C52750C00012E1A /* OptionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721F5AC62C52750C00012E1A /* OptionData.swift */; };
 		723821E92C47B8130055053A /* ResetPasswordVCProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723821E82C47B8130055053A /* ResetPasswordVCProtocol.swift */; };
 		7238CF412C41488F006F5B27 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7238CF402C41488F006F5B27 /* GoogleService-Info.plist */; };
@@ -28,6 +29,10 @@
 		72557E922C415A74002625AA /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72557E902C415A74002625AA /* LoginViewController.xib */; };
 		72557E942C415A7F002625AA /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72557E932C415A7F002625AA /* LoginViewModel.swift */; };
 		72557E982C415A9B002625AA /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72557E972C415A9B002625AA /* LoginCoordinator.swift */; };
+		7267F59E2C5931BB008699B3 /* ProgressChartScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7267F59D2C5931BB008699B3 /* ProgressChartScreenCoordinator.swift */; };
+		7267F5A12C59321B008699B3 /* ProgressChartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7267F59F2C59321B008699B3 /* ProgressChartScreenViewController.swift */; };
+		7267F5A22C59321B008699B3 /* ProgressChartScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7267F5A02C59321B008699B3 /* ProgressChartScreenViewController.xib */; };
+		7267F5A42C59325A008699B3 /* ProgressChartScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7267F5A32C59325A008699B3 /* ProgressChartScreenViewModel.swift */; };
 		726988CD2C3D446700124AD3 /* SignUpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726988CC2C3D446700124AD3 /* SignUpCoordinator.swift */; };
 		726988CF2C3D447700124AD3 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726988CE2C3D447700124AD3 /* SignUpViewModel.swift */; };
 		726988D22C3D449000124AD3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726988D02C3D448F00124AD3 /* SignUpViewController.swift */; };
@@ -190,6 +195,8 @@
 		7284E2112C301CC00081F8D1 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7284E2102C301CC00081F8D1 /* HomeCoordinator.swift */; };
 		7284E2132C301D790081F8D1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7284E2122C301D790081F8D1 /* HomeViewController.swift */; };
 		7284E2162C3035880081F8D1 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7284E2152C3035880081F8D1 /* HomeViewModel.swift */; };
+		7289AB372C58FBB20097E2E2 /* EmptyStateContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7289AB362C58FBB20097E2E2 /* EmptyStateContainer.swift */; };
+		7289AB392C5918990097E2E2 /* ProgressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7289AB382C5918990097E2E2 /* ProgressTableViewCell.swift */; };
 		729BB3CA2C391DBB00F06383 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7284E2172C3035930081F8D1 /* Home.storyboard */; };
 		729BB3D12C3922BB00F06383 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729BB3CF2C3922BB00F06383 /* TabBarController.swift */; };
 		729BB3D22C3922BB00F06383 /* TabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 729BB3D02C3922BB00F06383 /* TabBarController.xib */; };
@@ -234,6 +241,7 @@
 		720119312C4713860075CDF6 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		720119332C478EB00075CDF6 /* CustomAlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewModel.swift; sourceTree = "<group>"; };
 		720119352C478ED80075CDF6 /* CustomAlertCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertCoordinator.swift; sourceTree = "<group>"; };
+		720FA6382C5A268400425BE1 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		721F5AC62C52750C00012E1A /* OptionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionData.swift; sourceTree = "<group>"; };
 		723821E82C47B8130055053A /* ResetPasswordVCProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVCProtocol.swift; sourceTree = "<group>"; };
 		7238CF3F2C4146FD006F5B27 /* InternshipApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InternshipApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -251,6 +259,10 @@
 		72557E902C415A74002625AA /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		72557E932C415A7F002625AA /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		72557E972C415A9B002625AA /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		7267F59D2C5931BB008699B3 /* ProgressChartScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressChartScreenCoordinator.swift; sourceTree = "<group>"; };
+		7267F59F2C59321B008699B3 /* ProgressChartScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressChartScreenViewController.swift; sourceTree = "<group>"; };
+		7267F5A02C59321B008699B3 /* ProgressChartScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressChartScreenViewController.xib; sourceTree = "<group>"; };
+		7267F5A32C59325A008699B3 /* ProgressChartScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressChartScreenViewModel.swift; sourceTree = "<group>"; };
 		726988CC2C3D446700124AD3 /* SignUpCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCoordinator.swift; sourceTree = "<group>"; };
 		726988CE2C3D447700124AD3 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		726988D02C3D448F00124AD3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -415,6 +427,8 @@
 		7284E2122C301D790081F8D1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7284E2152C3035880081F8D1 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		7284E2172C3035930081F8D1 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		7289AB362C58FBB20097E2E2 /* EmptyStateContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateContainer.swift; sourceTree = "<group>"; };
+		7289AB382C5918990097E2E2 /* ProgressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTableViewCell.swift; sourceTree = "<group>"; };
 		729BB3CF2C3922BB00F06383 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		729BB3D02C3922BB00F06383 /* TabBarController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBarController.xib; sourceTree = "<group>"; };
 		729BB3DC2C39256200F06383 /* ProgressCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCoordinator.swift; sourceTree = "<group>"; };
@@ -528,6 +542,18 @@
 				72557E972C415A9B002625AA /* LoginCoordinator.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		7267F59C2C593198008699B3 /* ProgressChartScreen */ = {
+			isa = PBXGroup;
+			children = (
+				7267F59D2C5931BB008699B3 /* ProgressChartScreenCoordinator.swift */,
+				7267F59F2C59321B008699B3 /* ProgressChartScreenViewController.swift */,
+				7267F5A02C59321B008699B3 /* ProgressChartScreenViewController.xib */,
+				7267F5A32C59325A008699B3 /* ProgressChartScreenViewModel.swift */,
+				720FA6382C5A268400425BE1 /* ChartView.swift */,
+			);
+			path = ProgressChartScreen;
 			sourceTree = "<group>";
 		};
 		726988C72C3D43FB00124AD3 /* SignUp */ = {
@@ -845,10 +871,13 @@
 		729BB3D42C3924A900F06383 /* Progress */ = {
 			isa = PBXGroup;
 			children = (
+				7267F59C2C593198008699B3 /* ProgressChartScreen */,
 				729BB3DC2C39256200F06383 /* ProgressCoordinator.swift */,
 				729BB3E02C39258F00F06383 /* ProgressViewModel.swift */,
 				729BB3E22C3925B000F06383 /* ProgressViewController.swift */,
 				729BB3E32C3925B000F06383 /* ProgressViewController.xib */,
+				7289AB362C58FBB20097E2E2 /* EmptyStateContainer.swift */,
+				7289AB382C5918990097E2E2 /* ProgressTableViewCell.swift */,
 			);
 			path = Progress;
 			sourceTree = "<group>";
@@ -1026,6 +1055,7 @@
 				727268FE2C352BBF004BF6B6 /* Saira_Condensed-Black.ttf in Resources */,
 				727269352C352BBF004BF6B6 /* Saira_SemiCondensed-SemiBold.ttf in Resources */,
 				7272696E2C352BBF004BF6B6 /* Saira_UltraCondensed-Regular.ttf in Resources */,
+				7267F5A22C59321B008699B3 /* ProgressChartScreenViewController.xib in Resources */,
 				7272694B2C352BBF004BF6B6 /* Saira_UltraCondensed-Light.ttf in Resources */,
 				7272695F2C352BBF004BF6B6 /* Saira_SemiExpanded-BoldItalic.ttf in Resources */,
 				7272690D2C352BBF004BF6B6 /* Saira_Expanded-Light.ttf in Resources */,
@@ -1219,6 +1249,7 @@
 				729BB3FF2C3955AD00F06383 /* StartViewController.swift in Sources */,
 				7271070E2C3A7BA00036E9AC /* CustomRoundedRectangleButton.swift in Sources */,
 				729BB3F72C39265F00F06383 /* MusclesViewModel.swift in Sources */,
+				7289AB392C5918990097E2E2 /* ProgressTableViewCell.swift in Sources */,
 				72F3F15D2C46944D0034B823 /* ResetPasswordViewModel.swift in Sources */,
 				7201192F2C4713690075CDF6 /* CustomAlertVC.swift in Sources */,
 				7284E20D2C3016F60081F8D1 /* Coordinator.swift in Sources */,
@@ -1231,6 +1262,7 @@
 				727107092C39D9910036E9AC /* GradientDivider.swift in Sources */,
 				7284E20A2C3010120081F8D1 /* BaseViewController.swift in Sources */,
 				729BB3FA2C39287C00F06383 /* TabBarCoordinator.swift in Sources */,
+				7289AB372C58FBB20097E2E2 /* EmptyStateContainer.swift in Sources */,
 				72AAD2252C3FAD7C0066EF8C /* DataBaseError.swift in Sources */,
 				729BB3F42C39265300F06383 /* MusclesViewController.swift in Sources */,
 				729BB4022C3955BB00F06383 /* StartCoordinator.swift in Sources */,
@@ -1244,12 +1276,14 @@
 				727269802C35ABA7004BF6B6 /* CustomRadioButton.swift in Sources */,
 				72557E982C415A9B002625AA /* LoginCoordinator.swift in Sources */,
 				729BB3D12C3922BB00F06383 /* TabBarController.swift in Sources */,
+				7267F59E2C5931BB008699B3 /* ProgressChartScreenCoordinator.swift in Sources */,
 				7284E20F2C3017D90081F8D1 /* AppCoordinator.swift in Sources */,
 				723C8E862C36D895000C19BA /* Constants.swift in Sources */,
 				7275D1A72C554E9800BA8E4B /* HomeCell.swift in Sources */,
 				726988D62C3D5AFC00124AD3 /* RegistrationData.swift in Sources */,
 				720119322C4713860075CDF6 /* ContainerView.swift in Sources */,
 				72B4DA462C52178A00B74573 /* ProgrammaticCustomTextField.swift in Sources */,
+				7267F5A12C59321B008699B3 /* ProgressChartScreenViewController.swift in Sources */,
 				72F3F15F2C4694590034B823 /* ResetPasswordCoordinator.swift in Sources */,
 				72C2C06F2C4FD01A0091C256 /* SelectOptionsCoordinator.swift in Sources */,
 				727AE37C2C4E1FFB00F8A2AD /* ProfileViewController.swift in Sources */,
@@ -1264,7 +1298,9 @@
 				72557E942C415A7F002625AA /* LoginViewModel.swift in Sources */,
 				724C38E02C510BE400DA1495 /* OptionCell.swift in Sources */,
 				729BB4082C3961AB00F06383 /* GradientView.swift in Sources */,
+				720FA6392C5A268400425BE1 /* ChartView.swift in Sources */,
 				7284E2132C301D790081F8D1 /* HomeViewController.swift in Sources */,
+				7267F5A42C59325A008699B3 /* ProgressChartScreenViewModel.swift in Sources */,
 				729EEF782C4ECA6B00A6DA80 /* EmptyAlertViewModel.swift in Sources */,
 				729EEF762C4ECA5D00A6DA80 /* EmptyAlertCoordinator.swift in Sources */,
 				729BB3E72C3925C000F06383 /* CalculatorCoordinator.swift in Sources */,

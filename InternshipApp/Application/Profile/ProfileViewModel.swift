@@ -120,6 +120,14 @@ final class ProfileViewModel {
     }
     
     
+    func deleteAccountButtonAction(navigationController: UINavigationController?) {
+        guard let navigationController else { return }
+        
+        let deleteAccountCoordinator = DeleteAccountCoordinator(navigationController: navigationController)
+        deleteAccountCoordinator.start()
+    }
+    
+    
     func updateOptionTextFields(saveButton: CustomButton, navigationController: UINavigationController?) {
         guard let navigationController else { return }
         

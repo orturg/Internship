@@ -299,4 +299,27 @@ class FirebaseService {
             }
         }
     }
+    
+    
+    func getCurrentUserEmail() -> String {
+        guard let email = Auth.auth().currentUser?.email else { return "" }
+        
+        return email
+    }
+    
+    
+    func deleteAuthenticatedUser() {
+        guard let user = Auth.auth().currentUser else { return }
+        
+        do {
+            try logOut()
+        } catch {}
+        
+        user.delete()
+    }
+    
+    
+    func deleteUserFromFirestore() {
+        collection.document(id).delete()
+    }
 }

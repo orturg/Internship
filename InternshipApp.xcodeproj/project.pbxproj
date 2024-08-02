@@ -230,6 +230,15 @@
 		72C2C06D2C4FD00D0091C256 /* SelectOptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C2C06C2C4FD00D0091C256 /* SelectOptionsViewModel.swift */; };
 		72C2C06F2C4FD01A0091C256 /* SelectOptionsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C2C06E2C4FD01A0091C256 /* SelectOptionsCoordinator.swift */; };
 		72C2C0712C4FD02A0091C256 /* SelectOptionsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C2C0702C4FD02A0091C256 /* SelectOptionsContainer.swift */; };
+		72C46A8A2C5CE7600003C00F /* DeleteAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C46A882C5CE7600003C00F /* DeleteAccountViewController.swift */; };
+		72C46A8B2C5CE7600003C00F /* DeleteAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72C46A892C5CE7600003C00F /* DeleteAccountViewController.xib */; };
+		72C46A8D2C5CE76D0003C00F /* DeleteAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C46A8C2C5CE76D0003C00F /* DeleteAccountViewModel.swift */; };
+		72C46A8F2C5CE7790003C00F /* DeleteAccountCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C46A8E2C5CE7790003C00F /* DeleteAccountCoordinator.swift */; };
+		72C46A922C5D07FE0003C00F /* DeleteAccountAlertCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C46A912C5D07FE0003C00F /* DeleteAccountAlertCoordinator.swift */; };
+		72C46A942C5D08130003C00F /* DeleteAccountAlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C46A932C5D08130003C00F /* DeleteAccountAlertViewModel.swift */; };
+		72C46A982C5D08450003C00F /* DeleteAccountAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C46A972C5D08450003C00F /* DeleteAccountAlertViewController.swift */; };
+		72C46A9A2C5D085B0003C00F /* DeleteAccountContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C46A992C5D085B0003C00F /* DeleteAccountContainer.swift */; };
+		72C46A9C2C5D09C90003C00F /* DeleteAccountAlertDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C46A9B2C5D09C90003C00F /* DeleteAccountAlertDelegate.swift */; };
 		72F3F15A2C4694320034B823 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F3F1582C4694320034B823 /* ResetPasswordViewController.swift */; };
 		72F3F15B2C4694320034B823 /* ResetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72F3F1592C4694320034B823 /* ResetPasswordViewController.xib */; };
 		72F3F15D2C46944D0034B823 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F3F15C2C46944D0034B823 /* ResetPasswordViewModel.swift */; };
@@ -461,6 +470,15 @@
 		72C2C06C2C4FD00D0091C256 /* SelectOptionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionsViewModel.swift; sourceTree = "<group>"; };
 		72C2C06E2C4FD01A0091C256 /* SelectOptionsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionsCoordinator.swift; sourceTree = "<group>"; };
 		72C2C0702C4FD02A0091C256 /* SelectOptionsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionsContainer.swift; sourceTree = "<group>"; };
+		72C46A882C5CE7600003C00F /* DeleteAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountViewController.swift; sourceTree = "<group>"; };
+		72C46A892C5CE7600003C00F /* DeleteAccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteAccountViewController.xib; sourceTree = "<group>"; };
+		72C46A8C2C5CE76D0003C00F /* DeleteAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountViewModel.swift; sourceTree = "<group>"; };
+		72C46A8E2C5CE7790003C00F /* DeleteAccountCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountCoordinator.swift; sourceTree = "<group>"; };
+		72C46A912C5D07FE0003C00F /* DeleteAccountAlertCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountAlertCoordinator.swift; sourceTree = "<group>"; };
+		72C46A932C5D08130003C00F /* DeleteAccountAlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountAlertViewModel.swift; sourceTree = "<group>"; };
+		72C46A972C5D08450003C00F /* DeleteAccountAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountAlertViewController.swift; sourceTree = "<group>"; };
+		72C46A992C5D085B0003C00F /* DeleteAccountContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountContainer.swift; sourceTree = "<group>"; };
+		72C46A9B2C5D09C90003C00F /* DeleteAccountAlertDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountAlertDelegate.swift; sourceTree = "<group>"; };
 		72F3F1582C4694320034B823 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		72F3F1592C4694320034B823 /* ResetPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResetPasswordViewController.xib; sourceTree = "<group>"; };
 		72F3F15C2C46944D0034B823 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
@@ -818,6 +836,7 @@
 				7284E2142C3035630081F8D1 /* Home */,
 				727AE36F2C4D7BB900F8A2AD /* Profile */,
 				72C2C0692C4FCFD70091C256 /* SelectOptions */,
+				72C46A872C5CE73A0003C00F /* DeleteAccount */,
 				729BB3D42C3924A900F06383 /* Progress */,
 				729BB3D52C3924B300F06383 /* Calculator */,
 				729BB3D72C3924D100F06383 /* Muscles */,
@@ -969,6 +988,30 @@
 				724C38DF2C510BE400DA1495 /* OptionCell.swift */,
 			);
 			path = SelectOptions;
+			sourceTree = "<group>";
+		};
+		72C46A872C5CE73A0003C00F /* DeleteAccount */ = {
+			isa = PBXGroup;
+			children = (
+				72C46A902C5D07D10003C00F /* Alert */,
+				72C46A882C5CE7600003C00F /* DeleteAccountViewController.swift */,
+				72C46A892C5CE7600003C00F /* DeleteAccountViewController.xib */,
+				72C46A8C2C5CE76D0003C00F /* DeleteAccountViewModel.swift */,
+				72C46A8E2C5CE7790003C00F /* DeleteAccountCoordinator.swift */,
+			);
+			path = DeleteAccount;
+			sourceTree = "<group>";
+		};
+		72C46A902C5D07D10003C00F /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				72C46A9B2C5D09C90003C00F /* DeleteAccountAlertDelegate.swift */,
+				72C46A912C5D07FE0003C00F /* DeleteAccountAlertCoordinator.swift */,
+				72C46A932C5D08130003C00F /* DeleteAccountAlertViewModel.swift */,
+				72C46A972C5D08450003C00F /* DeleteAccountAlertViewController.swift */,
+				72C46A992C5D085B0003C00F /* DeleteAccountContainer.swift */,
+			);
+			path = Alert;
 			sourceTree = "<group>";
 		};
 		72F3F1572C4693F60034B823 /* ResetPassword */ = {
@@ -1162,6 +1205,7 @@
 				7272691B2C352BBF004BF6B6 /* Saira_Expanded-Thin.ttf in Resources */,
 				7272692D2C352BBF004BF6B6 /* Saira_SemiCondensed-ExtraLightItalic.ttf in Resources */,
 				727269512C352BBF004BF6B6 /* Saira_Expanded-ThinItalic.ttf in Resources */,
+				72C46A8B2C5CE7600003C00F /* DeleteAccountViewController.xib in Resources */,
 				7272691F2C352BBF004BF6B6 /* Saira_SemiCondensed-Thin.ttf in Resources */,
 				727269602C352BBF004BF6B6 /* Saira_SemiCondensed-Medium.ttf in Resources */,
 				7284E1F72C2FFA8F0081F8D1 /* Assets.xcassets in Resources */,
@@ -1246,6 +1290,7 @@
 				723C8E832C36D7AF000C19BA /* TextValues.swift in Sources */,
 				726988CD2C3D446700124AD3 /* SignUpCoordinator.swift in Sources */,
 				72C2C0712C4FD02A0091C256 /* SelectOptionsContainer.swift in Sources */,
+				72C46A9A2C5D085B0003C00F /* DeleteAccountContainer.swift in Sources */,
 				729BB3FF2C3955AD00F06383 /* StartViewController.swift in Sources */,
 				7271070E2C3A7BA00036E9AC /* CustomRoundedRectangleButton.swift in Sources */,
 				729BB3F72C39265F00F06383 /* MusclesViewModel.swift in Sources */,
@@ -1263,9 +1308,11 @@
 				7284E20A2C3010120081F8D1 /* BaseViewController.swift in Sources */,
 				729BB3FA2C39287C00F06383 /* TabBarCoordinator.swift in Sources */,
 				7289AB372C58FBB20097E2E2 /* EmptyStateContainer.swift in Sources */,
+				72C46A8F2C5CE7790003C00F /* DeleteAccountCoordinator.swift in Sources */,
 				72AAD2252C3FAD7C0066EF8C /* DataBaseError.swift in Sources */,
 				729BB3F42C39265300F06383 /* MusclesViewController.swift in Sources */,
 				729BB4022C3955BB00F06383 /* StartCoordinator.swift in Sources */,
+				72C46A922C5D07FE0003C00F /* DeleteAccountAlertCoordinator.swift in Sources */,
 				729BB3E12C39258F00F06383 /* ProgressViewModel.swift in Sources */,
 				72F3F15A2C4694320034B823 /* ResetPasswordViewController.swift in Sources */,
 				7272697A2C35317A004BF6B6 /* CustomSwitch.swift in Sources */,
@@ -1286,6 +1333,7 @@
 				7267F5A12C59321B008699B3 /* ProgressChartScreenViewController.swift in Sources */,
 				72F3F15F2C4694590034B823 /* ResetPasswordCoordinator.swift in Sources */,
 				72C2C06F2C4FD01A0091C256 /* SelectOptionsCoordinator.swift in Sources */,
+				72C46A8D2C5CE76D0003C00F /* DeleteAccountViewModel.swift in Sources */,
 				727AE37C2C4E1FFB00F8A2AD /* ProfileViewController.swift in Sources */,
 				7284E2162C3035880081F8D1 /* HomeViewModel.swift in Sources */,
 				724C38D82C50CC4300DA1495 /* PopupTransitioningDelegate.swift in Sources */,
@@ -1295,6 +1343,7 @@
 				7284E1F02C2FFA8E0081F8D1 /* SceneDelegate.swift in Sources */,
 				726988CF2C3D447700124AD3 /* SignUpViewModel.swift in Sources */,
 				727269782C352CC0004BF6B6 /* CustomButton.swift in Sources */,
+				72C46A942C5D08130003C00F /* DeleteAccountAlertViewModel.swift in Sources */,
 				72557E942C415A7F002625AA /* LoginViewModel.swift in Sources */,
 				724C38E02C510BE400DA1495 /* OptionCell.swift in Sources */,
 				729BB4082C3961AB00F06383 /* GradientView.swift in Sources */,
@@ -1302,11 +1351,14 @@
 				7284E2132C301D790081F8D1 /* HomeViewController.swift in Sources */,
 				7267F5A42C59325A008699B3 /* ProgressChartScreenViewModel.swift in Sources */,
 				729EEF782C4ECA6B00A6DA80 /* EmptyAlertViewModel.swift in Sources */,
+				72C46A982C5D08450003C00F /* DeleteAccountAlertViewController.swift in Sources */,
 				729EEF762C4ECA5D00A6DA80 /* EmptyAlertCoordinator.swift in Sources */,
 				729BB3E72C3925C000F06383 /* CalculatorCoordinator.swift in Sources */,
 				729BB3E42C3925B000F06383 /* ProgressViewController.swift in Sources */,
 				7272697E2C3536B1004BF6B6 /* CustomCheckboxSwitch.swift in Sources */,
 				72B4DA442C52175600B74573 /* TextFieldCell.swift in Sources */,
+				72C46A9C2C5D09C90003C00F /* DeleteAccountAlertDelegate.swift in Sources */,
+				72C46A8A2C5CE7600003C00F /* DeleteAccountViewController.swift in Sources */,
 				729BB3F12C39264600F06383 /* MusclesCoordinator.swift in Sources */,
 				724C38DC2C51094F00DA1495 /* OptionDataName.swift in Sources */,
 				729BB4042C39564C00F06383 /* StartViewModel.swift in Sources */,

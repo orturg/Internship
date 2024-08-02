@@ -68,4 +68,8 @@ enum TextValues {
     static let positionAnimation = "position.y"
     static let progressVCEmptyStateScreen = "Options are not selected. To display them, add them to your profile."
     static let progressTableViewCellReuseID = "ProgressTableViewCell"
+    static let deleteAccountInstructionLabelText = "To delete your account, confirm your email."
+    static let sairaThin = "Saira-Thin"
+    static let delete = "Delete"
+    static let deleteAccountAlertText = "Are you sure you want to delete your account?"
 }

@@ -8,10 +8,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="InternshipApp" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DeleteAccountViewController" customModule="InternshipApp" customModuleProvider="target">
             <connections>
-                <outlet property="avatarImageView" destination="Sgm-z4-dRm" id="R3R-cs-gF8"/>
-                <outlet property="nameTextField" destination="Hq6-c6-bts" id="zcn-hm-8WD"/>
+                <outlet property="textField" destination="kSl-Z5-0Mk" id="uDM-2g-iRH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,19 +19,15 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hq6-c6-bts" customClass="CustomTextField" customModule="InternshipApp" customModuleProvider="target">
-                    <rect key="frame" x="52" y="296" width="289" height="51"/>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kSl-Z5-0Mk" customClass="CustomTextField" customModule="InternshipApp" customModuleProvider="target">
+                    <rect key="frame" x="52" y="295" width="289" height="51"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sgm-z4-dRm">
-                    <rect key="frame" x="134" y="132" width="125" height="125"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <point key="canvasLocation" x="139" y="21"/>
+            <point key="canvasLocation" x="140" y="20"/>
         </view>
     </objects>
 </document>

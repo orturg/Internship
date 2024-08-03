@@ -226,6 +226,7 @@
 		72AB5B532C4263AF0021FC33 /* ViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AB5B522C4263AF0021FC33 /* ViewController+Ext.swift */; };
 		72B4DA442C52175600B74573 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4DA432C52175600B74573 /* TextFieldCell.swift */; };
 		72B4DA462C52178A00B74573 /* ProgrammaticCustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4DA452C52178A00B74573 /* ProgrammaticCustomTextField.swift */; };
+		72BB6C5B2C5E0E20008E10C9 /* DeleteAccountVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BB6C5A2C5E0E20008E10C9 /* DeleteAccountVCDelegate.swift */; };
 		72C2C06B2C4FCFFD0091C256 /* SelectOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C2C06A2C4FCFFD0091C256 /* SelectOptionsViewController.swift */; };
 		72C2C06D2C4FD00D0091C256 /* SelectOptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C2C06C2C4FD00D0091C256 /* SelectOptionsViewModel.swift */; };
 		72C2C06F2C4FD01A0091C256 /* SelectOptionsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C2C06E2C4FD01A0091C256 /* SelectOptionsCoordinator.swift */; };
@@ -466,6 +467,7 @@
 		72AB5B522C4263AF0021FC33 /* ViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Ext.swift"; sourceTree = "<group>"; };
 		72B4DA432C52175600B74573 /* TextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
 		72B4DA452C52178A00B74573 /* ProgrammaticCustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammaticCustomTextField.swift; sourceTree = "<group>"; };
+		72BB6C5A2C5E0E20008E10C9 /* DeleteAccountVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountVCDelegate.swift; sourceTree = "<group>"; };
 		72C2C06A2C4FCFFD0091C256 /* SelectOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionsViewController.swift; sourceTree = "<group>"; };
 		72C2C06C2C4FD00D0091C256 /* SelectOptionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionsViewModel.swift; sourceTree = "<group>"; };
 		72C2C06E2C4FD01A0091C256 /* SelectOptionsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionsCoordinator.swift; sourceTree = "<group>"; };
@@ -998,6 +1000,7 @@
 				72C46A892C5CE7600003C00F /* DeleteAccountViewController.xib */,
 				72C46A8C2C5CE76D0003C00F /* DeleteAccountViewModel.swift */,
 				72C46A8E2C5CE7790003C00F /* DeleteAccountCoordinator.swift */,
+				72BB6C5A2C5E0E20008E10C9 /* DeleteAccountVCDelegate.swift */,
 			);
 			path = DeleteAccount;
 			sourceTree = "<group>";
@@ -1338,6 +1341,7 @@
 				7284E2162C3035880081F8D1 /* HomeViewModel.swift in Sources */,
 				724C38D82C50CC4300DA1495 /* PopupTransitioningDelegate.swift in Sources */,
 				7284E1EE2C2FFA8E0081F8D1 /* AppDelegate.swift in Sources */,
+				72BB6C5B2C5E0E20008E10C9 /* DeleteAccountVCDelegate.swift in Sources */,
 				729EEF722C4ECA0E00A6DA80 /* EmptyCustomAlertVC.swift in Sources */,
 				72557E912C415A74002625AA /* LoginViewController.swift in Sources */,
 				7284E1F02C2FFA8E0081F8D1 /* SceneDelegate.swift in Sources */,

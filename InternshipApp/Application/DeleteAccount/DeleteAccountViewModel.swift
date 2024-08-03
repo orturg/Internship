@@ -7,8 +7,9 @@
 
 import UIKit
 
-final class DeleteAccountViewModel {
+final class DeleteAccountViewModel: DeleteAccountVCDelegate {
     weak var coordinator: DeleteAccountCoordinator?
+    var isDeleteButtonActive = true
     
     func isValidEmail(text: String?) -> Bool {
         let currentUserEmail = FirebaseService.shared.getCurrentUserEmail()
@@ -25,6 +26,8 @@ final class DeleteAccountViewModel {
         guard let navigationController else { return }
         
         let deleteAlertCoordinator = DeleteAccountAlertCoordinator(navigationController: navigationController, messageText: TextValues.deleteAccountAlertText, containerHeight: Constants.deleteAlertContainerHeight)
+        deleteAlertCoordinator.deleteAccountVCDelegate = self
         deleteAlertCoordinator.start()
+        isDeleteButtonActive = false
     }
 }

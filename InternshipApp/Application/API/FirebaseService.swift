@@ -319,7 +319,12 @@ class FirebaseService {
     }
     
     
-    func deleteUserFromFirestore() {
-        collection.document(id).delete()
+    func deleteUserFromFirestore(completion: @escaping(Result<String?, DataBaseError>) -> Void) {
+        collection.document(id).delete { error in
+            if let error {
+                completion(.failure(.errorDeletingUser))
+            }
+            completion(.success(nil))
+        }
     }
 }

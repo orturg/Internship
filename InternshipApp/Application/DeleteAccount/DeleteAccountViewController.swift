@@ -92,10 +92,12 @@ final class DeleteAccountViewController: BaseViewController {
     @objc private func deleteButtonAction() {
         guard let vm else { return }
         
-        if vm.isValidEmail(text: textField.getText()) {
-            vm.deleteButtonAction(navigationController: navigationController)
-        } else {
-            textField.changeToRed()
+        if vm.isDeleteButtonActive {
+            if vm.isValidEmail(text: textField.getText()) {
+                vm.deleteButtonAction(navigationController: navigationController)
+            } else {
+                textField.changeToRed()
+            }
         }
     }
     

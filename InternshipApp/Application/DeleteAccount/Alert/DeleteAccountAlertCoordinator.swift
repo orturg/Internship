@@ -12,6 +12,8 @@ final class DeleteAccountAlertCoordinator {
     let messageText: String
     var containerHeight: CGFloat
     
+    weak var deleteAccountVCDelegate: DeleteAccountVCDelegate?
+    
     init(navigationController: UINavigationController, messageText: String, containerHeight: CGFloat) {
         self.navigationController = navigationController
         self.messageText = messageText
@@ -24,6 +26,7 @@ final class DeleteAccountAlertCoordinator {
         
         alertVC.vm = alertVM
         alertVC.vm?.coordinator = self
+        alertVC.vm?.deleteAccountVCDelegate = deleteAccountVCDelegate
         
         navigationController.present(alertVC, animated: true)
     }

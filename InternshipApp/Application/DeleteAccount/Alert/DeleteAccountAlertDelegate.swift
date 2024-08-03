@@ -5,8 +5,8 @@
 //  Created by Artur Nozhenko on 02.08.2024.
 //
 
-import Foundation
+import UIKit
 
-protocol DeleteAccountAlertDelegate: AnyObject {
+protocol DeleteAccountAlertDelegate: UIViewController {
     func dismissVC()
 }

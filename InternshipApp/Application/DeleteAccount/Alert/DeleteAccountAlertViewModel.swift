@@ -10,6 +10,7 @@ import UIKit
 final class DeleteAccountAlertViewModel {
     weak var coordinator: DeleteAccountAlertCoordinator?
     weak var delegate: DeleteAccountAlertDelegate?
+    weak var deleteAccountVCDelegate: DeleteAccountVCDelegate?
     
     func deleteButtonAction() {
         deleteUser()
@@ -29,11 +30,24 @@ final class DeleteAccountAlertViewModel {
     
     func cancelButtonAction() {
         delegate?.dismissVC()
+        deleteAccountVCDelegate?.isDeleteButtonActive = true
     }
     
     
     private func deleteUser() {
+        deleteAccountVCDelegate?.isDeleteButtonActive = false
         FirebaseService.shared.deleteAuthenticatedUser()
-        FirebaseService.shared.deleteUserFromFirestore()
+        FirebaseService.shared.deleteUserFromFirestore { [weak self] result in
+            guard let self else { return }
+            guard let delegate else { return }
+            
+            switch result {
+            case .success(_): break
+            case .failure(let error):
+                delegate.dismissVC()
+                delegate.showAlert(vc: delegate, error: error)
+                deleteAccountVCDelegate?.isDeleteButtonActive = true
+            }
+        }
     }
 }

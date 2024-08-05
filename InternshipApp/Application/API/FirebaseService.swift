@@ -310,20 +310,19 @@ class FirebaseService {
     
     func deleteAuthenticatedUser() {
         guard let user = Auth.auth().currentUser else { return }
-        
+        user.delete()
         do {
             try logOut()
         } catch {}
-        
-        user.delete()
     }
     
     
     func deleteUserFromFirestore(completion: @escaping(Result<String?, DataBaseError>) -> Void) {
-        collection.document(id).delete { error in
+        collection.document(id).delete { [weak self] error in
             if let error {
                 completion(.failure(.errorDeletingUser))
             }
+            
             completion(.success(nil))
         }
     }

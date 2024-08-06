@@ -240,6 +240,7 @@
 		72C46A982C5D08450003C00F /* DeleteAccountAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C46A972C5D08450003C00F /* DeleteAccountAlertViewController.swift */; };
 		72C46A9A2C5D085B0003C00F /* DeleteAccountContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C46A992C5D085B0003C00F /* DeleteAccountContainer.swift */; };
 		72C46A9C2C5D09C90003C00F /* DeleteAccountAlertDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C46A9B2C5D09C90003C00F /* DeleteAccountAlertDelegate.swift */; };
+		72F2D6DD2C62288F00E2D7C4 /* Exercises.json in Resources */ = {isa = PBXBuildFile; fileRef = 72F2D6DC2C62288F00E2D7C4 /* Exercises.json */; };
 		72F3F15A2C4694320034B823 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F3F1582C4694320034B823 /* ResetPasswordViewController.swift */; };
 		72F3F15B2C4694320034B823 /* ResetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72F3F1592C4694320034B823 /* ResetPasswordViewController.xib */; };
 		72F3F15D2C46944D0034B823 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F3F15C2C46944D0034B823 /* ResetPasswordViewModel.swift */; };
@@ -481,6 +482,7 @@
 		72C46A972C5D08450003C00F /* DeleteAccountAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountAlertViewController.swift; sourceTree = "<group>"; };
 		72C46A992C5D085B0003C00F /* DeleteAccountContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountContainer.swift; sourceTree = "<group>"; };
 		72C46A9B2C5D09C90003C00F /* DeleteAccountAlertDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountAlertDelegate.swift; sourceTree = "<group>"; };
+		72F2D6DC2C62288F00E2D7C4 /* Exercises.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Exercises.json; sourceTree = "<group>"; };
 		72F3F1582C4694320034B823 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		72F3F1592C4694320034B823 /* ResetPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResetPasswordViewController.xib; sourceTree = "<group>"; };
 		72F3F15C2C46944D0034B823 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
@@ -616,6 +618,7 @@
 		727267582C33ED9A004BF6B6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				72F2D6DC2C62288F00E2D7C4 /* Exercises.json */,
 				723C8E822C36D7AF000C19BA /* TextValues.swift */,
 				723C8E852C36D895000C19BA /* Constants.swift */,
 				727269742C352BCD004BF6B6 /* Fonts */,
@@ -1188,6 +1191,7 @@
 				727268F82C352BBF004BF6B6 /* Saira_SemiCondensed-Italic.ttf in Resources */,
 				727269672C352BBF004BF6B6 /* Saira-ExtraBold.ttf in Resources */,
 				727269452C352BBF004BF6B6 /* Saira_Condensed-SemiBoldItalic.ttf in Resources */,
+				72F2D6DD2C62288F00E2D7C4 /* Exercises.json in Resources */,
 				7272693B2C352BBF004BF6B6 /* Saira_Expanded-Bold.ttf in Resources */,
 				727269122C352BBF004BF6B6 /* Saira_SemiExpanded-Black.ttf in Resources */,
 				727269292C352BBF004BF6B6 /* Saira_ExtraCondensed-ThinItalic.ttf in Resources */,

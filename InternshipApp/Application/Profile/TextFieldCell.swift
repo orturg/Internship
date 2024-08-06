@@ -42,7 +42,7 @@ class TextFieldCell: UITableViewCell {
     
     private func configureCell() {
         selectionStyle = .none
-        backgroundColor = .black
+        backgroundColor = .clear
     }
     
     private func configureTextField() {

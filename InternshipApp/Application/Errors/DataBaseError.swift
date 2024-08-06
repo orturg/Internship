@@ -12,5 +12,6 @@ enum DataBaseError: String, Error {
     case errorUpdatingUser = "Error occurred updating user. Please try again."
     case errorGettingUser = "Error occurred getting user. Please try again."
     case errorSigningIn = "Error occurred signing in. Please try again."
-    case errorResetingPassword = "Error occurred reseting password. Please try again"
+    case errorResetingPassword = "Error occurred reseting password. Please try again."
+    case errorDeletingUser = "Error occurred deleting user. Please try again."
 }

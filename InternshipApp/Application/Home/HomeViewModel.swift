@@ -73,6 +73,7 @@ final class HomeViewModel {
     
     
     func getCells(completion: @escaping () -> Void) {
+        let oldData = optionData
         optionData.removeAll()
         
         FirebaseService.shared.getOptionData { [weak self] result in
@@ -83,7 +84,9 @@ final class HomeViewModel {
                 filteredOptions?.forEach {
                     self.optionData.append($0)
                 }
-                needToReload = true
+                if oldData != self.optionData {
+                    needToReload = true
+                }
                 completion()
             case .failure(_):
                 completion()

@@ -170,4 +170,8 @@ enum Constants {
     static let progressTableViewCellLineTopAnchor: CGFloat = 12
     static let progressTableViewCellLineHeight: CGFloat = 2
     static let progressTableViewCellLineBottomAnchor: CGFloat = 32
+    static let deleteAccountInstructionLabelSize: CGFloat = 16
+    static let deleteAccountVCDeleteButtonBottomAnchor: CGFloat = 48
+    static let deleteAlertContainerHeight: CGFloat = 153
+    
 }

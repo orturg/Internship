@@ -16,7 +16,9 @@ final class ProfileViewController: BaseViewController {
         UITableView(frame: .zero, style: .plain)
     }()
     
-    private var addOptionsButton = CustomRoundedRectangleButton(buttonBackgroundColor: .appYellow, buttonText: TextValues.addOptions, textColor: .black, height: Constants.customRoundedRectangleButtonHeight, width: Constants.customRoundedRectangleButtonWidth)
+    private let addOptionsButton = CustomRoundedRectangleButton(buttonBackgroundColor: .appYellow, buttonText: TextValues.addOptions, textColor: .black, height: Constants.customRoundedRectangleButtonHeight, width: Constants.customRoundedRectangleButtonWidth)
+    
+    private let deleteAccountButton = CustomButton(text: TextValues.deleteAccountLabel, color: .appRed)
     
     lazy var gradient: GradientView = {
         GradientView(width: Constants.gradientViewWidth, height: view.bounds.height, topColor: .clear, bottomColor: .black)
@@ -54,6 +56,7 @@ final class ProfileViewController: BaseViewController {
         configureScreenTitle()
         configureSaveButton()
         configureAvatarImageView()
+        configureDeleteAccountButton()
         configureTextFields()
         configureInstructionLabel()
         configureTableView()
@@ -61,6 +64,31 @@ final class ProfileViewController: BaseViewController {
         setupSubviews()
         setupLayoutConstraints()
     }
+    
+    
+    private func setupSubviews() {
+        view.addSubview(gradient)
+        view.addSubview(scrollView)
+        
+        scrollView.addSubview(contentView)
+        
+        contentView.addSubview(backButton)
+        contentView.addSubview(screenTitle)
+        contentView.addSubview(saveButton)
+        contentView.addSubview(avatarImageView)
+        contentView.addSubview(nameTextField)
+        contentView.addSubview(deleteAccountButton)
+        
+        
+        view.addSubview(backButton)
+        view.addSubview(saveButton)
+        view.addSubview(avatarImageView)
+        view.addSubview(deleteAccountButton)
+        view.addSubview(nameTextField)
+        
+        view.addSubview(addOptionsButton)
+    }
+    
     
     private func configureVC() {
         navigationController?.navigationBar.isHidden = true
@@ -146,28 +174,6 @@ final class ProfileViewController: BaseViewController {
         }
     }
     
-    
-    private func setupSubviews() {
-        view.addSubview(gradient)
-        view.addSubview(scrollView)
-        
-        scrollView.addSubview(contentView)
-        
-        contentView.addSubview(backButton)
-        contentView.addSubview(screenTitle)
-        contentView.addSubview(saveButton)
-        contentView.addSubview(avatarImageView)
-        contentView.addSubview(nameTextField)
-        
-        
-        view.addSubview(backButton)
-        view.addSubview(saveButton)
-        view.addSubview(avatarImageView)
-        view.addSubview(nameTextField)
-        
-        view.addSubview(addOptionsButton)
-    }
-    
     private func configureAvatarImageView() {
         avatarImageView.layer.cornerRadius = Constants.homeAvatarImageViewCornerRadius
         avatarImageView.image = vm?.avatarImage
@@ -186,11 +192,21 @@ final class ProfileViewController: BaseViewController {
         present(imagePicker, animated: true, completion: nil)
     }
     
+    
+    private func configureDeleteAccountButton() {
+        deleteAccountButton.addTarget(self, action: #selector(deleteAccountButtonAction), for: .touchUpInside)
+    }
+    
+    
+    @objc private func deleteAccountButtonAction() {
+        vm?.deleteAccountButtonAction(navigationController: navigationController)
+    }
+    
+    
     private func configureTextFields() {
         nameTextField.setTextFieldTitle(text: TextValues.name)
         nameTextField.textField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
     }
-    
     
     
     @objc private func textFieldDidChange() {
@@ -222,7 +238,7 @@ final class ProfileViewController: BaseViewController {
     private func configureTableView() {
         tableView.frame = view.bounds
         tableView.rowHeight = Constants.textFieldCellHeight
-        tableView.backgroundColor = .black
+        tableView.backgroundColor = .clear
         
         tableView.register(TextFieldCell.self, forCellReuseIdentifier: TextFieldCell.reuseID)
         
@@ -297,6 +313,8 @@ final class ProfileViewController: BaseViewController {
             saveButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.saveButtonTitleTrailingPadding),
             saveButton.heightAnchor.constraint(equalToConstant: Constants.saveButtonHeight),
             
+            deleteAccountButton.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: 21),
+            deleteAccountButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -44),
             
             addOptionsButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             addOptionsButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -Constants.addOptionsBottomAnchor),

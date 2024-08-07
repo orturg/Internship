@@ -72,4 +72,11 @@ enum TextValues {
     static let sairaThin = "Saira-Thin"
     static let delete = "Delete"
     static let deleteAccountAlertText = "Are you sure you want to delete your account?"
+    static let muscles = "Muscles"
+    static let musclesTableViewSectionHeaderCellReuseID = "SectionHeaderCell"
+    static let nunitoLight = "Nunito-Light"
+    static let reset = "Reset"
+    static let jsonFileName = "Exercises.json"
+    static let exerciseCellReuseID = "ExerciseCellID"
+    static let moreAbout = "More About"
 }

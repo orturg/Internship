@@ -157,6 +157,8 @@ extension MusclesViewController: UITableViewDelegate {
         guard let headerCell = tableView.headerView(forSection: section) as? SectionHeaderCell else {
             return
         }
+        headerCell.backgroundColor = .clear
+        headerCell.contentView.backgroundColor = .clear
         headerCell.setSelectedCells(amount: vm?.selectedCountForSection[section] ?? 0)
     }
     
@@ -209,6 +211,10 @@ extension MusclesViewController: UITableViewDataSource {
         guard let vm else { return UIView() }
         
         guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: SectionHeaderCell.reuseID) as? SectionHeaderCell else { return UITableViewCell() }
+        
+        header.contentView.backgroundColor = .clear
+        header.backgroundView = UIView(frame: header.bounds)
+        header.backgroundView?.backgroundColor = .clear
         
         header.setTitle(vm.exerciseList[section].muscleName)
         header.setImage(isArrowDown: vm.sectionExpanded[section])

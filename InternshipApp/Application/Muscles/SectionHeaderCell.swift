@@ -43,6 +43,9 @@ class SectionHeaderCell: UITableViewHeaderFooterView {
     
     private func configureCell() {
         backgroundColor = .clear
+        contentView.backgroundColor = .clear
+        backgroundView = UIView(frame: bounds)
+        backgroundView?.backgroundColor = .clear
     }
     
     

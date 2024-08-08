@@ -175,7 +175,7 @@ enum Constants {
     static let deleteAlertContainerHeight: CGFloat = 153
     static let musclesTableViewCellHeight: CGFloat = 171
     static let musclesResetButtonTrailingAnchor: CGFloat = 16
-    static let musclesTableViewTopAnchor: CGFloat = 57
+    static let musclesTableViewTopAnchor: CGFloat = 66
     static let musclesTableViewHorizontalAnchor: CGFloat = 43
     static let musclesTableViewBottomAnchor: CGFloat = 24
     static let musclesTableViewSpacerHeight: CGFloat = 12

@@ -8,7 +8,7 @@
 import UIKit
 import ReadMoreTextView
 
-class ExerciseDetailViewController: UIViewController {
+final class ExerciseDetailViewController: UIViewController {
     
     var vm: ExerciseDetailViewModel?
     

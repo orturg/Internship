@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ExerciseDetailCoordinator: Coordinator {
+final class ExerciseDetailCoordinator: Coordinator {
     var navigationController: UINavigationController
     var exercise: Exercise
     

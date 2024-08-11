@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ExerciseDetailViewModel {
+final class ExerciseDetailViewModel {
     weak var coordinator: ExerciseDetailCoordinator?
     var exercise: Exercise?
 }

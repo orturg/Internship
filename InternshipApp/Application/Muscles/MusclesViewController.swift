@@ -33,7 +33,9 @@ final class MusclesViewController: BaseViewController {
             guard let self else { return }
             switch result {
             case .success(_):
-                configure()
+                self.configure()
+                self.tableView.reloadData()
+                self.setResetButton()
             case .failure(let error):
                 self.showAlert(vc: self, error: error)
             }
@@ -48,7 +50,8 @@ final class MusclesViewController: BaseViewController {
             switch result {
             case .success(_):
                 self.vm?.selectedCountForSection = Array(repeating: 0, count: self.vm?.exerciseList.count ?? 0)
-                configure()
+                self.configure()
+                self.tableView.reloadData()
             case .failure(let error):
                 self.showAlert(vc: self, error: error)
             }
@@ -57,10 +60,16 @@ final class MusclesViewController: BaseViewController {
     
     
     private func configure() {
+        configureVC()
         configureTitleLabel()
         configureTableView()
         setupSubviews()
         setupLayoutConstraints()
+    }
+    
+    
+    private func configureVC() {
+        tabBarController?.tabBar.isHidden = false
     }
     
     
@@ -184,6 +193,10 @@ extension MusclesViewController: UITableViewDataSource {
             
             let adjustedRow = indexPath.row / 2
             let exercise = vm.exerciseList[indexPath.section].exercisesList[adjustedRow]
+            
+            cell.exercise = exercise
+            cell.navigationController = navigationController
+            cell.bringSubviewToFront(cell.moreAboutButton)
             
             cell.setImage(exerciseImageName: exercise.imageIcon)
             cell.setTitle(exercise.name)

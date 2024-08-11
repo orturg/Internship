@@ -127,7 +127,6 @@ class FirebaseService {
                                 "changedValue": valueArray.count == 1 ? 0 : valueArray[valueArray.count - 1] - valueArray[valueArray.count - 2],
                                 "dateArray": timeArray
                             ])
-                            print(dataDic)
                         }
                     } else {
                         var valueArray: [Int] = []

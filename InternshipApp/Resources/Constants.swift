@@ -210,4 +210,17 @@ enum Constants {
     static let musclesTableViewExerciseCellArrowImageViewLeadingAnchor: CGFloat = 6
     static let musclesTableViewExerciseCellArrowImageViewWidth: CGFloat = 18
     static let musclesTableViewExerciseCellArrowImageViewHeight: CGFloat = 18
+    static let exerciseDetailExerciseTitleLabelSize: CGFloat = 18
+    static let exerciseDetailDescriptionTitleLabelSize: CGFloat = 14
+    static let exerciseDetailDescriptionInstructionLabelSize: CGFloat = 16
+    static let exerciseDetailExerciseInstructionImageViewHeight: CGFloat = 277
+    static let exerciseDetailExerciseImageViewBottomAnchor: CGFloat = 24
+    static let exerciseDetailExerciseImageViewLeadingAnchor: CGFloat = 24
+    static let exerciseDetailExerciseImageViewWidth: CGFloat = 45
+    static let exerciseDetailExerciseImageViewHeight: CGFloat = 45
+    static let exerciseDetailExerciseTitleLabelLeadingAnchor: CGFloat = 24
+    static let exerciseDetailExerciseDescriptionLabelTopAnchor: CGFloat = 3
+    static let exerciseDetailExerciseInstructionLabelTopAnchor: CGFloat = 23
+    static let exerciseDetailExerciseInstructionLabelTrailingAnchor: CGFloat = 24
+    static let exerciseDetailExerciseInstructionLabelBottomAnchor: CGFloat = 20
 }

@@ -21,7 +21,7 @@ final class MusclesViewModel {
     var isResetButtonActive = false
     
     weak var delegate: MusclesViewModelDelegate?
-
+    
     
     func getExercises(completion: @escaping(Result<String?, DataBaseError>) -> Void) {
         var data: Data = Data()

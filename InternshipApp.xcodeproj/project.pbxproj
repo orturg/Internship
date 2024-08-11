@@ -246,6 +246,10 @@
 		72AB5B532C4263AF0021FC33 /* ViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AB5B522C4263AF0021FC33 /* ViewController+Ext.swift */; };
 		72B4DA442C52175600B74573 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4DA432C52175600B74573 /* TextFieldCell.swift */; };
 		72B4DA462C52178A00B74573 /* ProgrammaticCustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4DA452C52178A00B74573 /* ProgrammaticCustomTextField.swift */; };
+		72B8C7F52C6619290076F571 /* ExerciseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B8C7F32C6619290076F571 /* ExerciseDetailViewController.swift */; };
+		72B8C7F62C6619290076F571 /* ExerciseDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72B8C7F42C6619290076F571 /* ExerciseDetailViewController.xib */; };
+		72B8C7F82C6619450076F571 /* ExerciseDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B8C7F72C6619450076F571 /* ExerciseDetailViewModel.swift */; };
+		72B8C7FA2C66195E0076F571 /* ExerciseDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B8C7F92C66195E0076F571 /* ExerciseDetailCoordinator.swift */; };
 		72BB6C5B2C5E0E20008E10C9 /* DeleteAccountVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BB6C5A2C5E0E20008E10C9 /* DeleteAccountVCDelegate.swift */; };
 		72C2C06B2C4FCFFD0091C256 /* SelectOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C2C06A2C4FCFFD0091C256 /* SelectOptionsViewController.swift */; };
 		72C2C06D2C4FD00D0091C256 /* SelectOptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C2C06C2C4FD00D0091C256 /* SelectOptionsViewModel.swift */; };
@@ -509,6 +513,10 @@
 		72AB5B522C4263AF0021FC33 /* ViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Ext.swift"; sourceTree = "<group>"; };
 		72B4DA432C52175600B74573 /* TextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
 		72B4DA452C52178A00B74573 /* ProgrammaticCustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammaticCustomTextField.swift; sourceTree = "<group>"; };
+		72B8C7F32C6619290076F571 /* ExerciseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailViewController.swift; sourceTree = "<group>"; };
+		72B8C7F42C6619290076F571 /* ExerciseDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseDetailViewController.xib; sourceTree = "<group>"; };
+		72B8C7F72C6619450076F571 /* ExerciseDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailViewModel.swift; sourceTree = "<group>"; };
+		72B8C7F92C66195E0076F571 /* ExerciseDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailCoordinator.swift; sourceTree = "<group>"; };
 		72BB6C5A2C5E0E20008E10C9 /* DeleteAccountVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountVCDelegate.swift; sourceTree = "<group>"; };
 		72C2C06A2C4FCFFD0091C256 /* SelectOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionsViewController.swift; sourceTree = "<group>"; };
 		72C2C06C2C4FD00D0091C256 /* SelectOptionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionsViewModel.swift; sourceTree = "<group>"; };
@@ -887,6 +895,7 @@
 				729BB3D42C3924A900F06383 /* Progress */,
 				729BB3D52C3924B300F06383 /* Calculator */,
 				729BB3D72C3924D100F06383 /* Muscles */,
+				72B8C7F22C6619030076F571 /* ExerciseDetail */,
 				7284E2192C3035E40081F8D1 /* Support */,
 				7284E20B2C30129E0081F8D1 /* Coordinators */,
 			);
@@ -1060,6 +1069,17 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		72B8C7F22C6619030076F571 /* ExerciseDetail */ = {
+			isa = PBXGroup;
+			children = (
+				72B8C7F32C6619290076F571 /* ExerciseDetailViewController.swift */,
+				72B8C7F42C6619290076F571 /* ExerciseDetailViewController.xib */,
+				72B8C7F72C6619450076F571 /* ExerciseDetailViewModel.swift */,
+				72B8C7F92C66195E0076F571 /* ExerciseDetailCoordinator.swift */,
+			);
+			path = ExerciseDetail;
+			sourceTree = "<group>";
+		};
 		72C2C0692C4FCFD70091C256 /* SelectOptions */ = {
 			isa = PBXGroup;
 			children = (
@@ -1122,7 +1142,7 @@
 				7284E1E62C2FFA8E0081F8D1 /* Sources */,
 				7284E1E72C2FFA8E0081F8D1 /* Frameworks */,
 				7284E1E82C2FFA8E0081F8D1 /* Resources */,
-				4725BACC37F35EB0D6BEF95D /* [CP] Embed Pods Frameworks */,
+				881C30E11D88F1A788175C6B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1281,6 +1301,7 @@
 				727269102C352BBF004BF6B6 /* Saira_Condensed-BoldItalic.ttf in Resources */,
 				727269612C352BBF004BF6B6 /* Saira_Expanded-BoldItalic.ttf in Resources */,
 				72A1FB822C6350E800C557C9 /* Nunito-Light.ttf in Resources */,
+				72B8C7F62C6619290076F571 /* ExerciseDetailViewController.xib in Resources */,
 				727268F82C352BBF004BF6B6 /* Saira_SemiCondensed-Italic.ttf in Resources */,
 				727269672C352BBF004BF6B6 /* Saira-ExtraBold.ttf in Resources */,
 				727269452C352BBF004BF6B6 /* Saira_Condensed-SemiBoldItalic.ttf in Resources */,
@@ -1344,7 +1365,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4725BACC37F35EB0D6BEF95D /* [CP] Embed Pods Frameworks */ = {
+		881C30E11D88F1A788175C6B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1401,9 +1422,11 @@
 				7289AB392C5918990097E2E2 /* ProgressTableViewCell.swift in Sources */,
 				72F3F15D2C46944D0034B823 /* ResetPasswordViewModel.swift in Sources */,
 				7201192F2C4713690075CDF6 /* CustomAlertVC.swift in Sources */,
+				72B8C7F52C6619290076F571 /* ExerciseDetailViewController.swift in Sources */,
 				7284E20D2C3016F60081F8D1 /* Coordinator.swift in Sources */,
 				726988D22C3D449000124AD3 /* SignUpViewController.swift in Sources */,
 				72F2D6DF2C622FAB00E2D7C4 /* SectionHeaderCell.swift in Sources */,
+				72B8C7F82C6619450076F571 /* ExerciseDetailViewModel.swift in Sources */,
 				727AE3772C4D7BFC00F8A2AD /* ProfileCoordinator.swift in Sources */,
 				729BB3EA2C3925D000F06383 /* CalculatorViewController.swift in Sources */,
 				72C2C06B2C4FCFFD0091C256 /* SelectOptionsViewController.swift in Sources */,
@@ -1415,6 +1438,7 @@
 				7289AB372C58FBB20097E2E2 /* EmptyStateContainer.swift in Sources */,
 				72C46A8F2C5CE7790003C00F /* DeleteAccountCoordinator.swift in Sources */,
 				72AAD2252C3FAD7C0066EF8C /* DataBaseError.swift in Sources */,
+				72B8C7FA2C66195E0076F571 /* ExerciseDetailCoordinator.swift in Sources */,
 				729BB3F42C39265300F06383 /* MusclesViewController.swift in Sources */,
 				729BB4022C3955BB00F06383 /* StartCoordinator.swift in Sources */,
 				72C46A922C5D07FE0003C00F /* DeleteAccountAlertCoordinator.swift in Sources */,

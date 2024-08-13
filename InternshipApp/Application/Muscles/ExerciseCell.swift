@@ -10,13 +10,16 @@ import UIKit
 class ExerciseCell: UITableViewCell {
     static let reuseID = TextValues.exerciseCellReuseID
     
-    let exerciseImageView = UIImageView()
-    let exerciseTitleLabel = UILabel()
-    let descriptionLabel = UILabel()
+    private let exerciseImageView = UIImageView()
+    private let exerciseTitleLabel = UILabel()
+    private let descriptionLabel = UILabel()
     let moreAboutButton = UIButton()
-    let arrowImageView = UIImageView()
-    let checkmarkImageView = UIImageView()
+    private let arrowImageView = UIImageView()
+    private let checkmarkImageView = UIImageView()
     var isActive = false
+    
+    var exercise: Exercise?
+    var navigationController: UINavigationController?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -84,7 +87,18 @@ class ExerciseCell: UITableViewCell {
         moreAboutButton.titleLabel?.font = UIFont(name: TextValues.nunitoLight, size: Constants.musclesTableViewExerciseCellMoreAboutLabelSize)
         moreAboutButton.setTitleColor(.appYellow, for: .normal)
         
+        moreAboutButton.addTarget(self, action: #selector(moreAboutButtonAction), for: .touchUpInside)
+        
         moreAboutButton.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    
+    @objc private func moreAboutButtonAction() {
+        guard let navigationController else { return }
+        guard let exercise else { return }
+        
+        let exerciseDetailCoordinator = ExerciseDetailCoordinator(navigationController: navigationController, exercise: exercise)
+        exerciseDetailCoordinator.start()
     }
     
     

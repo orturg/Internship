@@ -79,4 +79,5 @@ enum TextValues {
     static let jsonFileName = "Exercises.json"
     static let exerciseCellReuseID = "ExerciseCellID"
     static let moreAbout = "More About"
+    static let showMore = " ...show more"
 }

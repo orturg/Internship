@@ -9,7 +9,6 @@ target 'InternshipApp' do
 	pod 'FirebaseCore'
 	pod 'Firebase/Analytics'
 	pod 'Firebase/Auth'
-	pod 'ReadMoreTextView'
 
   # Pods for InternshipApp
 

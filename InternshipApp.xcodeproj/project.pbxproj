@@ -197,6 +197,8 @@
 		7284E2162C3035880081F8D1 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7284E2152C3035880081F8D1 /* HomeViewModel.swift */; };
 		7289AB372C58FBB20097E2E2 /* EmptyStateContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7289AB362C58FBB20097E2E2 /* EmptyStateContainer.swift */; };
 		7289AB392C5918990097E2E2 /* ProgressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7289AB382C5918990097E2E2 /* ProgressTableViewCell.swift */; };
+		7290A6E02C6B3A6000C27D7A /* UILabel+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7290A6DF2C6B3A6000C27D7A /* UILabel+Ext.swift */; };
+		7290A6E22C6B3ED500C27D7A /* UITapGestureRecognizer+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7290A6E12C6B3ED500C27D7A /* UITapGestureRecognizer+Ext.swift */; };
 		729BB3CA2C391DBB00F06383 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7284E2172C3035930081F8D1 /* Home.storyboard */; };
 		729BB3D12C3922BB00F06383 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729BB3CF2C3922BB00F06383 /* TabBarController.swift */; };
 		729BB3D22C3922BB00F06383 /* TabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 729BB3D02C3922BB00F06383 /* TabBarController.xib */; };
@@ -465,6 +467,8 @@
 		7284E2172C3035930081F8D1 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		7289AB362C58FBB20097E2E2 /* EmptyStateContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateContainer.swift; sourceTree = "<group>"; };
 		7289AB382C5918990097E2E2 /* ProgressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTableViewCell.swift; sourceTree = "<group>"; };
+		7290A6DF2C6B3A6000C27D7A /* UILabel+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ext.swift"; sourceTree = "<group>"; };
+		7290A6E12C6B3ED500C27D7A /* UITapGestureRecognizer+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITapGestureRecognizer+Ext.swift"; sourceTree = "<group>"; };
 		729BB3CF2C3922BB00F06383 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		729BB3D02C3922BB00F06383 /* TabBarController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBarController.xib; sourceTree = "<group>"; };
 		729BB3DC2C39256200F06383 /* ProgressCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCoordinator.swift; sourceTree = "<group>"; };
@@ -1065,6 +1069,8 @@
 			children = (
 				72AB5B522C4263AF0021FC33 /* ViewController+Ext.swift */,
 				72708AA82C4EA36300CB4E7B /* UIImage+Ext.swift */,
+				7290A6DF2C6B3A6000C27D7A /* UILabel+Ext.swift */,
+				7290A6E12C6B3ED500C27D7A /* UITapGestureRecognizer+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1445,6 +1451,7 @@
 				729BB3E12C39258F00F06383 /* ProgressViewModel.swift in Sources */,
 				72F3F15A2C4694320034B823 /* ResetPasswordViewController.swift in Sources */,
 				7272697A2C35317A004BF6B6 /* CustomSwitch.swift in Sources */,
+				7290A6E22C6B3ED500C27D7A /* UITapGestureRecognizer+Ext.swift in Sources */,
 				724C38D62C50CC2300DA1495 /* PopupTransitioningPresentationController.swift in Sources */,
 				720119342C478EB00075CDF6 /* CustomAlertViewModel.swift in Sources */,
 				724C38E22C5124E200DA1495 /* ProfileVCDelegate.swift in Sources */,
@@ -1490,6 +1497,7 @@
 				7272697E2C3536B1004BF6B6 /* CustomCheckboxSwitch.swift in Sources */,
 				72B4DA442C52175600B74573 /* TextFieldCell.swift in Sources */,
 				72C46A9C2C5D09C90003C00F /* DeleteAccountAlertDelegate.swift in Sources */,
+				7290A6E02C6B3A6000C27D7A /* UILabel+Ext.swift in Sources */,
 				72C46A8A2C5CE7600003C00F /* DeleteAccountViewController.swift in Sources */,
 				729BB3F12C39264600F06383 /* MusclesCoordinator.swift in Sources */,
 				724C38DC2C51094F00DA1495 /* OptionDataName.swift in Sources */,

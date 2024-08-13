@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import ReadMoreTextView
 
 final class ExerciseDetailViewController: UIViewController {
     
@@ -19,7 +18,7 @@ final class ExerciseDetailViewController: UIViewController {
     private let exerciseImageView = UIImageView()
     private let exerciseTitleLabel = UILabel()
     private let exerciseDescriptionLabel = UILabel()
-    private let exerciseInstructionLabel = ReadMoreTextView()
+    private let exerciseInstructionLabel = UILabel()
     
     private let scrollView = UIScrollView()
     private let contentView = UIView()
@@ -127,23 +126,31 @@ final class ExerciseDetailViewController: UIViewController {
     
     
     private func configureExerciseInstructionLabel() {
-        exerciseInstructionLabel.maximumNumberOfLines = 4
-        exerciseInstructionLabel.backgroundColor = .clear
+        let exerciseInstructionLabelText = vm?.exercise?.descriptions ?? ""
+        exerciseInstructionLabel.textColor = .appSecondary
+        exerciseInstructionLabel.text = exerciseInstructionLabelText
+        exerciseInstructionLabel.font = UIFont(name: TextValues.sairaThin, size: Constants.exerciseDetailDescriptionInstructionLabelSize)
+        exerciseInstructionLabel.isUserInteractionEnabled = true
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(showMoreButtonAction(_:)))
+            exerciseInstructionLabel.addGestureRecognizer(tapGestureRecognizer)
+        
+        DispatchQueue.main.async {
+            self.exerciseInstructionLabel.appendReadmore(after: exerciseInstructionLabelText, trailingContent: .showMore)
+        }
         
         exerciseInstructionLabel.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    
+    @objc private func showMoreButtonAction(_ sender: UITapGestureRecognizer) {
+        guard let text = exerciseInstructionLabel.text else { return }
         
-        let textAttributes = [
-            NSAttributedString.Key.foregroundColor: UIColor.appSecondary,
-            NSAttributedString.Key.font: UIFont(name: TextValues.sairaThin, size: Constants.exerciseDetailDescriptionInstructionLabelSize)
-        ]
-        
-        let showMoreTextAttributes = [
-            NSAttributedString.Key.foregroundColor: UIColor.appYellow,
-            NSAttributedString.Key.font: UIFont(name: TextValues.sairaThin, size: Constants.exerciseDetailDescriptionInstructionLabelSize)
-        ]
-        exerciseInstructionLabel.shouldTrim = true
-        exerciseInstructionLabel.attributedText = NSAttributedString(string: vm?.exercise?.descriptions ?? "", attributes: textAttributes as [NSAttributedString.Key : Any])
-        exerciseInstructionLabel.attributedReadMoreText = NSAttributedString(string: TextValues.showMore, attributes: showMoreTextAttributes as [NSAttributedString.Key : Any])
+        let showMore = (text as NSString).range(of: TrailingContent.showMore.text)
+        if sender.didTap(label: exerciseInstructionLabel, inRange: showMore) {
+            exerciseInstructionLabel.numberOfLines = 0
+            exerciseInstructionLabel.text = vm?.exercise?.descriptions
+        } else { return }
     }
     
     

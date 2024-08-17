@@ -39,7 +39,7 @@ final class CustomRadioButton: UIButton {
         translatesAutoresizingMaskIntoConstraints = false
         layer.borderColor = color?.cgColor
         layer.borderWidth = Constants.customRadioButtonBorderWidth
-        addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        addTarget(self, action: #selector(valueDidChange), for: .touchUpInside)
         if isActive { createInnerCircle() }
     }
     
@@ -52,8 +52,13 @@ final class CustomRadioButton: UIButton {
     }
     
     
-    @objc private func buttonAction() {
-        isActive.toggle()
+    func setStatus(_ status: Bool) {
+        isActive = status
+        valueDidChange()
+    }
+    
+    
+    @objc private func valueDidChange() {
         if isActive {
             createInnerCircle()
         } else {

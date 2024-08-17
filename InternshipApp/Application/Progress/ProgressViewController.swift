@@ -70,7 +70,7 @@ final class ProgressViewController: BaseViewController {
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
         
-        tableView.register(ProgressTableViewCell.self, forCellReuseIdentifier: ProgressTableViewCell.reuseID)
+        tableView.register(SimpleCellWithLine.self, forCellReuseIdentifier: SimpleCellWithLine.reuseID)
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -122,7 +122,7 @@ extension ProgressViewController: UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ProgressTableViewCell.reuseID, for: indexPath) as? ProgressTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SimpleCellWithLine.reuseID, for: indexPath) as? SimpleCellWithLine else { return UITableViewCell() }
         cell.selectionStyle = .none
         cell.setTitle(vm?.optionData[indexPath.row].optionName.rawValue ?? "")
         

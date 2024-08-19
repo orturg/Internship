@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProgressTableViewCell: UITableViewCell {
+class SimpleCellWithLine: UITableViewCell {
     
     static let reuseID = TextValues.progressTableViewCellReuseID
     let titleLabel = UILabel()

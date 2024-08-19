@@ -185,6 +185,11 @@
 		727AE3772C4D7BFC00F8A2AD /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AE3762C4D7BFC00F8A2AD /* ProfileCoordinator.swift */; };
 		727AE37C2C4E1FFB00F8A2AD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AE37A2C4E1FFB00F8A2AD /* ProfileViewController.swift */; };
 		727AE37D2C4E1FFB00F8A2AD /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 727AE37B2C4E1FFB00F8A2AD /* ProfileViewController.xib */; };
+		728316012C6B6FBF00E8BCB2 /* CalculatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728316002C6B6FBF00E8BCB2 /* CalculatorTableViewCell.swift */; };
+		728316042C6B712F00E8BCB2 /* CalculationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728316032C6B712F00E8BCB2 /* CalculationCoordinator.swift */; };
+		728316072C6B716900E8BCB2 /* CalculationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728316052C6B716900E8BCB2 /* CalculationViewController.swift */; };
+		728316082C6B716900E8BCB2 /* CalculationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 728316062C6B716900E8BCB2 /* CalculationViewController.xib */; };
+		7283160A2C6B718F00E8BCB2 /* CalculationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728316092C6B718F00E8BCB2 /* CalculationViewModel.swift */; };
 		7284E1EE2C2FFA8E0081F8D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7284E1ED2C2FFA8E0081F8D1 /* AppDelegate.swift */; };
 		7284E1F02C2FFA8E0081F8D1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7284E1EF2C2FFA8E0081F8D1 /* SceneDelegate.swift */; };
 		7284E1F72C2FFA8F0081F8D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7284E1F62C2FFA8F0081F8D1 /* Assets.xcassets */; };
@@ -196,7 +201,7 @@
 		7284E2132C301D790081F8D1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7284E2122C301D790081F8D1 /* HomeViewController.swift */; };
 		7284E2162C3035880081F8D1 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7284E2152C3035880081F8D1 /* HomeViewModel.swift */; };
 		7289AB372C58FBB20097E2E2 /* EmptyStateContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7289AB362C58FBB20097E2E2 /* EmptyStateContainer.swift */; };
-		7289AB392C5918990097E2E2 /* ProgressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7289AB382C5918990097E2E2 /* ProgressTableViewCell.swift */; };
+		7289AB392C5918990097E2E2 /* SimpleCellWithLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7289AB382C5918990097E2E2 /* SimpleCellWithLine.swift */; };
 		7290A6E02C6B3A6000C27D7A /* UILabel+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7290A6DF2C6B3A6000C27D7A /* UILabel+Ext.swift */; };
 		7290A6E22C6B3ED500C27D7A /* UITapGestureRecognizer+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7290A6E12C6B3ED500C27D7A /* UITapGestureRecognizer+Ext.swift */; };
 		729BB3CA2C391DBB00F06383 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7284E2172C3035930081F8D1 /* Home.storyboard */; };
@@ -244,6 +249,7 @@
 		72A1FB8E2C6350E800C557C9 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72A1FB7A2C6350E800C557C9 /* OFL.txt */; };
 		72A1FB8F2C6350E800C557C9 /* Nunito-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72A1FB7B2C6350E800C557C9 /* Nunito-Italic-VariableFont_wght.ttf */; };
 		72A1FB902C6350E800C557C9 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72A1FB7C2C6350E800C557C9 /* README.txt */; };
+		72A213642C6F2F6400E1ED7A /* CalculationViewStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A213632C6F2F6400E1ED7A /* CalculationViewStack.swift */; };
 		72AAD2252C3FAD7C0066EF8C /* DataBaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AAD2242C3FAD7C0066EF8C /* DataBaseError.swift */; };
 		72AB5B532C4263AF0021FC33 /* ViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AB5B522C4263AF0021FC33 /* ViewController+Ext.swift */; };
 		72B4DA442C52175600B74573 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4DA432C52175600B74573 /* TextFieldCell.swift */; };
@@ -253,6 +259,12 @@
 		72B8C7F82C6619450076F571 /* ExerciseDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B8C7F72C6619450076F571 /* ExerciseDetailViewModel.swift */; };
 		72B8C7FA2C66195E0076F571 /* ExerciseDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B8C7F92C66195E0076F571 /* ExerciseDetailCoordinator.swift */; };
 		72BB6C5B2C5E0E20008E10C9 /* DeleteAccountVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BB6C5A2C5E0E20008E10C9 /* DeleteAccountVCDelegate.swift */; };
+		72BE520F2C6DCD65003B2003 /* ChooseActivityLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BE520D2C6DCD65003B2003 /* ChooseActivityLevelViewController.swift */; };
+		72BE52102C6DCD65003B2003 /* ChooseActivityLevelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72BE520E2C6DCD65003B2003 /* ChooseActivityLevelViewController.xib */; };
+		72BE52122C6DCDA8003B2003 /* ChooseActivityLevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BE52112C6DCDA8003B2003 /* ChooseActivityLevelViewModel.swift */; };
+		72BE52142C6DCDD6003B2003 /* ChooseActivityLevelCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BE52132C6DCDD6003B2003 /* ChooseActivityLevelCoordinator.swift */; };
+		72BE52162C6DCE8F003B2003 /* ChooseActivityLevelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BE52152C6DCE8F003B2003 /* ChooseActivityLevelContainer.swift */; };
+		72BE52182C6DD931003B2003 /* ChooseActivityLevelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BE52172C6DD931003B2003 /* ChooseActivityLevelCell.swift */; };
 		72C2C06B2C4FCFFD0091C256 /* SelectOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C2C06A2C4FCFFD0091C256 /* SelectOptionsViewController.swift */; };
 		72C2C06D2C4FD00D0091C256 /* SelectOptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C2C06C2C4FD00D0091C256 /* SelectOptionsViewModel.swift */; };
 		72C2C06F2C4FD01A0091C256 /* SelectOptionsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C2C06E2C4FD01A0091C256 /* SelectOptionsCoordinator.swift */; };
@@ -266,6 +278,7 @@
 		72C46A982C5D08450003C00F /* DeleteAccountAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C46A972C5D08450003C00F /* DeleteAccountAlertViewController.swift */; };
 		72C46A9A2C5D085B0003C00F /* DeleteAccountContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C46A992C5D085B0003C00F /* DeleteAccountContainer.swift */; };
 		72C46A9C2C5D09C90003C00F /* DeleteAccountAlertDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C46A9B2C5D09C90003C00F /* DeleteAccountAlertDelegate.swift */; };
+		72C59B552C70858600E802D1 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C59B542C70858600E802D1 /* CustomSegmentedControl.swift */; };
 		72F2D6DF2C622FAB00E2D7C4 /* SectionHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F2D6DE2C622FAB00E2D7C4 /* SectionHeaderCell.swift */; };
 		72F2D6E52C623C4F00E2D7C4 /* ExerciseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F2D6E42C623C4F00E2D7C4 /* ExerciseList.swift */; };
 		72F3F15A2C4694320034B823 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F3F1582C4694320034B823 /* ResetPasswordViewController.swift */; };
@@ -453,6 +466,11 @@
 		727AE3762C4D7BFC00F8A2AD /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		727AE37A2C4E1FFB00F8A2AD /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		727AE37B2C4E1FFB00F8A2AD /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		728316002C6B6FBF00E8BCB2 /* CalculatorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTableViewCell.swift; sourceTree = "<group>"; };
+		728316032C6B712F00E8BCB2 /* CalculationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationCoordinator.swift; sourceTree = "<group>"; };
+		728316052C6B716900E8BCB2 /* CalculationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationViewController.swift; sourceTree = "<group>"; };
+		728316062C6B716900E8BCB2 /* CalculationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalculationViewController.xib; sourceTree = "<group>"; };
+		728316092C6B718F00E8BCB2 /* CalculationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationViewModel.swift; sourceTree = "<group>"; };
 		7284E1ED2C2FFA8E0081F8D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7284E1EF2C2FFA8E0081F8D1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7284E1F62C2FFA8F0081F8D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -466,7 +484,7 @@
 		7284E2152C3035880081F8D1 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		7284E2172C3035930081F8D1 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		7289AB362C58FBB20097E2E2 /* EmptyStateContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateContainer.swift; sourceTree = "<group>"; };
-		7289AB382C5918990097E2E2 /* ProgressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTableViewCell.swift; sourceTree = "<group>"; };
+		7289AB382C5918990097E2E2 /* SimpleCellWithLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCellWithLine.swift; sourceTree = "<group>"; };
 		7290A6DF2C6B3A6000C27D7A /* UILabel+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ext.swift"; sourceTree = "<group>"; };
 		7290A6E12C6B3ED500C27D7A /* UITapGestureRecognizer+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITapGestureRecognizer+Ext.swift"; sourceTree = "<group>"; };
 		729BB3CF2C3922BB00F06383 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -513,6 +531,7 @@
 		72A1FB7A2C6350E800C557C9 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		72A1FB7B2C6350E800C557C9 /* Nunito-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		72A1FB7C2C6350E800C557C9 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		72A213632C6F2F6400E1ED7A /* CalculationViewStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationViewStack.swift; sourceTree = "<group>"; };
 		72AAD2242C3FAD7C0066EF8C /* DataBaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseError.swift; sourceTree = "<group>"; };
 		72AB5B522C4263AF0021FC33 /* ViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Ext.swift"; sourceTree = "<group>"; };
 		72B4DA432C52175600B74573 /* TextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
@@ -522,6 +541,12 @@
 		72B8C7F72C6619450076F571 /* ExerciseDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailViewModel.swift; sourceTree = "<group>"; };
 		72B8C7F92C66195E0076F571 /* ExerciseDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailCoordinator.swift; sourceTree = "<group>"; };
 		72BB6C5A2C5E0E20008E10C9 /* DeleteAccountVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountVCDelegate.swift; sourceTree = "<group>"; };
+		72BE520D2C6DCD65003B2003 /* ChooseActivityLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseActivityLevelViewController.swift; sourceTree = "<group>"; };
+		72BE520E2C6DCD65003B2003 /* ChooseActivityLevelViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseActivityLevelViewController.xib; sourceTree = "<group>"; };
+		72BE52112C6DCDA8003B2003 /* ChooseActivityLevelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseActivityLevelViewModel.swift; sourceTree = "<group>"; };
+		72BE52132C6DCDD6003B2003 /* ChooseActivityLevelCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseActivityLevelCoordinator.swift; sourceTree = "<group>"; };
+		72BE52152C6DCE8F003B2003 /* ChooseActivityLevelContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseActivityLevelContainer.swift; sourceTree = "<group>"; };
+		72BE52172C6DD931003B2003 /* ChooseActivityLevelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseActivityLevelCell.swift; sourceTree = "<group>"; };
 		72C2C06A2C4FCFFD0091C256 /* SelectOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionsViewController.swift; sourceTree = "<group>"; };
 		72C2C06C2C4FD00D0091C256 /* SelectOptionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionsViewModel.swift; sourceTree = "<group>"; };
 		72C2C06E2C4FD01A0091C256 /* SelectOptionsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionsCoordinator.swift; sourceTree = "<group>"; };
@@ -535,6 +560,7 @@
 		72C46A972C5D08450003C00F /* DeleteAccountAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountAlertViewController.swift; sourceTree = "<group>"; };
 		72C46A992C5D085B0003C00F /* DeleteAccountContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountContainer.swift; sourceTree = "<group>"; };
 		72C46A9B2C5D09C90003C00F /* DeleteAccountAlertDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountAlertDelegate.swift; sourceTree = "<group>"; };
+		72C59B542C70858600E802D1 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		72F2D6DE2C622FAB00E2D7C4 /* SectionHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderCell.swift; sourceTree = "<group>"; };
 		72F2D6E42C623C4F00E2D7C4 /* ExerciseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseList.swift; sourceTree = "<group>"; };
 		72F3F1582C4694320034B823 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
@@ -856,6 +882,18 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		728316022C6B710D00E8BCB2 /* Calculation */ = {
+			isa = PBXGroup;
+			children = (
+				728316032C6B712F00E8BCB2 /* CalculationCoordinator.swift */,
+				728316052C6B716900E8BCB2 /* CalculationViewController.swift */,
+				728316062C6B716900E8BCB2 /* CalculationViewController.xib */,
+				728316092C6B718F00E8BCB2 /* CalculationViewModel.swift */,
+				72A213632C6F2F6400E1ED7A /* CalculationViewStack.swift */,
+			);
+			path = Calculation;
+			sourceTree = "<group>";
+		};
 		7284E1E12C2FFA8E0081F8D1 = {
 			isa = PBXGroup;
 			children = (
@@ -956,7 +994,7 @@
 				729BB3E22C3925B000F06383 /* ProgressViewController.swift */,
 				729BB3E32C3925B000F06383 /* ProgressViewController.xib */,
 				7289AB362C58FBB20097E2E2 /* EmptyStateContainer.swift */,
-				7289AB382C5918990097E2E2 /* ProgressTableViewCell.swift */,
+				7289AB382C5918990097E2E2 /* SimpleCellWithLine.swift */,
 			);
 			path = Progress;
 			sourceTree = "<group>";
@@ -964,10 +1002,13 @@
 		729BB3D52C3924B300F06383 /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				72BE520C2C6DCD28003B2003 /* ChooseActivityLevel */,
+				728316022C6B710D00E8BCB2 /* Calculation */,
 				729BB3E62C3925C000F06383 /* CalculatorCoordinator.swift */,
 				729BB3E82C3925D000F06383 /* CalculatorViewController.swift */,
 				729BB3E92C3925D000F06383 /* CalculatorViewController.xib */,
 				729BB3EE2C39262D00F06383 /* CalculatorViewModel.swift */,
+				728316002C6B6FBF00E8BCB2 /* CalculatorTableViewCell.swift */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -1006,6 +1047,7 @@
 				7272697F2C35ABA7004BF6B6 /* CustomRadioButton.swift */,
 				729BB4072C3961AB00F06383 /* GradientView.swift */,
 				7271070D2C3A7BA00036E9AC /* CustomRoundedRectangleButton.swift */,
+				72C59B542C70858600E802D1 /* CustomSegmentedControl.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -1084,6 +1126,19 @@
 				72B8C7F92C66195E0076F571 /* ExerciseDetailCoordinator.swift */,
 			);
 			path = ExerciseDetail;
+			sourceTree = "<group>";
+		};
+		72BE520C2C6DCD28003B2003 /* ChooseActivityLevel */ = {
+			isa = PBXGroup;
+			children = (
+				72BE52132C6DCDD6003B2003 /* ChooseActivityLevelCoordinator.swift */,
+				72BE520D2C6DCD65003B2003 /* ChooseActivityLevelViewController.swift */,
+				72BE520E2C6DCD65003B2003 /* ChooseActivityLevelViewController.xib */,
+				72BE52112C6DCDA8003B2003 /* ChooseActivityLevelViewModel.swift */,
+				72BE52152C6DCE8F003B2003 /* ChooseActivityLevelContainer.swift */,
+				72BE52172C6DD931003B2003 /* ChooseActivityLevelCell.swift */,
+			);
+			path = ChooseActivityLevel;
 			sourceTree = "<group>";
 		};
 		72C2C0692C4FCFD70091C256 /* SelectOptions */ = {
@@ -1228,6 +1283,7 @@
 				72A1FB7E2C6350E800C557C9 /* Nunito-Medium.ttf in Resources */,
 				727269072C352BBF004BF6B6 /* Saira_SemiCondensed-ExtraLight.ttf in Resources */,
 				727268F52C352BBF004BF6B6 /* Saira_UltraCondensed-SemiBoldItalic.ttf in Resources */,
+				72BE52102C6DCD65003B2003 /* ChooseActivityLevelViewController.xib in Resources */,
 				727269212C352BBF004BF6B6 /* Saira_Expanded-Regular.ttf in Resources */,
 				72A1FB892C6350E800C557C9 /* Nunito-SemiBoldItalic.ttf in Resources */,
 				727269822C368966004BF6B6 /* CustomTextField.xib in Resources */,
@@ -1346,6 +1402,7 @@
 				7272694F2C352BBF004BF6B6 /* Saira_Expanded-SemiBold.ttf in Resources */,
 				7272691E2C352BBF004BF6B6 /* Saira-MediumItalic.ttf in Resources */,
 				7272695A2C352BBF004BF6B6 /* Saira-Italic.ttf in Resources */,
+				728316082C6B716900E8BCB2 /* CalculationViewController.xib in Resources */,
 				7272696F2C352BBF004BF6B6 /* Saira_ExtraCondensed-MediumItalic.ttf in Resources */,
 				727269252C352BBF004BF6B6 /* Saira-ExtraBoldItalic.ttf in Resources */,
 				727269192C352BBF004BF6B6 /* Saira_UltraCondensed-Bold.ttf in Resources */,
@@ -1425,7 +1482,9 @@
 				729BB3FF2C3955AD00F06383 /* StartViewController.swift in Sources */,
 				7271070E2C3A7BA00036E9AC /* CustomRoundedRectangleButton.swift in Sources */,
 				729BB3F72C39265F00F06383 /* MusclesViewModel.swift in Sources */,
-				7289AB392C5918990097E2E2 /* ProgressTableViewCell.swift in Sources */,
+				72BE52142C6DCDD6003B2003 /* ChooseActivityLevelCoordinator.swift in Sources */,
+				728316012C6B6FBF00E8BCB2 /* CalculatorTableViewCell.swift in Sources */,
+				7289AB392C5918990097E2E2 /* SimpleCellWithLine.swift in Sources */,
 				72F3F15D2C46944D0034B823 /* ResetPasswordViewModel.swift in Sources */,
 				7201192F2C4713690075CDF6 /* CustomAlertVC.swift in Sources */,
 				72B8C7F52C6619290076F571 /* ExerciseDetailViewController.swift in Sources */,
@@ -1452,10 +1511,12 @@
 				72F3F15A2C4694320034B823 /* ResetPasswordViewController.swift in Sources */,
 				7272697A2C35317A004BF6B6 /* CustomSwitch.swift in Sources */,
 				7290A6E22C6B3ED500C27D7A /* UITapGestureRecognizer+Ext.swift in Sources */,
+				72A213642C6F2F6400E1ED7A /* CalculationViewStack.swift in Sources */,
 				724C38D62C50CC2300DA1495 /* PopupTransitioningPresentationController.swift in Sources */,
 				720119342C478EB00075CDF6 /* CustomAlertViewModel.swift in Sources */,
 				724C38E22C5124E200DA1495 /* ProfileVCDelegate.swift in Sources */,
 				727107212C3AC29F0036E9AC /* FirebaseService.swift in Sources */,
+				72BE520F2C6DCD65003B2003 /* ChooseActivityLevelViewController.swift in Sources */,
 				727269802C35ABA7004BF6B6 /* CustomRadioButton.swift in Sources */,
 				72557E982C415A9B002625AA /* LoginCoordinator.swift in Sources */,
 				729BB3D12C3922BB00F06383 /* TabBarController.swift in Sources */,
@@ -1465,6 +1526,7 @@
 				72F2D6E52C623C4F00E2D7C4 /* ExerciseList.swift in Sources */,
 				7275D1A72C554E9800BA8E4B /* HomeCell.swift in Sources */,
 				726988D62C3D5AFC00124AD3 /* RegistrationData.swift in Sources */,
+				72BE52122C6DCDA8003B2003 /* ChooseActivityLevelViewModel.swift in Sources */,
 				720119322C4713860075CDF6 /* ContainerView.swift in Sources */,
 				72B4DA462C52178A00B74573 /* ProgrammaticCustomTextField.swift in Sources */,
 				7267F5A12C59321B008699B3 /* ProgressChartScreenViewController.swift in Sources */,
@@ -1477,12 +1539,14 @@
 				7284E1EE2C2FFA8E0081F8D1 /* AppDelegate.swift in Sources */,
 				72BB6C5B2C5E0E20008E10C9 /* DeleteAccountVCDelegate.swift in Sources */,
 				729EEF722C4ECA0E00A6DA80 /* EmptyCustomAlertVC.swift in Sources */,
+				72C59B552C70858600E802D1 /* CustomSegmentedControl.swift in Sources */,
 				72557E912C415A74002625AA /* LoginViewController.swift in Sources */,
 				7284E1F02C2FFA8E0081F8D1 /* SceneDelegate.swift in Sources */,
 				726988CF2C3D447700124AD3 /* SignUpViewModel.swift in Sources */,
 				727269782C352CC0004BF6B6 /* CustomButton.swift in Sources */,
 				72C46A942C5D08130003C00F /* DeleteAccountAlertViewModel.swift in Sources */,
 				72557E942C415A7F002625AA /* LoginViewModel.swift in Sources */,
+				728316072C6B716900E8BCB2 /* CalculationViewController.swift in Sources */,
 				724C38E02C510BE400DA1495 /* OptionCell.swift in Sources */,
 				729BB4082C3961AB00F06383 /* GradientView.swift in Sources */,
 				720FA6392C5A268400425BE1 /* ChartView.swift in Sources */,
@@ -1497,6 +1561,7 @@
 				7272697E2C3536B1004BF6B6 /* CustomCheckboxSwitch.swift in Sources */,
 				72B4DA442C52175600B74573 /* TextFieldCell.swift in Sources */,
 				72C46A9C2C5D09C90003C00F /* DeleteAccountAlertDelegate.swift in Sources */,
+				72BE52182C6DD931003B2003 /* ChooseActivityLevelCell.swift in Sources */,
 				7290A6E02C6B3A6000C27D7A /* UILabel+Ext.swift in Sources */,
 				72C46A8A2C5CE7600003C00F /* DeleteAccountViewController.swift in Sources */,
 				729BB3F12C39264600F06383 /* MusclesCoordinator.swift in Sources */,
@@ -1507,10 +1572,13 @@
 				729EEF742C4ECA4600A6DA80 /* EmptyContainerView.swift in Sources */,
 				720119362C478ED80075CDF6 /* CustomAlertCoordinator.swift in Sources */,
 				729BB3DD2C39256200F06383 /* ProgressCoordinator.swift in Sources */,
+				7283160A2C6B718F00E8BCB2 /* CalculationViewModel.swift in Sources */,
 				7284E2112C301CC00081F8D1 /* HomeCoordinator.swift in Sources */,
+				728316042C6B712F00E8BCB2 /* CalculationCoordinator.swift in Sources */,
 				723821E92C47B8130055053A /* ResetPasswordVCProtocol.swift in Sources */,
 				72708AA92C4EA36300CB4E7B /* UIImage+Ext.swift in Sources */,
 				729BB3EF2C39262D00F06383 /* CalculatorViewModel.swift in Sources */,
+				72BE52162C6DCE8F003B2003 /* ChooseActivityLevelContainer.swift in Sources */,
 				721F5AC72C52750C00012E1A /* OptionData.swift in Sources */,
 				7272675B2C3408A5004BF6B6 /* CustomTextField.swift in Sources */,
 			);

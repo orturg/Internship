@@ -106,14 +106,9 @@ final class MusclesViewController: BaseViewController {
         resetButton.addTarget(self, action: #selector(resetButtonAction), for: .touchUpInside)
         
         if vm.isResetButtonActive {
-            view.addSubview(resetButton)
-            
-            NSLayoutConstraint.activate([
-                resetButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 122),
-                resetButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.musclesResetButtonTrailingAnchor),
-            ])
+            navigationItem.rightBarButtonItem = UIBarButtonItem(customView: resetButton)
         } else {
-            resetButton.removeFromSuperview()
+            navigationItem.rightBarButtonItem = UIBarButtonItem()
         }
     }
     

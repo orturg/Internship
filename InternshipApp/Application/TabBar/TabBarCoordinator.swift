@@ -44,6 +44,9 @@ final class TabBarCoordinator: Coordinator {
             musclesNavController: musclesNavController
         )
         
-        navigationController.pushViewController(tabBarController, animated: true)
+        guard let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate else { return }
+        
+        sceneDelegate.window?.rootViewController = tabBarController
+        sceneDelegate.window?.makeKeyAndVisible()
     }
 }

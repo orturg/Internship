@@ -104,6 +104,7 @@ final class HomeViewController: BaseViewController {
     
     
     private func configureAvatarImageView() {
+        
         avatarImageView.layer.cornerRadius = Constants.homeAvatarImageViewCornerRadius
         avatarImageView.layer.borderWidth = Constants.homeAvatarImageViewBorderWidth
         avatarImageView.layer.borderColor = UIColor.appYellow.cgColor
@@ -133,7 +134,7 @@ final class HomeViewController: BaseViewController {
             gradient.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             gradient.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             
-            collectionView.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor),
+            collectionView.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: Constants.homeCollectionViewTopAnchor),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.homeCollectionViewHorizontalAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.homeCollectionViewHorizontalAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -Constants.homeCollectionViewBottomAnchor)

@@ -58,7 +58,6 @@ final class ChartView: UIView {
             let x = startingX + CGFloat(index) * (barWidth + barSpacing)
             let barHeight = CGFloat(value) / CGFloat(maxY) * (graphHeight - dateLabelHeight - bottomPadding) / 3
             
-            
             let barLayer = CALayer()
             barLayer.frame = CGRect(x: x, y: graphHeight - barHeight - dateLabelHeight - bottomPadding, width: barWidth, height: barHeight)
             barLayer.backgroundColor = UIColor.appYellow.cgColor

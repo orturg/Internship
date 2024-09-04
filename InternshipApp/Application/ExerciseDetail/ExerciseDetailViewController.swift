@@ -45,14 +45,12 @@ final class ExerciseDetailViewController: UIViewController {
     
     private func configureVC() {
         tabBarController?.tabBar.isHidden = true
-        navigationController?.navigationBar.isHidden = true
+        navigationItem.titleView = titleLabel
     }
     
     
     private func setupSubviews() {
         view.addSubview(scrollView)
-        view.addSubview(backButton)
-        view.addSubview(titleLabel)
     }
     
     
@@ -77,6 +75,8 @@ final class ExerciseDetailViewController: UIViewController {
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissVC))
         backButton.addGestureRecognizer(tapGestureRecognizer)
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
     }
     
     
@@ -166,11 +166,6 @@ final class ExerciseDetailViewController: UIViewController {
             contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
-            
-            backButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 108),
-            backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.backButtonLeadingPadding),
-            backButton.widthAnchor.constraint(equalToConstant: Constants.backButtonWidth),
-            backButton.heightAnchor.constraint(equalToConstant: Constants.backButtonHeight),
             
             exerciseInstructionImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
             exerciseInstructionImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),

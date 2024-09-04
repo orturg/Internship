@@ -45,7 +45,6 @@ final class DeleteAccountViewController: BaseViewController {
     
     private func setupSubviews() {
         view.addSubview(gradient)
-        view.addSubview(backButton)
         view.addSubview(textField)
         view.addSubview(instructionLabel)
         view.addSubview(deleteButton)
@@ -59,6 +58,8 @@ final class DeleteAccountViewController: BaseViewController {
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissVC))
         backButton.addGestureRecognizer(tapGestureRecognizer)
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
     }
     
     
@@ -108,11 +109,6 @@ final class DeleteAccountViewController: BaseViewController {
             gradient.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             gradient.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             gradient.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            
-            backButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 108),
-            backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.backButtonLeadingPadding),
-            backButton.widthAnchor.constraint(equalToConstant: Constants.backButtonWidth),
-            backButton.heightAnchor.constraint(equalToConstant: Constants.backButtonHeight),
             
             instructionLabel.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: Constants.instructionLabelTopAnchor),
             instructionLabel.leadingAnchor.constraint(equalTo: textField.leadingAnchor),

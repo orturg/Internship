@@ -39,8 +39,6 @@ final class ProgressChartScreenViewController: UIViewController {
     }
     
     private func setupSubviews() {
-        view.addSubview(backButton)
-        view.addSubview(titleLabel)
         view.addSubview(centerLabel)
         view.addSubview(dateLabel)
         view.addSubview(scrollView)
@@ -49,7 +47,6 @@ final class ProgressChartScreenViewController: UIViewController {
     
     
     private func configureVC() {
-        navigationController?.navigationBar.isHidden = true
         tabBarController?.tabBar.isHidden = true
     }
     
@@ -61,6 +58,8 @@ final class ProgressChartScreenViewController: UIViewController {
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissVC))
         backButton.addGestureRecognizer(tapGestureRecognizer)
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
     }
     
     
@@ -75,6 +74,8 @@ final class ProgressChartScreenViewController: UIViewController {
         titleLabel.font = UIFont(name: TextValues.sairaMedium, size: Constants.progressChartScreenTitleLabelSize)
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        navigationItem.titleView = titleLabel
     }
     
     
@@ -118,14 +119,6 @@ final class ProgressChartScreenViewController: UIViewController {
     
     private func setupLayoutConstraints() {
         NSLayoutConstraint.activate([
-            backButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 108),
-            backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.backButtonLeadingPadding),
-            backButton.widthAnchor.constraint(equalToConstant: Constants.backButtonWidth),
-            backButton.heightAnchor.constraint(equalToConstant: Constants.backButtonHeight),
-            
-            titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 108),
-            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            
             centerLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: Constants.progressChartScreenCenterLabelTopAnchor),
             centerLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             

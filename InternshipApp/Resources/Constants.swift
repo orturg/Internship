@@ -108,7 +108,7 @@ enum Constants {
     static let programmaticCustomTextFieldHeight: CGFloat = 70
     static let programmaticCustomTextFieldTitleLabelHeight: CGFloat = 7
     static let programmaticCustomTextFieldTitleTextFieldHeight: CGFloat = 42
-    static let homeCollectionViewTopAnchor: CGFloat = 37
+    static let homeCollectionViewTopAnchor: CGFloat = 57
     static let homeCollectionViewHorizontalAnchor: CGFloat = 40
     static let homeCollectionViewBottomAnchor: CGFloat = 24
     static let homeCollectionViewCellWidth: CGFloat = 270

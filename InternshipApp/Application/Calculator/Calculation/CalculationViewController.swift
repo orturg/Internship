@@ -62,8 +62,9 @@ final class CalculationViewController: BaseViewController, ChooseActivityLevelDe
     
     
     private func configureVC() {
-        navigationController?.navigationBar.isHidden = true
         tabBarController?.tabBar.isHidden = true
+        navigationItem.titleView = titleLabel
+        
         vm?.calculationDelegate = self
         vm?.chooseActivityLevelDelegate = self
     }
@@ -72,8 +73,6 @@ final class CalculationViewController: BaseViewController, ChooseActivityLevelDe
     private func setupSubviews() {
         view.addSubview(gradient)
         view.addSubview(scrollView)
-        view.addSubview(titleLabel)
-        view.addSubview(backButton)
         view.addSubview(parametersStackView)
         view.addSubview(calculateButton)
     }
@@ -101,6 +100,8 @@ final class CalculationViewController: BaseViewController, ChooseActivityLevelDe
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissVC))
         backButton.addGestureRecognizer(tapGestureRecognizer)
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
     }
     
     
@@ -505,11 +506,6 @@ final class CalculationViewController: BaseViewController, ChooseActivityLevelDe
             contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
-            
-            backButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 108),
-            backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.backButtonLeadingPadding),
-            backButton.widthAnchor.constraint(equalToConstant: Constants.backButtonWidth),
-            backButton.heightAnchor.constraint(equalToConstant: Constants.backButtonHeight),
             
             calculatorNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.calculationViewControllerCalculatorNameLabelTopAnchor),
             calculatorNameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.calculationViewControllerCalculatorNameLabelHorizontalAnchor),

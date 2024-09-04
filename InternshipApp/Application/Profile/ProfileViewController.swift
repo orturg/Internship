@@ -72,16 +72,10 @@ final class ProfileViewController: BaseViewController {
         
         scrollView.addSubview(contentView)
         
-        contentView.addSubview(backButton)
-        contentView.addSubview(screenTitle)
-        contentView.addSubview(saveButton)
         contentView.addSubview(avatarImageView)
         contentView.addSubview(nameTextField)
         contentView.addSubview(deleteAccountButton)
         
-        
-        view.addSubview(backButton)
-        view.addSubview(saveButton)
         view.addSubview(avatarImageView)
         view.addSubview(deleteAccountButton)
         view.addSubview(nameTextField)
@@ -91,7 +85,7 @@ final class ProfileViewController: BaseViewController {
     
     
     private func configureVC() {
-        navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.isHidden = false
         tabBarController?.tabBar.isHidden = true
     }
     
@@ -108,11 +102,10 @@ final class ProfileViewController: BaseViewController {
     
     private func configureBackButton() {
         backButton.image = UIImage.back
-        backButton.isUserInteractionEnabled = true
-        backButton.translatesAutoresizingMaskIntoConstraints = false
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissVC))
         backButton.addGestureRecognizer(tapGestureRecognizer)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
     }
     
     @objc private func dismissVC() {
@@ -124,10 +117,12 @@ final class ProfileViewController: BaseViewController {
         screenTitle.font = UIFont(name: TextValues.sairaMedium, size: Constants.profileTitleSize)
         screenTitle.textColor = .appWhite
         screenTitle.translatesAutoresizingMaskIntoConstraints = false
+        navigationItem.titleView = screenTitle
     }
     
     private func configureSaveButton() {
         saveButton.addTarget(self, action: #selector(saveButtonAction), for: .touchUpInside)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: saveButton)
     }
     
     
@@ -299,21 +294,6 @@ final class ProfileViewController: BaseViewController {
             contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
-            
-            backButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 108),
-            backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.backButtonLeadingPadding),
-            backButton.widthAnchor.constraint(equalToConstant: Constants.backButtonWidth),
-            backButton.heightAnchor.constraint(equalToConstant: Constants.backButtonHeight),
-            
-            screenTitle.topAnchor.constraint(equalTo: view.topAnchor, constant: 108),
-            screenTitle.leadingAnchor.constraint(equalTo: backButton.trailingAnchor, constant: Constants.screenTitleLeadingPadding),
-            screenTitle.widthAnchor.constraint(equalToConstant: Constants.screenTitleWidth),
-            screenTitle.heightAnchor.constraint(equalToConstant: Constants.screenTitleHeight),
-            
-            saveButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 108),
-            saveButton.leadingAnchor.constraint(equalTo: screenTitle.trailingAnchor, constant: Constants.saveButtonLeadingPadding),
-            saveButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.saveButtonTitleTrailingPadding),
-            saveButton.heightAnchor.constraint(equalToConstant: Constants.saveButtonHeight),
             
             deleteAccountButton.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: 21),
             deleteAccountButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -44),
